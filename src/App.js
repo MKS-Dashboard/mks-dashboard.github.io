@@ -97,7 +97,7 @@ function App() {
         </Route>
         <Route exact path='/buildings'>
           <Layout>
-            <Buildings />
+            <Buildings buildingsData={ApiBuildings} />
           </Layout>
         </Route>
         <Route exact path='/credits'>
