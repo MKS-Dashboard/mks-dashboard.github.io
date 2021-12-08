@@ -4,42 +4,95 @@ import Home from "./components/Home/Home"
 import Vehicles from "./components/Vehicles/Vehicles"
 import Buildings from "./components/Buildings/Buildings"
 import Credits from "./components/Credits/Credits"
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import './App.css';
 
 function App() {
-
+  const apiUrl = "https://mks-dashboard-mks-dashboard-piet2001.cloud.okteto.net/"
   const [SessionId, setSessionId] = useState("Default");
+  const [inputvalue, setInputValue] = useState("x")
   const [ApiVehicles, setApiVehicles] = useState([]);
+  const [ApiBuildings, setApiBuildings] = useState([]);
+  let trycount = 0;
 
-  useEffect(() => {
-    const fetchMissions = async () => {
-      const result = await axios.get('https://www.meldkamerspel.com/einsaetze.json/',
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          withCredentials: true
-        });
+  function SaveSessionID() {
+    setSessionId(inputvalue);
+    refreshdata();
+  }
+
+  function refreshdata() {
+    fetchUser();
+    fetchVehicles();
+    fetchBuildings();
+  }
+
+  async function fetchVehicles() {
+    const fetchVersions = async () => {
+      const result = await axios(`${apiUrl}/vehicles/${SessionId}`);
+      return result.data;
+    };
+    fetchVersions().then((r) => setApiVehicles(r)).catch(function error() {
+      setTimeout(() => {
+        if (trycount < 10) {
+          trycount++
+          console.log("Error")
+          setSessionId(inputvalue);
+          refreshdata();
+        }
+      }, trycount * 1000);
+
+    });
+  }
+
+  async function fetchBuildings() {
+    const fetchBuildings = async () => {
+      const result = await axios(`${apiUrl}/buildings/${SessionId}`);
+      return result.data;
+    };
+    fetchBuildings().then((r) => setApiBuildings(r)).catch(function error() {
+      setTimeout(() => {
+        if (trycount < 10) {
+          trycount++
+          console.log("Error")
+          setSessionId(inputvalue);
+          refreshdata();
+        }
+      }, trycount * 1000);
+
+    });
+  }
+
+  async function fetchUser() {
+    const fetchVersions = async () => {
+      const result = await axios(`${apiUrl}/credits/${SessionId}`);
       console.log(result.data)
       return result.data;
-    }
-    fetchMissions().then(r => setApiVehicles(r));
-  }, [SessionId]);
+    };
+    fetchVersions().then((r) => alert(`Welkom ${r.user_name}`)).catch(function error() {
+      setTimeout(() => {
+        if (trycount < 10) {
+          trycount++
+          console.log("Error")
+          setSessionId(inputvalue);
+          refreshdata();
+        }
+      }, trycount * 1000);
+    });
+  }
 
-  console.log(ApiVehicles)
+
   return (
     <Router>
       <Switch>
         <Route exact path='/'>
-          <Layout>
-            <Home setSessionId={setSessionId} />
+          <Layout refresh={refreshdata}>
+            <Home setInputValue={setInputValue} SaveSessionID={SaveSessionID} template={SessionId} />
           </Layout>
         </Route>
         <Route exact path='/vehicles'>
           <Layout>
-            <Vehicles />
+            <Vehicles vehicleData={ApiVehicles} />
           </Layout>
         </Route>
         <Route exact path='/buildings'>
