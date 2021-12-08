@@ -14,7 +14,6 @@ function App() {
   const [inputvalue, setInputValue] = useState("x")
   const [ApiVehicles, setApiVehicles] = useState([]);
   const [ApiBuildings, setApiBuildings] = useState([]);
-  let trycount = 0;
 
   function SaveSessionID() {
     setSessionId(inputvalue);
@@ -33,15 +32,7 @@ function App() {
       return result.data;
     };
     fetchVersions().then((r) => setApiVehicles(r)).catch(function error() {
-      setTimeout(() => {
-        if (trycount < 10) {
-          trycount++
-          console.log("Error")
-          setSessionId(inputvalue);
-          refreshdata();
-        }
-      }, trycount * 1000);
-
+      alert("Ophalen voertuigen mislukt, probeer opnieuw!")
     });
   }
 
@@ -51,15 +42,7 @@ function App() {
       return result.data;
     };
     fetchBuildings().then((r) => setApiBuildings(r)).catch(function error() {
-      setTimeout(() => {
-        if (trycount < 10) {
-          trycount++
-          console.log("Error")
-          setSessionId(inputvalue);
-          refreshdata();
-        }
-      }, trycount * 1000);
-
+      alert("Ophalen gebouwen mislukt, probeer opnieuw!")
     });
   }
 
@@ -70,14 +53,7 @@ function App() {
       return result.data;
     };
     fetchVersions().then((r) => alert(`Welkom ${r.user_name}`)).catch(function error() {
-      setTimeout(() => {
-        if (trycount < 10) {
-          trycount++
-          console.log("Error")
-          setSessionId(inputvalue);
-          refreshdata();
-        }
-      }, trycount * 1000);
+      alert("Ophalen usergegevens mislukt, probeer opnieuw!")
     });
   }
 
