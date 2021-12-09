@@ -13,6 +13,7 @@ const Home = (props) => {
             <br />
             <br />
 
+            Uw SessionID van <a href="https://meldkamerspel.com">Meldkamerspel.com</a>:<br />
             <input name='sessionId' type='password' value={props.template} onChange={e => props.setInputValue(e.target.value)} />
             <input name='submit' type='submit' value='Gegevens ophalen' onClick={() => props.SaveSessionID()} />
 
