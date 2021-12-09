@@ -31,9 +31,7 @@ function App() {
       const result = await axios(`${apiUrl}/vehicles/${SessionId}`);
       return result.data;
     };
-    fetchVersions().then((r) => setApiVehicles(r)).catch(function error() {
-      alert("Ophalen voertuigen mislukt, probeer opnieuw!")
-    });
+    fetchVersions().then((r) => setApiVehicles(r))
   }
 
   async function fetchBuildings() {
@@ -41,9 +39,7 @@ function App() {
       const result = await axios(`${apiUrl}/buildings/${SessionId}`);
       return result.data;
     };
-    fetchBuildings().then((r) => setApiBuildings(r)).catch(function error() {
-      alert("Ophalen gebouwen mislukt, probeer opnieuw!")
-    });
+    fetchBuildings().then((r) => setApiBuildings(r))
   }
 
   async function fetchUser() {

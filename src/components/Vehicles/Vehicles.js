@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./tabellen.css"
 
 function Vehicles(props) {
 
@@ -31,10 +30,10 @@ function Vehicles(props) {
 
     return (
         <div id="Container">
-            <p>Je bevind je nu op de voertuigen pagina</p>
+            Je bevind je nu op de voertuigen pagina
 
             <h2> Brandweer </h2>
-            <table class="table" id="Brandweer">
+            <table className="table" id="Brandweer">
                 <thead>
                     <tr>
                         <th>Afkorting</th>
@@ -50,7 +49,7 @@ function Vehicles(props) {
                         return (
                             vehicleinbezit.map((vehicle) => {
                                 return (
-                                    <tr>
+                                    <tr key={vehicle.ID}>
                                         <td>{vehicle.name}</td>
                                         <td>{vehicle.namelong}</td>
                                         <td>{vehicle.inbezit}</td>
@@ -79,7 +78,7 @@ function Vehicles(props) {
                         return (
                             vehicleinbezit.map((vehicle) => {
                                 return (
-                                    <tr>
+                                    <tr key={vehicle.ID}>
                                         <td>{vehicle.name}</td>
                                         <td>{vehicle.namelong}</td>
                                         <td>{vehicle.inbezit}</td>
@@ -108,7 +107,7 @@ function Vehicles(props) {
                         return (
                             vehicleinbezit.map((vehicle) => {
                                 return (
-                                    <tr>
+                                    <tr key={vehicle.ID}>
                                         <td>{vehicle.name}</td>
                                         <td>{vehicle.namelong}</td>
                                         <td>{vehicle.inbezit}</td>
@@ -137,7 +136,7 @@ function Vehicles(props) {
                         return (
                             vehicleinbezit.map((vehicle) => {
                                 return (
-                                    <tr>
+                                    <tr key={vehicle.ID}>
                                         <td>{vehicle.name}</td>
                                         <td>{vehicle.namelong}</td>
                                         <td>{vehicle.inbezit}</td>

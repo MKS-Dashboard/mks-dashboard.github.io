@@ -44,4 +44,153 @@
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+  min-height: 80vh;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+}
+
+/* tabellen */
+#Tabel {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Tabel td, #vehicles th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#Tabel tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#Tabel tr:hover {
+  background-color: #ddd;
+}
+
+#Tabel th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #ff0000;
+  color: white;
+}
+
+#Brandweer {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Brandweer td, #vehicles th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#Brandweer tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#Brandweer tr:hover {
+  background-color: #ddd;
+}
+
+#Brandweer th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #ff0000;
+  color: white;
+}
+
+#Politie {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Politie td, #vehicles th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#Politie tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#Politie tr:hover {
+  background-color: #ddd;
+}
+
+#Politie th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #0004eee7;
+  color: white;
+}
+
+#Ambulance {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Ambulance td, #vehicles th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#Ambulance tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#Ambulance tr:hover {
+  background-color: #ddd;
+}
+
+#Ambulance th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #fffb00;
+  color: rgb(0, 0, 0);
+}
+
+#Waterredding {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Waterredding td, #vehicles th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#Waterredding tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#Waterredding tr:hover {
+  background-color: #ddd;
+}
+
+#Waterredding th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #ff9900;
+  color: white;
 }
