@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Home = (props) => {
+    const [checked, setChecked] = React.useState(false)
 
     return (
         <div id="Container">
@@ -13,11 +14,17 @@ const Home = (props) => {
             <br />
             <br />
 
-            Door het gebruiken van de applicatie gaat u automatisch akkoort met de <a href="/voorwaarden">Algemene Voorwaarden</a> en <a href="/privacy">Privacyverklaring</a>
+            <label>
+                <input type="checkbox"
+                    defaultChecked={checked}
+                    onChange={() => setChecked(!checked)}
+                />
+                Ik ga akkoord met de <a href="/voorwaarden">Algemene Voorwaarden</a> en <a href="/privacy">Privacyverklaring</a>
+            </label>
             <br /><br />
             Uw SessionID van <a href="https://meldkamerspel.com">Meldkamerspel.com</a>:<br />
-            <input name='sessionId' type='password' value={props.template} onChange={e => props.setInputValue(e.target.value)} />
-            <input name='submit' type='submit' value='Gegevens ophalen' onClick={() => props.GetData()} />
+            <input name='sessionId' type='password' value={props.template} onChange={e => props.setInputValue(e.target.value)} disabled={!checked} />
+            <input name='submit' type='submit' value='Gegevens ophalen' onClick={() => props.GetData()} disabled={!checked} />
 
             <br />
 
