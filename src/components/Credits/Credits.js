@@ -29,22 +29,39 @@ function Credits() {
 
     console.log(`length: ${VersionsList.length}`)
     return (
-        <div>
+        <div id="Container">
             Op deze pagina vind je het gemiddelde aantal credits wat een melding in een versie opleverd.
+            <br /><br />
 
-            {(() => {
-                VersionsList.sort((a, b) => (a.avg < b.avg) ? 1 : -1)
-                var count = 0
-                return (
-                    VersionsList.map((version) => {
-                        count++
+            <table className="table" id="Tabel">
+                <thead>
+                    <tr>
+                        <th>Plek</th>
+                        <th>Locale</th>
+                        <th>Gemiddelde</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                        return (<h4>#{count} - {version.code} - {version.avg}</h4>)
-                    }
+                    {(() => {
 
-                    )
-                )
-            })()}
+                        VersionsList.sort((a, b) => (a.avg < b.avg) ? 1 : -1)
+                        var count = 0
+                        return (
+                            VersionsList.map((version) => {
+                                count++
+                                return (
+                                    <tr key={version.code}>
+                                        <td>#{count}</td>
+                                        <td>{version.code}</td>
+                                        <td>{version.avg}</td>
+                                    </tr>
+                                )
+                            }
+                            ))
+                    })()}
+                </tbody>
+            </table>
         </div>
     )
 }

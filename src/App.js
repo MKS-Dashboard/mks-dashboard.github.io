@@ -4,52 +4,88 @@ import Home from "./components/Home/Home"
 import Vehicles from "./components/Vehicles/Vehicles"
 import Buildings from "./components/Buildings/Buildings"
 import Credits from "./components/Credits/Credits"
-import React, { useState, useEffect } from "react";
+import Voorwaarden from "./components/Voorwaarden/Voorwaarden"
+import Privacy from "./components/Voorwaarden/Privacy";
+import React, { useState } from "react";
 import axios from "axios";
 import './App.css';
 
 function App() {
-
-  const [SessionId, setSessionId] = useState("Default");
+  const apiUrl = "https://mks-dashboard-mks-dashboard-piet2001.cloud.okteto.net/"
+  const [inputvalue, setInputValue] = useState("x")
   const [ApiVehicles, setApiVehicles] = useState([]);
+  const [ApiBuildings, setApiBuildings] = useState([]);
 
-  useEffect(() => {
-    const fetchMissions = async () => {
-      const result = await axios.get('https://www.meldkamerspel.com/einsaetze.json/',
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          withCredentials: true
-        });
-      console.log(result.data)
+  function LoadData() {
+    setTimeout(() => {
+      refreshdata();
+    }, 3000);
+  }
+
+  function refreshdata() {
+    fetchUser();
+    fetchVehicles();
+    fetchBuildings();
+  }
+
+  async function fetchVehicles() {
+    const fetchVersions = async () => {
+      const result = await axios(`${apiUrl}/vehicles/${inputvalue}`);
       return result.data;
-    }
-    fetchMissions().then(r => setApiVehicles(r));
-  }, [SessionId]);
+    };
+    fetchVersions().then((r) => setApiVehicles(r))
+  }
 
-  console.log(ApiVehicles)
+  async function fetchBuildings() {
+    const fetchBuildings = async () => {
+      const result = await axios(`${apiUrl}/buildings/${inputvalue}`);
+      return result.data;
+    };
+    fetchBuildings().then((r) => setApiBuildings(r))
+  }
+
+  async function fetchUser() {
+    const fetchVersions = async () => {
+      const result = await axios(`${apiUrl}/credits/${inputvalue}`);
+      return result.data;
+    };
+    fetchVersions().then((r) => alert(`Welkom ${r.user_name}`)).catch(function error() {
+      alert("Ophalen usergegevens mislukt, probeer opnieuw!")
+    });
+  }
+
+
   return (
     <Router>
       <Switch>
         <Route exact path='/'>
-          <Layout>
-            <Home setSessionId={setSessionId} />
+          <Layout refresh={refreshdata}>
+            <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} />
           </Layout>
         </Route>
         <Route exact path='/vehicles'>
           <Layout>
-            <Vehicles />
+            <Vehicles vehicleData={ApiVehicles} />
           </Layout>
         </Route>
         <Route exact path='/buildings'>
           <Layout>
-            <Buildings />
+            <Buildings buildingsData={ApiBuildings} />
           </Layout>
         </Route>
         <Route exact path='/credits'>
           <Layout>
             <Credits />
+          </Layout>
+        </Route>
+        <Route exact path='/voorwaarden'>
+          <Layout>
+            <Voorwaarden />
+          </Layout>
+        </Route>
+        <Route exact path='/privacy'>
+          <Layout>
+            <Privacy />
           </Layout>
         </Route>
       </Switch>
