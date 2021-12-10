@@ -21,22 +21,6 @@ const Voorwaarden = () => {
                 Wanneer gebruiker onder de 16 jaar is dient hij/zij uitdrukkelijke toestemming van ouders en/of wettelijke vertegenwoordigers.
             </p>
 
-            <h2>Cookies:</h2>
-            <p>
-                De website maakt gebruik van cookies om je online ervaring persoonlijker te maken.
-                Door MKS-Dashboard te openen, stemde je ermee in om de vereiste cookies te gebruiken.<br />
-                <br />
-                Een cookie is een tekstbestand dat door een web pagina server op je harde schijf wordt geplaatst.
-                Cookies kunnen niet worden gebruikt om programma's uit te voeren of virussen op je computer te plaatsen.
-                Cookies worden uniek aan jou toegewezen en kunnen alleen worden gelezen door een webserver in het domein dat de cookie aan je heeft uitgegeven.<br />
-                <br />
-                We kunnen cookies gebruiken om informatie te verzamelen, op te slaan en bij te houden voor statistische of marketingdoeleinden om onze website te laten werken.
-                Je hebt de mogelijkheid om optionele cookies te accepteren of om te weigeren.
-                Er zijn enkele vereiste cookies die nodig zijn voor de werking van onze website.
-                Voor deze cookies is je toestemming niet vereist, aangezien ze altijd werken.
-                Hou er rekening mee dat door het accepteren van vereiste cookies, je ook cookies van derden accepteert, die kunnen worden gebruikt via door derden geleverde services als je dergelijke services op onze website gebruikt, bijvoorbeeld een video weergavevenster van derden dat geïntegreerd is op onze website.
-            </p>
-
             <h2>Externe gegevens:</h2>
             <p>
                 De website maakt gebruik van externe om je online ervaring persoonlijker te maken.
