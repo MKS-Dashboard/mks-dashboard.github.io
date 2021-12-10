@@ -12,14 +12,14 @@ import './App.css';
 
 function App() {
   const apiUrl = "https://mks-dashboard-mks-dashboard-piet2001.cloud.okteto.net/"
-  const [SessionId, setSessionId] = useState("Default");
   const [inputvalue, setInputValue] = useState("x")
   const [ApiVehicles, setApiVehicles] = useState([]);
   const [ApiBuildings, setApiBuildings] = useState([]);
 
-  function SaveSessionID() {
-    setSessionId(inputvalue);
-    refreshdata();
+  function LoadData() {
+    setTimeout(() => {
+      refreshdata();
+    }, 3000);
   }
 
   function refreshdata() {
@@ -30,7 +30,7 @@ function App() {
 
   async function fetchVehicles() {
     const fetchVersions = async () => {
-      const result = await axios(`${apiUrl}/vehicles/${SessionId}`);
+      const result = await axios(`${apiUrl}/vehicles/${inputvalue}`);
       return result.data;
     };
     fetchVersions().then((r) => setApiVehicles(r))
@@ -38,7 +38,7 @@ function App() {
 
   async function fetchBuildings() {
     const fetchBuildings = async () => {
-      const result = await axios(`${apiUrl}/buildings/${SessionId}`);
+      const result = await axios(`${apiUrl}/buildings/${inputvalue}`);
       return result.data;
     };
     fetchBuildings().then((r) => setApiBuildings(r))
@@ -46,8 +46,7 @@ function App() {
 
   async function fetchUser() {
     const fetchVersions = async () => {
-      const result = await axios(`${apiUrl}/credits/${SessionId}`);
-      console.log(result.data)
+      const result = await axios(`${apiUrl}/credits/${inputvalue}`);
       return result.data;
     };
     fetchVersions().then((r) => alert(`Welkom ${r.user_name}`)).catch(function error() {
@@ -61,7 +60,7 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Layout refresh={refreshdata}>
-            <Home setInputValue={setInputValue} SaveSessionID={SaveSessionID} template={SessionId} />
+            <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} />
           </Layout>
         </Route>
         <Route exact path='/vehicles'>
