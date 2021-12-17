@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   const apiUrl = "https://mks-dashboard-mks-dashboard-piet2001.cloud.okteto.net/"
-  const [inputvalue, setInputValue] = useState("x")
+  const [inputvalue, setInputValue] = useState("")
   const [ApiVehicles, setApiVehicles] = useState([]);
   const [ApiBuildings, setApiBuildings] = useState([]);
 
