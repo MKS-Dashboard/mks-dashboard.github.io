@@ -137,12 +137,12 @@ function Vehicles(props) {
 
                         var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === "Politie")
                         return (
-                            vehicleinbezit.map((groep) => {
+                            vehicleinbezit.map((vehicle) => {
                                 return (
-                                    <tr key={groep.ID}>
-                                        <td>{groep.name}</td>
-                                        <td>{groep.namelong}</td>
-                                        <td>{groep.inbezit}</td>
+                                    <tr key={vehicle.ID}>
+                                        <td>{vehicle.name}</td>
+                                        <td>{vehicle.namelong}</td>
+                                        <td>{vehicle.inbezit}</td>
                                     </tr>
                                 )
                             }
