@@ -4,16 +4,17 @@ import axios from "axios";
 function Vehicles(props) {
 
     const [vehicleTypes, setVehicleTypes] = useState([]);
+    const [vehicleGroups, setVehicleGroups] = useState([]);
 
     useEffect(() => {
         fetchVehicleTemplate()
 
         async function fetchVehicleTemplate() {
-            const fetchVersions = async () => {
+            const fetchVehicleTemplate = async () => {
                 const result = await axios("https://mks-dashboard.github.io/datafiles/vehicles.json");
                 return result.data;
             };
-            fetchVersions().then((r) => update(r));
+            fetchVehicleTemplate().then((r) => update(r));
         }
 
         async function update(types) {
@@ -25,8 +26,40 @@ function Vehicles(props) {
 
             types.sort((a, b) => (a.name > b.name) ? 1 : -1)
             setVehicleTypes(types)
+            fetchVehicleGroups()
         }
-    }, [props.vehicleData,]);
+
+        async function fetchVehicleGroups() {
+            const fetchGroups = async () => {
+                const result = await axios("https://mks-dashboard.github.io/datafiles/vehiclegroups.json");
+                return result.data;
+            };
+            fetchGroups().then((r) => updateGroups(r));
+        }
+
+        async function updateGroups(groups) {
+            var data = props.vehicleData
+            for (let i = 0; i < groups.length; i++) {
+                //types[i].inbezit = data.filter(vehicle => vehicle.vehicle_type === types[i].ID).length
+                let count = 0;
+                var types = ""
+
+                for (let j = 0; j < groups[i].vehicles.length; j++) {
+                    count += data.filter(vehicle => vehicle.vehicle_type === groups[i].vehicles[j]).length;
+                    types += `${vehicleTypes.find(vehicle => vehicle.ID === groups[i].vehicles[j]).name}, `
+                }
+
+                groups[i].count = count
+                groups[i].types = types
+
+            }
+
+            groups.sort((a, b) => (a.name > b.name) ? 1 : -1)
+            setVehicleGroups(groups)
+        }
+
+
+    }, [props.vehicleData]);
 
     return (
         <div id="Container">
@@ -60,6 +93,34 @@ function Vehicles(props) {
                     })()}
                 </tbody>
             </table>
+            <br />
+            <table className="table" id="Brandweer">
+                <thead>
+                    <tr>
+                        <th>Groep</th>
+                        <th>Voertuigen</th>
+                        <th>Aantal</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {(() => {
+
+                        var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === "Brandweer")
+                        return (
+                            groepen.map((groep) => {
+                                return (
+                                    <tr key={groep.name}>
+                                        <td>{groep.name}</td>
+                                        <td>{groep.types}</td>
+                                        <td>{groep.count}</td>
+                                    </tr>
+                                )
+                            }
+                            ))
+                    })()}
+                </tbody>
+            </table>
 
             <h2> Politie </h2>
             <table className="table" id="Politie">
@@ -76,12 +137,40 @@ function Vehicles(props) {
 
                         var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === "Politie")
                         return (
-                            vehicleinbezit.map((vehicle) => {
+                            vehicleinbezit.map((groep) => {
                                 return (
-                                    <tr key={vehicle.ID}>
-                                        <td>{vehicle.name}</td>
-                                        <td>{vehicle.namelong}</td>
-                                        <td>{vehicle.inbezit}</td>
+                                    <tr key={groep.ID}>
+                                        <td>{groep.name}</td>
+                                        <td>{groep.namelong}</td>
+                                        <td>{groep.inbezit}</td>
+                                    </tr>
+                                )
+                            }
+                            ))
+                    })()}
+                </tbody>
+            </table>
+            <br />
+            <table className="table" id="Politie">
+                <thead>
+                    <tr>
+                        <th>Groep</th>
+                        <th>Voertuigen</th>
+                        <th>Aantal</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {(() => {
+
+                        var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === "Politie")
+                        return (
+                            groepen.map((groep) => {
+                                return (
+                                    <tr key={groep.name}>
+                                        <td>{groep.name}</td>
+                                        <td>{groep.types}</td>
+                                        <td>{groep.count}</td>
                                     </tr>
                                 )
                             }
@@ -118,6 +207,34 @@ function Vehicles(props) {
                     })()}
                 </tbody>
             </table>
+            <br />
+            <table className="table" id="Ambulance">
+                <thead>
+                    <tr>
+                        <th>Groep</th>
+                        <th>Voertuigen</th>
+                        <th>Aantal</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {(() => {
+
+                        var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === "Ambulance")
+                        return (
+                            groepen.map((groep) => {
+                                return (
+                                    <tr key={groep.name}>
+                                        <td>{groep.name}</td>
+                                        <td>{groep.types}</td>
+                                        <td>{groep.count}</td>
+                                    </tr>
+                                )
+                            }
+                            ))
+                    })()}
+                </tbody>
+            </table>
 
             <h2> KNRM/RB </h2>
             <table className="table" id="Waterredding">
@@ -140,6 +257,34 @@ function Vehicles(props) {
                                         <td>{vehicle.name}</td>
                                         <td>{vehicle.namelong}</td>
                                         <td>{vehicle.inbezit}</td>
+                                    </tr>
+                                )
+                            }
+                            ))
+                    })()}
+                </tbody>
+            </table>
+            <br />
+            <table className="table" id="Waterredding">
+                <thead>
+                    <tr>
+                        <th>Groep</th>
+                        <th>Voertuigen</th>
+                        <th>Aantal</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {(() => {
+
+                        var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === "Waterredding")
+                        return (
+                            groepen.map((groep) => {
+                                return (
+                                    <tr key={groep.name}>
+                                        <td>{groep.name}</td>
+                                        <td>{groep.types}</td>
+                                        <td>{groep.count}</td>
                                     </tr>
                                 )
                             }
