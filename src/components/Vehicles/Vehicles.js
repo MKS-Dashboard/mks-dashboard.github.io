@@ -59,7 +59,7 @@ function Vehicles(props) {
         }
 
 
-    }, [props.vehicleData]);
+    }, [props.vehicleData, vehicleTypes]);
 
     return (
         <div id="Container">
