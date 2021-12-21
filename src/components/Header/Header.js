@@ -2,7 +2,8 @@ import "./Header.css";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { RiPoliceCarFill } from "react-icons/ri";
-import { FaHome, FaDollarSign, FaBuilding } from "react-icons/fa";
+import { FaHome, FaBuilding } from "react-icons/fa"; //FaDollarSign
+import { BiWorld } from "react-icons/bi";
 // import { BsPersonFill } from "react-icons/bs";
 import React from "react";
 
@@ -22,7 +23,7 @@ const Header = () => {
               <FaBuilding id="icon" size={50} />
             </Link>
             <Link className="link" to="/credits">
-              <FaDollarSign id="icon" size={50} />
+              <BiWorld id="icon" size={50} />
             </Link>
           </Nav>
         </Navbar.Collapse>
