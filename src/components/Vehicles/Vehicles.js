@@ -65,7 +65,7 @@ function Vehicles(props) {
 
         async function fetchadditionalvalues() {
             const fetchGroups = async () => {
-                const result = await axios("https://raw.githubusercontent.com/MKS-Dashboard/datafiles/Test/additionalvalues.json");
+                const result = await axios("https://mks-dashboard.github.io/datafiles/additionalvalues.json");
                 return result.data;
             };
             fetchGroups().then((r) => updateadditionalvalues(r));
