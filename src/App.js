@@ -19,12 +19,15 @@ function App() {
 
   function LoadData() {
     setTimeout(() => {
+      fetchUser();
       refreshdata();
+      setInterval(() => {
+        refreshdata();
+      }, 5 * 60 * 1000)
     }, 3000);
   }
 
   function refreshdata() {
-    fetchUser();
     fetchVehicles();
     fetchBuildings();
   }
