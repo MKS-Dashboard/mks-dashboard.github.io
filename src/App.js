@@ -15,15 +15,19 @@ function App() {
   const [inputvalue, setInputValue] = useState("")
   const [ApiVehicles, setApiVehicles] = useState([]);
   const [ApiBuildings, setApiBuildings] = useState([]);
+  const [Agree, setAgree] = React.useState(false)
 
   function LoadData() {
     setTimeout(() => {
+      fetchUser();
       refreshdata();
+      setInterval(() => {
+        refreshdata();
+      }, 5 * 60 * 1000)
     }, 3000);
   }
 
   function refreshdata() {
-    fetchUser();
     fetchVehicles();
     fetchBuildings();
   }
@@ -60,7 +64,7 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Layout refresh={refreshdata}>
-            <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} />
+            <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
           </Layout>
         </Route>
         <Route exact path='/vehicles'>

@@ -51,7 +51,7 @@ function Buildings(props) {
                                 return (
                                     <tr key={building.ID}>
                                         <td>{building.name}</td>
-                                        <td>{building.inbezit}</td>
+                                        <td>{building.inbezit.toLocaleString()}</td>
                                     </tr>
                                 )
                             }

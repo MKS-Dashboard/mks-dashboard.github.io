@@ -5,6 +5,7 @@ function Vehicles(props) {
 
     const [vehicleTypes, setVehicleTypes] = useState([]);
     const [vehicleGroups, setVehicleGroups] = useState([]);
+    const [additionalValues, setAdditionalvValues] = useState([])
 
     useEffect(() => {
         fetchVehicleTemplate()
@@ -26,8 +27,11 @@ function Vehicles(props) {
 
             types.sort((a, b) => (a.name > b.name) ? 1 : -1)
             setVehicleTypes(types)
-            fetchVehicleGroups()
         }
+    }, [props.vehicleData]);
+
+    useEffect(() => {
+        fetchVehicleGroups();
 
         async function fetchVehicleGroups() {
             const fetchGroups = async () => {
@@ -56,11 +60,39 @@ function Vehicles(props) {
 
             groups.sort((a, b) => (a.name > b.name) ? 1 : -1)
             setVehicleGroups(groups)
+            fetchadditionalvalues()
         }
 
+        async function fetchadditionalvalues() {
+            const fetchGroups = async () => {
+                const result = await axios("https://mks-dashboard.github.io/datafiles/additionalvalues.json");
+                return result.data;
+            };
+            fetchGroups().then((r) => updateadditionalvalues(r));
+        }
 
-    }, [props.vehicleData, vehicleTypes]);
+        async function updateadditionalvalues(additionalvalues) {
+            var data = props.vehicleData
 
+            for (var k = 0; k < additionalvalues.length; k++) {
+                var amount = 0;
+
+                for (var l = 0; l < additionalvalues[k].Voertuigen.length; l++) {
+                    // eslint-disable-next-line
+                    var count = data.filter(vehicle => vehicle.vehicle_type === additionalvalues[k].Voertuigen[l].id).length;
+                    if (count > 0) {
+                        amount += count * additionalvalues[k].Voertuigen[l].amount
+                    }
+                }
+
+                additionalvalues[k].total = amount
+            }
+
+            setAdditionalvValues(additionalvalues)
+            console.log("RUN")
+        }
+
+    }, [props.vehicleData, vehicleTypes])
     return (
         <div id="Container">
             Je bevind je nu op de voertuigen pagina
@@ -85,7 +117,7 @@ function Vehicles(props) {
                                     <tr key={vehicle.ID}>
                                         <td>{vehicle.name}</td>
                                         <td>{vehicle.namelong}</td>
-                                        <td>{vehicle.inbezit}</td>
+                                        <td>{vehicle.inbezit.toLocaleString()}</td>
                                     </tr>
                                 )
                             }
@@ -113,7 +145,33 @@ function Vehicles(props) {
                                     <tr key={groep.name}>
                                         <td>{groep.name}</td>
                                         <td>{groep.types}</td>
-                                        <td>{groep.count}</td>
+                                        <td>{groep.count.toLocaleString()}</td>
+                                    </tr>
+                                )
+                            }
+                            ))
+                    })()}
+                </tbody>
+            </table>
+            <br />
+            <table className="table" id="Brandweer">
+                <thead>
+                    <tr>
+                        <th>Waarde</th>
+                        <th>Aantal</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {(() => {
+
+                        var values = additionalValues.filter(value => value.total > 0)
+                        return (
+                            values.map((value) => {
+                                return (
+                                    <tr key={value.name}>
+                                        <td>{value.name}</td>
+                                        <td>{value.total.toLocaleString()}</td>
                                     </tr>
                                 )
                             }
@@ -137,12 +195,12 @@ function Vehicles(props) {
 
                         var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === "Politie")
                         return (
-                            vehicleinbezit.map((groep) => {
+                            vehicleinbezit.map((vehicle) => {
                                 return (
-                                    <tr key={groep.ID}>
-                                        <td>{groep.name}</td>
-                                        <td>{groep.namelong}</td>
-                                        <td>{groep.inbezit}</td>
+                                    <tr key={vehicle.ID}>
+                                        <td>{vehicle.name}</td>
+                                        <td>{vehicle.namelong}</td>
+                                        <td>{vehicle.inbezit.toLocaleString()}</td>
                                     </tr>
                                 )
                             }
@@ -170,7 +228,7 @@ function Vehicles(props) {
                                     <tr key={groep.name}>
                                         <td>{groep.name}</td>
                                         <td>{groep.types}</td>
-                                        <td>{groep.count}</td>
+                                        <td>{groep.count.toLocaleString()}</td>
                                     </tr>
                                 )
                             }
@@ -199,7 +257,7 @@ function Vehicles(props) {
                                     <tr key={vehicle.ID}>
                                         <td>{vehicle.name}</td>
                                         <td>{vehicle.namelong}</td>
-                                        <td>{vehicle.inbezit}</td>
+                                        <td>{vehicle.inbezit.toLocaleString()}</td>
                                     </tr>
                                 )
                             }
@@ -227,7 +285,7 @@ function Vehicles(props) {
                                     <tr key={groep.name}>
                                         <td>{groep.name}</td>
                                         <td>{groep.types}</td>
-                                        <td>{groep.count}</td>
+                                        <td>{groep.count.toLocaleString()}</td>
                                     </tr>
                                 )
                             }
@@ -256,7 +314,7 @@ function Vehicles(props) {
                                     <tr key={vehicle.ID}>
                                         <td>{vehicle.name}</td>
                                         <td>{vehicle.namelong}</td>
-                                        <td>{vehicle.inbezit}</td>
+                                        <td>{vehicle.inbezit.toLocaleString()}</td>
                                     </tr>
                                 )
                             }
@@ -284,7 +342,7 @@ function Vehicles(props) {
                                     <tr key={groep.name}>
                                         <td>{groep.name}</td>
                                         <td>{groep.types}</td>
-                                        <td>{groep.count}</td>
+                                        <td>{groep.count.toLocaleString()}</td>
                                     </tr>
                                 )
                             }
