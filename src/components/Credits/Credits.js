@@ -10,7 +10,7 @@ function Credits() {
 
         async function fetchVersions() {
             const fetchVersions = async () => {
-                const result = await axios("https://raw.githubusercontent.com/Piet2001/Teststuff/master/games.json");
+                const result = await axios("https://mks-dashboard.github.io/datafiles/games.json");
                 return result.data;
             };
             fetchVersions().then((r) => update(r));
