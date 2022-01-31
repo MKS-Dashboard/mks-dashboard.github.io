@@ -11,11 +11,18 @@ import axios from "axios";
 import './App.css';
 
 function App() {
-  const apiUrl = "https://mks-dashboard-mks-dashboard-piet2001.cloud.okteto.net/"
+  let apiUrl;
   const [inputvalue, setInputValue] = useState("")
   const [ApiVehicles, setApiVehicles] = useState([]);
   const [ApiBuildings, setApiBuildings] = useState([]);
   const [Agree, setAgree] = React.useState(false)
+
+  if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
+    apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net/"
+  }
+  else {
+    apiUrl = "https://mks-dashboard-mks-dashboard-piet2001.cloud.okteto.net/"
+  }
 
   function LoadData() {
     setTimeout(() => {
