@@ -3,6 +3,7 @@ import Layout from "./components/Layout/Layout";
 import Home from "./components/Home/Home"
 import Vehicles from "./components/Vehicles/Vehicles"
 import Buildings from "./components/Buildings/Buildings"
+import AllianceBuildings from "./components/Buildings/AllianceBuildings";
 import Credits from "./components/Credits/Credits"
 import Voorwaarden from "./components/Voorwaarden/Voorwaarden"
 import Privacy from "./components/Voorwaarden/Privacy";
@@ -15,6 +16,7 @@ function App() {
   const [inputvalue, setInputValue] = useState("")
   const [ApiVehicles, setApiVehicles] = useState([]);
   const [ApiBuildings, setApiBuildings] = useState([]);
+  const [ApiAllianceBuildings, setApiAllianceBuildings] = useState([])
   const [Agree, setAgree] = React.useState(false)
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
@@ -31,12 +33,13 @@ function App() {
       setInterval(() => {
         refreshdata();
       }, 5 * 60 * 1000)
-    }, 3000);
+    }, 1000);
   }
 
   function refreshdata() {
     fetchVehicles();
     fetchBuildings();
+    fetchAllianceBuildings();
   }
 
   async function fetchVehicles() {
@@ -53,6 +56,14 @@ function App() {
       return result.data;
     };
     fetchBuildings().then((r) => setApiBuildings(r))
+  }
+
+  async function fetchAllianceBuildings() {
+    const fetchAllianceBuildings = async () => {
+      const result = await axios(`${apiUrl}/alliancebuildings/${inputvalue}`);
+      return result.data;
+    };
+    fetchAllianceBuildings().then((r) => setApiAllianceBuildings(r))
   }
 
   async function fetchUser() {
@@ -82,6 +93,11 @@ function App() {
         <Route exact path='/buildings'>
           <Layout>
             <Buildings buildingsData={ApiBuildings} />
+          </Layout>
+        </Route>
+        <Route exact path='/alliancebuildings'>
+          <Layout>
+            <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
           </Layout>
         </Route>
         <Route exact path='/credits'>
