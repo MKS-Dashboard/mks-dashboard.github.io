@@ -89,7 +89,6 @@ function Vehicles(props) {
             }
 
             setAdditionalvValues(additionalvalues)
-            console.log("RUN")
         }
 
     }, [props.vehicleData, vehicleTypes])

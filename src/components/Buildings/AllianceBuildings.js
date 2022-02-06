@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function Buildings(props) {
+function AllianceBuildings(props) {
 
     const [buildingTypes, setBuildingTypes] = useState([]);
 
@@ -17,17 +17,7 @@ function Buildings(props) {
         }
 
         async function update(types) {
-            var data = props.buildingsData
-
-            for (let j = 0; j < data.length; j++) {
-                if (data[j].small_building === true) {
-                    console.log(data[j])
-                    var type = types.find(type => type.ID === data[j].building_type)
-                    console.log(type)
-                    data[j].building_type = type.smallBuildingId
-                    console.log(data[j])
-                }
-            }
+            var data = props.allianceBuildingsData
 
             for (let i = 0; i < types.length; i++) {
                 types[i].inbezit = data.filter(building => building.building_type === types[i].ID).length
@@ -36,12 +26,12 @@ function Buildings(props) {
             types.sort((a, b) => (a.name > b.name) ? 1 : -1)
             setBuildingTypes(types)
         }
-    }, [props.buildingsData,]);
+    }, [props.allianceBuildingsData,]);
 
 
     return (
         <div id="Container">
-            Je bevind je nu op de gebouwen pagina.
+            Je bevind je nu op de teamgebouwen pagina
 
             <h2> Gebouwen </h2>
             <table className="table" id="Tabel">
@@ -73,4 +63,4 @@ function Buildings(props) {
     )
 }
 
-export default Buildings
+export default AllianceBuildings
