@@ -24,10 +24,6 @@ function Credits() {
         }
     }, []);
 
-
-
-
-    console.log(`length: ${VersionsList.length}`)
     return (
         <div id="Container">
             Op deze pagina vind je het gemiddelde aantal credits wat een melding in een versie opleverd.
