@@ -27,7 +27,6 @@ function Buildings(props) {
                     data[j].building_type = type.smallBuildingId
                     console.log(data[j])
                 }
-                console.log(data)
             }
 
             for (let i = 0; i < types.length; i++) {
@@ -42,7 +41,7 @@ function Buildings(props) {
 
     return (
         <div id="Container">
-            Je bevind je nu op de gebouwen pagina
+            Je bevind je nu op de gebouwen pagina.
 
             <h2> Gebouwen </h2>
             <table className="table" id="Tabel">

@@ -7,6 +7,7 @@ import AllianceBuildings from "./components/Buildings/AllianceBuildings";
 import Credits from "./components/Credits/Credits"
 import Voorwaarden from "./components/Voorwaarden/Voorwaarden"
 import Privacy from "./components/Voorwaarden/Privacy";
+import Beds from "./components/Beds/Beds"
 import React, { useState } from "react";
 import axios from "axios";
 import './App.css';
@@ -98,6 +99,11 @@ function App() {
         <Route exact path='/alliancebuildings'>
           <Layout>
             <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
+          </Layout>
+        </Route>
+        <Route exact path='/beds'>
+          <Layout>
+            <Beds Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
           </Layout>
         </Route>
         <Route exact path='/credits'>
