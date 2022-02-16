@@ -8,6 +8,10 @@ function Beds(props) {
     const [usedBedsUser, setUsedbedsUser] = useState();
     const [totalBedsTeam, setTotalBedsTeam] = useState();
     const [usedBedsTeam, setUsedbedsTeam] = useState();
+    const [totalCellsUser, setTotalCellsUser] = useState();
+    const [usedCellsUser, setUsedCellsUser] = useState();
+    const [totalCellsTeam, setTotalCellsTeam] = useState();
+    const [usedCellsTeam, setUsedCellsTeam] = useState();
 
     useEffect(() => {
         var ziekenhuizen = props.Buildings.filter(building => building.building_type === 2)
@@ -15,7 +19,7 @@ function Beds(props) {
         let OwnUsed = 0
         for (var i = 0; i < ziekenhuizen.length; i++) {
             totalOwn += 10 + ziekenhuizen[i].level
-            OwnUsed += ziekenhuizen[i].patient_count
+            OwnUsed += ziekenhuizen[i].patient_count ?? 0
         }
         setTotalBedsUser(totalOwn)
         setUsedbedsUser(OwnUsed)
@@ -25,10 +29,31 @@ function Beds(props) {
         let TeamUsed = 0
         for (var j = 0; j < TeamZiekenhuizen.length; j++) {
             totalTeam += 10 + TeamZiekenhuizen[j].level
-            TeamUsed += TeamZiekenhuizen[j].patient_count
+            TeamUsed += TeamZiekenhuizen[j].patient_count ?? 0
         }
         setTotalBedsTeam(totalTeam)
         setUsedbedsTeam(TeamUsed)
+
+        var politie = props.Buildings.filter(building => building.building_type === 5)
+        let totalCelOwn = 0
+        let OwnCelUsed = 0
+        for (var k = 0; k < politie.length; k++) {
+            totalCelOwn += politie[k].extensions.filter(ex => (ex.caption === "Gevangeniscel" || ex.caption === "Extra cel") && ex.available === true).length
+            OwnCelUsed += politie[k].prisoner_count ?? 0
+        }
+        setTotalCellsUser(totalCelOwn)
+        setUsedCellsUser(OwnCelUsed)
+
+        var TeamCellen = props.AllianceBuildings.filter(building => building.building_type === 12)
+        let totalCellTeam = 0
+        let TeamCellUsed = 0
+        for (var l = 0; l < TeamCellen.length; l++) {
+            totalCellTeam += 10 + TeamCellen[l].extensions.filter(ex => (ex.caption === "Gevangeniscel" || ex.caption === "Extra cel") && ex.available === true).length
+            TeamCellUsed += TeamCellen[l].prisoner_count ?? 0
+        }
+        setTotalCellsTeam(totalCellTeam)
+        setUsedCellsTeam(TeamCellUsed)
+        console.log(`alliance: ${totalCellTeam} - ${TeamCellUsed}`)
 
     }, [props.Buildings, props.AllianceBuildings]);
 
@@ -47,6 +72,21 @@ function Beds(props) {
             <ProgressBar>
                 <ProgressBar animated striped variant="danger" now={usedBedsTeam} key={1} min={0} max={totalBedsTeam} label={usedBedsTeam?.toLocaleString()} />
                 <ProgressBar animated striped variant="success" now={totalBedsTeam - usedBedsTeam} key={2} min={0} max={totalBedsTeam} label={(totalBedsTeam - usedBedsTeam)?.toLocaleString()} />
+            </ProgressBar>
+            <br /><br />
+            <h2>Hieronder vind je informatie over de cellen</h2>
+            <br /><br />
+            Eigen ({(usedCellsUser / totalCellsUser * 100).toFixed(2)}% in gebruik):
+            <ProgressBar>
+                <ProgressBar animated striped variant="danger" now={usedCellsUser} key={1} min={0} max={totalCellsUser} label={usedCellsUser?.toLocaleString()} />
+                <ProgressBar animated striped variant="success" now={totalCellsUser - usedCellsUser} key={2} min={0} max={totalCellsUser} label={(totalCellsUser - usedCellsUser)?.toLocaleString()} />
+            </ProgressBar>
+
+            <br /><br />
+            Team ({(usedCellsTeam / totalCellsTeam * 100).toFixed(2)}% in gebruik):
+            <ProgressBar>
+                <ProgressBar animated striped variant="danger" now={usedCellsTeam} key={1} min={0} max={totalCellsTeam} label={usedCellsTeam?.toLocaleString()} />
+                <ProgressBar animated striped variant="success" now={totalCellsTeam - usedCellsTeam} key={2} min={0} max={totalCellsTeam} label={(totalCellsTeam - usedCellsTeam)?.toLocaleString()} />
             </ProgressBar>
 
         </div>
