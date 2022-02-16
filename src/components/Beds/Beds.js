@@ -53,7 +53,6 @@ function Beds(props) {
         }
         setTotalCellsTeam(totalCellTeam)
         setUsedCellsTeam(TeamCellUsed)
-        console.log(`alliance: ${totalCellTeam} - ${TeamCellUsed}`)
 
     }, [props.Buildings, props.AllianceBuildings]);
 
