@@ -33,7 +33,9 @@ function AllianceBuildings(props) {
         <div id="Container">
             Je bevind je nu op de teamgebouwen pagina
 
-            <h2> Gebouwen </h2>
+            <h2> Gebouwen ({buildingTypes.reduce(function (prev, cur) {
+                return prev + cur.inbezit;
+            }, 0).toLocaleString()})</h2>
             <table className="table" id="Tabel">
                 <thead>
                     <tr>

@@ -96,7 +96,9 @@ function Vehicles(props) {
         <div id="Container">
             Je bevind je nu op de voertuigen pagina
 
-            <h2> Brandweer </h2>
+            <h2> Brandweer ({vehicleTypes.filter(vehicle => vehicle.categorie === "Brandweer").reduce(function (prev, cur) {
+                return prev + cur.inbezit;
+            }, 0).toLocaleString()}) </h2>
             <table className="table" id="Brandweer">
                 <thead>
                     <tr>
@@ -179,7 +181,9 @@ function Vehicles(props) {
                 </tbody>
             </table>
 
-            <h2> Politie </h2>
+            <h2> Politie ({vehicleTypes.filter(vehicle => vehicle.categorie === "Politie").reduce(function (prev, cur) {
+                return prev + cur.inbezit;
+            }, 0).toLocaleString()})</h2>
             <table className="table" id="Politie">
                 <thead>
                     <tr>
@@ -236,7 +240,9 @@ function Vehicles(props) {
                 </tbody>
             </table>
 
-            <h2> Ambulance </h2>
+            <h2> Ambulance ({vehicleTypes.filter(vehicle => vehicle.categorie === "Ambulance").reduce(function (prev, cur) {
+                return prev + cur.inbezit;
+            }, 0).toLocaleString()})</h2>
             <table className="table" id="Ambulance">
                 <thead>
                     <tr>
@@ -293,7 +299,9 @@ function Vehicles(props) {
                 </tbody>
             </table>
 
-            <h2> KNRM/RB </h2>
+            <h2> KNRM/RB ({vehicleTypes.filter(vehicle => vehicle.categorie === "Waterredding").reduce(function (prev, cur) {
+                return prev + cur.inbezit;
+            }, 0).toLocaleString()})</h2>
             <table className="table" id="Waterredding">
                 <thead>
                     <tr>

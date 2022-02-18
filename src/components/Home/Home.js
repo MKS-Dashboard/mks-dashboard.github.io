@@ -22,7 +22,7 @@ const Home = (props) => {
                 Ik ga akkoord met de <a href="/voorwaarden">Algemene Voorwaarden</a> en <a href="/privacy">Privacyverklaring</a>
             </label>
             <br /><br />
-            Uw SessionID van <a href="https://meldkamerspel.com">Meldkamerspel.com</a>:<HiInformationCircle size={15} title={`F12(element inspecteren) --> Application --> Cookies`} /><br />
+            Uw SessionID van <a href="https://meldkamerspel.com">Meldkamerspel.com</a>:<HiInformationCircle size={15} title={`F12(element inspecteren) --> Application --> Cookies --> _session_id`} /><br />
             <input name='sessionId' type='password' value={props.template} onChange={e => props.setInputValue(e.target.value)} disabled={!props.agree} />
             <input name='submit' type='submit' value='Gegevens ophalen' onClick={() => props.GetData()} disabled={!props.agree} />
 
