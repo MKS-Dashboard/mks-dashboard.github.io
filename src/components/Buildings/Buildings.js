@@ -21,11 +21,8 @@ function Buildings(props) {
 
             for (let j = 0; j < data.length; j++) {
                 if (data[j].small_building === true) {
-                    console.log(data[j])
                     var type = types.find(type => type.ID === data[j].building_type)
-                    console.log(type)
                     data[j].building_type = type.smallBuildingId
-                    console.log(data[j])
                 }
             }
 
