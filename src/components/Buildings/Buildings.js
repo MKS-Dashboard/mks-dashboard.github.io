@@ -21,11 +21,8 @@ function Buildings(props) {
 
             for (let j = 0; j < data.length; j++) {
                 if (data[j].small_building === true) {
-                    console.log(data[j])
                     var type = types.find(type => type.ID === data[j].building_type)
-                    console.log(type)
                     data[j].building_type = type.smallBuildingId
-                    console.log(data[j])
                 }
             }
 
@@ -43,7 +40,9 @@ function Buildings(props) {
         <div id="Container">
             Je bevind je nu op de gebouwen pagina.
 
-            <h2> Gebouwen </h2>
+            <h2> Gebouwen ({buildingTypes.reduce(function (prev, cur) {
+                return prev + cur.inbezit;
+            }, 0).toLocaleString()})</h2>
             <table className="table" id="Tabel">
                 <thead>
                     <tr>
