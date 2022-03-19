@@ -43,8 +43,8 @@ const Privacy = () => {
                 MKS-Dashboard bewaart je persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor je gegevens worden verzameld.
                 Wij hanteren de volgende bewaartermijnen voor de volgende (categorieën) van persoonsgegevens:
                 <ul>
-                    <li>Gebruikersaccount naam: 1 jaar na laatste gebruik</li>
-                    <li>statistische gegevens: 3 jaar na laatste invoer/ophaling</li>
+                    <li>Gebruikersaccount naam: 14 dagen na laatste gebruik</li>
+                    <li>statistische gegevens: 30 dagen na laatste invoer/ophaling</li>
                 </ul>
             </p>
 
