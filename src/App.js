@@ -21,10 +21,10 @@ function App() {
   const [Agree, setAgree] = React.useState(false)
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
-    apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net/"
+    apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net"
   }
   else {
-    apiUrl = "https://mks-dashboard-mks-dashboard-piet2001.cloud.okteto.net/"
+    apiUrl = "https://mks-dashboard-mks-dashboard-piet2001.cloud.okteto.net"
   }
 
   function LoadData() {
