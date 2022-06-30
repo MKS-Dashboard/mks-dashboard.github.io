@@ -81,44 +81,44 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={
+        <Route path='/' element={
           <Layout refresh={refreshdata}>
             <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
           </Layout>}
         />
-        <Route exact path='/vehicles' element={
+        <Route path='/vehicles' element={
           <Layout>
             <Vehicles vehicleData={ApiVehicles} />
           </Layout>
         } />
 
-        <Route exact path='/buildings' element={
+        <Route path='/buildings' element={
           <Layout>
             <Buildings buildingsData={ApiBuildings} />
           </Layout>
         } />
 
-        <Route exact path='/alliancebuildings' element={
+        <Route path='/alliancebuildings' element={
           <Layout>
             <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
           </Layout>
         } />
-        <Route exact path='/beds' element={
+        <Route path='/beds' element={
           <Layout>
             <Beds Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
           </Layout>
         } />
-        <Route exact path='/credits' element={
+        <Route path='/credits' element={
           <Layout>
             <Credits />
           </Layout>
         } />
-        <Route exact path='/voorwaarden' element={
+        <Route path='/voorwaarden' element={
           <Layout>
             <Voorwaarden />
           </Layout>
         } />
-        <Route exact path='/privacy' element={
+        <Route path='/privacy' element={
           <Layout>
             <Privacy />
           </Layout>
