@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Home from "./components/Home/Home"
 import Vehicles from "./components/Vehicles/Vehicles"
@@ -79,50 +79,52 @@ function App() {
 
 
   return (
-    <Router>
-      <Switch>
-        <Route exact path='/'>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={
           <Layout refresh={refreshdata}>
             <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
-          </Layout>
-        </Route>
-        <Route exact path='/vehicles'>
+          </Layout>}
+        />
+        <Route exact path='/vehicles' element={
           <Layout>
             <Vehicles vehicleData={ApiVehicles} />
           </Layout>
-        </Route>
-        <Route exact path='/buildings'>
+        } />
+
+        <Route exact path='/buildings' element={
           <Layout>
             <Buildings buildingsData={ApiBuildings} />
           </Layout>
-        </Route>
-        <Route exact path='/alliancebuildings'>
+        } />
+
+        <Route exact path='/alliancebuildings' element={
           <Layout>
             <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
           </Layout>
-        </Route>
-        <Route exact path='/beds'>
+        } />
+        <Route exact path='/beds' element={
           <Layout>
             <Beds Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
           </Layout>
-        </Route>
-        <Route exact path='/credits'>
+        } />
+        <Route exact path='/credits' element={
           <Layout>
             <Credits />
           </Layout>
-        </Route>
-        <Route exact path='/voorwaarden'>
+        } />
+        <Route exact path='/voorwaarden' element={
           <Layout>
             <Voorwaarden />
           </Layout>
-        </Route>
-        <Route exact path='/privacy'>
+        } />
+        <Route exact path='/privacy' element={
           <Layout>
             <Privacy />
           </Layout>
-        </Route>
-      </Switch>
-    </Router>
+        } />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
