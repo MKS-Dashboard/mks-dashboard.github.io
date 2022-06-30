@@ -96,6 +96,8 @@ function Vehicles(props) {
         <div id="Container">
             Je bevind je nu op de voertuigen pagina
 
+            <h2>Je hebt {props.vehicleData.length.toLocaleString()} voertuigen in totaal.</h2>
+
             <h2> Brandweer ({vehicleTypes.filter(vehicle => vehicle.categorie === "Brandweer").reduce(function (prev, cur) {
                 return prev + cur.inbezit;
             }, 0).toLocaleString()}) </h2>
