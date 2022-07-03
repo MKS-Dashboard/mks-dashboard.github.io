@@ -1,7 +1,6 @@
 .header-wrapper .navbar {
   background: rgb(255, 0, 0);
   background: linear-gradient(#ff0000, #ff0000);
-  height: 50px;
 }
 
 .header-wrapper .header-title {
@@ -10,7 +9,10 @@
   text-decoration: none !important;
 }
 
-.header-wrapper .link, .link:hover, .link:focus, .link:active {
+.header-wrapper .link,
+.link:hover,
+.link:focus,
+.link:active {
   color: black;
   padding: 8px;
   height: 30px;
