@@ -142,7 +142,7 @@ const Home = (props) => {
                 <tbody>
                     {(() => {
 
-                        var array = new Array;
+                        let array = [];
                         for (var key in Code) {
                             var value = Code[key];
                             array.push({ a: key, b: value })
