@@ -59,7 +59,8 @@
   margin-right: auto;
 }
 
-#Tabel td, #vehicles th {
+#Tabel td,
+#vehicles th {
   border: 1px solid #ddd;
   padding: 8px;
 }
@@ -88,7 +89,8 @@
   margin-right: auto;
 }
 
-#Brandweer td, #vehicles th {
+#Brandweer td,
+#vehicles th {
   border: 1px solid #ddd;
   padding: 8px;
 }
@@ -117,7 +119,8 @@
   margin-right: auto;
 }
 
-#Politie td, #vehicles th {
+#Politie td,
+#vehicles th {
   border: 1px solid #ddd;
   padding: 8px;
 }
@@ -146,7 +149,8 @@
   margin-right: auto;
 }
 
-#Ambulance td, #vehicles th {
+#Ambulance td,
+#vehicles th {
   border: 1px solid #ddd;
   padding: 8px;
 }
@@ -175,7 +179,8 @@
   margin-right: auto;
 }
 
-#Waterredding td, #vehicles th {
+#Waterredding td,
+#vehicles th {
   border: 1px solid #ddd;
   padding: 8px;
 }
@@ -192,5 +197,33 @@
   padding-top: 12px;
   padding-bottom: 12px;
   background-color: #ff9900;
+  color: white;
+}
+
+#TabelSmall {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 20%;
+  text-align: center;
+}
+
+#TabelSmall td,
+#vehicles th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#TabelSmall tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#TabelSmall tr:hover {
+  background-color: #ddd;
+}
+
+#TabelSmall th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #ff0000;
   color: white;
 }

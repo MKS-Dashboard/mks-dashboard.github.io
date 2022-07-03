@@ -11,7 +11,7 @@ import React from "react";
 const Header = () => {
   return (
     <div className="header-wrapper">
-      <Navbar collapseOnSelect className="navbar" expand="lg">
+      <Navbar className="navbar" expand="lg">
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Link className="link" to="/">

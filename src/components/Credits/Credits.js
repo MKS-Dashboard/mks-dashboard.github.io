@@ -12,7 +12,6 @@ function Credits() {
         async function fetchLastUpdate() {
             const fetchUpdate = async () => {
                 const result = await axios("https://api.github.com/repos/Piet2001/Missionfiles-All-Versions/branches/master");
-                console.log(result.data.commit.commit.author.date)
                 return new Date(result.data.commit.commit.author.date);
             };
             fetchUpdate().then((r) => setLastUpdate(r));
