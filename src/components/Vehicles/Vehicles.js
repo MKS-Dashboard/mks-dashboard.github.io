@@ -253,7 +253,7 @@ function Vehicles(props) {
 
                     {(() => {
 
-                        var values = additionalValues.filter(value => value.total > 0 && value.type === "Brandweer")
+                        var values = additionalValues.filter(value => value.total > 0 && value.type === "Politie")
                         return (
                             values.map((value) => {
                                 return (
@@ -319,6 +319,32 @@ function Vehicles(props) {
                                         <td>{groep.name}</td>
                                         <td>{groep.types}</td>
                                         <td>{groep.count.toLocaleString()}</td>
+                                    </tr>
+                                )
+                            }
+                            ))
+                    })()}
+                </tbody>
+            </table>
+            <br />
+            <table className="table" id="Politie">
+                <thead>
+                    <tr>
+                        <th>Waarde</th>
+                        <th>Aantal</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {(() => {
+
+                        var values = additionalValues.filter(value => value.total > 0 && value.type === "Politie")
+                        return (
+                            values.map((value) => {
+                                return (
+                                    <tr key={value.name}>
+                                        <td>{value.name}</td>
+                                        <td>{value.total.toLocaleString()}</td>
                                     </tr>
                                 )
                             }
