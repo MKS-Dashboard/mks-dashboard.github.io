@@ -327,7 +327,7 @@ function Vehicles(props) {
                 </tbody>
             </table>
             <br />
-            <table className="table" id="Politie">
+            <table className="table" id="Ambulance">
                 <thead>
                     <tr>
                         <th>Waarde</th>
