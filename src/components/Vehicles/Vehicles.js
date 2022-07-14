@@ -338,7 +338,7 @@ function Vehicles(props) {
 
                     {(() => {
 
-                        var values = additionalValues.filter(value => value.total > 0 && value.type === "Politie")
+                        var values = additionalValues.filter(value => value.total > 0 && value.type === "Ambulance")
                         return (
                             values.map((value) => {
                                 return (
