@@ -8,6 +8,7 @@ import Credits from "./components/Credits/Credits"
 import Voorwaarden from "./components/Voorwaarden/Voorwaarden"
 import Privacy from "./components/Voorwaarden/Privacy";
 import Beds from "./components/Beds/Beds"
+import Suggestions from "./components/Suggestions/suggestions"
 import React, { useState } from "react";
 import axios from "axios";
 import './App.css';
@@ -121,6 +122,11 @@ function App() {
         <Route path='/privacy' element={
           <Layout>
             <Privacy />
+          </Layout>
+        } />
+        <Route path='suggestions' element={
+          <Layout>
+            <Suggestions />
           </Layout>
         } />
       </Routes>

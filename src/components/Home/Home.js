@@ -28,6 +28,15 @@ const Home = (props) => {
             }
         }
     });
+    const [GitInfoDatafiles, setGitInfoDatafiles] = useState({
+        "commit": {
+            "commit": {
+                "author": {
+                    "date": "2022-06-30T19:12:06Z"
+                }
+            }
+        }
+    });
     const [Contributors, setContributors] = useState([{ "login": "Piet2001" }])
     const [Stars, setStars] = useState([{ "login": "Piet2001" }])
     const [Code, setCode] = useState({
@@ -63,6 +72,16 @@ const Home = (props) => {
                 return result.data;
             };
             fetch().then((r) => setGitInfoDev(r));
+        }
+
+        fetchLastUpdateDatafiles()
+
+        async function fetchLastUpdateDatafiles() {
+            const fetch = async () => {
+                const result = await axios("https://api.github.com/repos/MKS-Dashboard/datafiles/branches/main");
+                return result.data;
+            };
+            fetch().then((r) => setGitInfoDatafiles(r));
         }
 
         fetchContributors()
@@ -127,6 +146,7 @@ const Home = (props) => {
             Aangemaakt: {new Date(GitInfo.created_at).toLocaleString()}<br />
             Laatste Live Update: {new Date(GitInfoMaster.commit.commit.author.date).toLocaleString()} <br />
             Laatste Development Update: {new Date(GitInfoDev.commit.commit.author.date).toLocaleString()} <br />
+            Laatste Databestanden Update: {new Date(GitInfoDatafiles.commit.commit.author.date).toLocaleString()} <br />
             <br />
             Bijdragers: {Contributors.map(({ login }) => login).join(', ')}<br />
             Supporters (github ster): {Stars.map(({ login }) => login).join(', ')} <br />
