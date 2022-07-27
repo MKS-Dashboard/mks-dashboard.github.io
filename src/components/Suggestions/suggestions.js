@@ -50,7 +50,7 @@ const Suggestions = (props) => {
                 </tbody>
             </table>
             <br />
-            Mis je nog iets in deze lijst? Meld deze dan <a href="https://github.com/MKS-Dashboard/mks-dashboard.github.io/issues/new" target="_blank" rel="noopener noreferrer">hier.</a>
+            Mis je nog iets in deze lijst? Meld deze dan <a href="https://github.com/MKS-Dashboard/mks-dashboard.github.io/issues/new" onClick="javascript:window.open('https://github.com/MKS-Dashboard/mks-dashboard.github.io/issues/new','Windows','width=650,height=350,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no');return false")">hier.</a>
         </div>
     )
 }
