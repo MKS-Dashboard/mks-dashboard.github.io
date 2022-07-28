@@ -7,7 +7,7 @@ import AllianceBuildings from "./components/Buildings/AllianceBuildings";
 import Credits from "./components/Credits/Credits"
 import Voorwaarden from "./components/Voorwaarden/Voorwaarden"
 import Privacy from "./components/Voorwaarden/Privacy";
-import Beds from "./components/Beds/Beds"
+import Beds from "./components/Progressdata/Progressdata"
 import Suggestions from "./components/Suggestions/suggestions"
 import React, { useState } from "react";
 import axios from "axios";
@@ -104,7 +104,7 @@ function App() {
             <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
           </Layout>
         } />
-        <Route path='/beds' element={
+        <Route path='/progressdata' element={
           <Layout>
             <Beds Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
           </Layout>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
-import "./Beds.css";
+import "./Progressdata.css";
 
-function Beds(props) {
+function Progressdata(props) {
 
     const [totalBedsUser, setTotalBedsUser] = useState();
     const [usedBedsUser, setUsedbedsUser] = useState();
@@ -92,4 +92,4 @@ function Beds(props) {
     );
 }
 
-export default Beds;
+export default Progressdata;

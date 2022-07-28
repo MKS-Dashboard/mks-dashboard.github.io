@@ -2,11 +2,11 @@ import "./Header.css";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { RiPoliceCarFill } from "react-icons/ri";
-import { FaHome, FaBuilding, FaBed } from "react-icons/fa"; //FaDollarSign
+import { FaHome, FaBuilding } from "react-icons/fa"; //FaDollarSign FaBed
 import { FcMultipleInputs } from "react-icons/fc";
 import { BiWorld } from "react-icons/bi";
 import { TiGroup } from "react-icons/ti";
-// import { BsPersonFill } from "react-icons/bs";
+import { BsClipboardData } from "react-icons/bs"; //BsPersonFill
 import React from "react";
 
 const Header = () => {
@@ -27,8 +27,8 @@ const Header = () => {
             <Link className="link" to="/alliancebuildings">
               <TiGroup id="icon" size={50} />
             </Link>
-            <Link className="link" to="/beds">
-              <FaBed id="icon" size={50} />
+            <Link className="link" to="/progressdata">
+              <BsClipboardData id="icon" size={50} />
             </Link>
             <Link className="link" to="/credits">
               <BiWorld id="icon" size={50} />
