@@ -9,6 +9,7 @@ import Voorwaarden from "./components/Voorwaarden/Voorwaarden"
 import Privacy from "./components/Voorwaarden/Privacy";
 import Progressdata from "./components/Progressdata/Progressdata"
 import Suggestions from "./components/Suggestions/suggestions"
+import Login from "./components/Login/Login";
 import React, { useState } from "react";
 import axios from "axios";
 import './App.css';
@@ -87,6 +88,13 @@ function App() {
             <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
           </Layout>}
         />
+
+        <Route path='/login/*' element={
+          <Layout refresh={refreshdata}>
+            <Login setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
+          </Layout>}
+        />
+
         <Route path='/vehicles' element={
           <Layout>
             <Vehicles vehicleData={ApiVehicles} />
