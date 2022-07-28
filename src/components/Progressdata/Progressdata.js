@@ -54,12 +54,8 @@ function Progressdata(props) {
         setTotalCellsTeam(totalCellTeam)
         setUsedCellsTeam(TeamCellUsed)
 
-
-
     }, [props.Buildings, props.AllianceBuildings]);
 
-    console.log(props.Vehicles.filter(vehicle => vehicle.fms_show === 5))
-    console.log(props.Vehicles.filter(vehicle => vehicle.fms_show === 1).length)
     return (
         <div id="Container">
             <h4>Hieronder vind je informatie over de bedden van ziekenhuizen</h4>
