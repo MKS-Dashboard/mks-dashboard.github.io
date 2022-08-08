@@ -3,18 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 function Login(props) {
 
-    // props.setAgree(true);
     var input = window.location.href.split("/").pop();
     props.setInputValue(input);
-    // function login() {
-
-    //     props.GetData();
-
-    // }
-
-    // useEffect(() => {
-    //     console.log(props.template)
-    // }, [])
     const navigate = useNavigate();
     const navigateToHome = () => {
         navigate('/');
