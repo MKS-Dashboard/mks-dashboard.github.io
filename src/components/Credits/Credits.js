@@ -5,6 +5,8 @@ function Credits() {
 
     const [VersionsList, setVersions] = useState([]);
     const [LastUpdate, setLastUpdate] = useState(new Date(1, 1, 1))
+    const [orderby, setOrderBy] = useState("avg")
+    const [orderDesc, setOrderDesc] = useState(true)
 
     useEffect(() => {
         fetchLastUpdate()
@@ -41,6 +43,16 @@ function Credits() {
         }
     }, []);
 
+    function UpdateOrder(column) {
+        if (orderby !== column) {
+            setOrderBy(column)
+            setOrderDesc(true)
+        }
+        else if (orderby === column) {
+            setOrderDesc(!orderDesc)
+        }
+    }
+
     return (
         <div id="Container">
             Op deze pagina vind je het gemiddelde aantal credits wat een melding in een versie opleverd.<br />
@@ -51,16 +63,22 @@ function Credits() {
                 <thead>
                     <tr>
                         <th>Plek</th>
-                        <th>Locale</th>
-                        <th>Aantal inzetten</th>
-                        <th>Gemiddelde</th>
+                        <th onClick={() => UpdateOrder("code")}>Locale</th>
+                        <th onClick={() => UpdateOrder("missions")}>Aantal inzetten</th>
+                        <th onClick={() => UpdateOrder("avg")}>Gemiddelde</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     {(() => {
 
-                        VersionsList.sort((a, b) => (a.avg < b.avg) ? 1 : -1)
+                        if (!orderDesc) {
+                            VersionsList.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1)
+                        }
+                        else {
+                            VersionsList.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1)
+                        }
+
                         var count = 0
                         return (
                             VersionsList.map((version) => {
