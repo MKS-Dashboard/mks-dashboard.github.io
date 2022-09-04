@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
+import { Button } from 'react-bootstrap';
 
 const Suggestions = (props) => {
 
@@ -28,6 +29,7 @@ const Suggestions = (props) => {
                         <th>Nummer</th>
                         <th>Titel</th>
                         <th>Labels</th>
+                        <th>Info/reageren</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +44,7 @@ const Suggestions = (props) => {
                                         <td>{issue.number}</td>
                                         <td>{issue.title}</td>
                                         <td>{issue.labels.map(({ name }) => name).join(', ')}</td>
+                                        <td><a href={`https://github.com/MKS-Dashboard/mks-dashboard.github.io/issues/${issue.number}`} target="_blank" rel="noopener noreferrer">Meer info over {issue.number}</a></td>
                                     </tr>
                                 )
                             }
