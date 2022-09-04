@@ -21,16 +21,16 @@ const Header = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Link hidden={props.loggedIn} className="link" to="/vehicles" >
+            <Link hidden={!props.loggedIn} className="link" to="/vehicles" >
               <RiPoliceCarFill id="icon" size={50} />
             </Link>
-            <Link hidden={props.loggedIn} className="link" to="/buildings">
+            <Link hidden={!props.loggedIn} className="link" to="/buildings">
               <FaBuilding id="icon" size={50} />
             </Link>
-            <Link hidden={props.loggedIn} className="link" to="/alliancebuildings">
+            <Link hidden={!props.loggedIn} className="link" to="/alliancebuildings">
               <TiGroup id="icon" size={50} />
             </Link>
-            <Link hidden={props.loggedIn} className="link" to="/progressdata">
+            <Link hidden={!props.loggedIn} className="link" to="/progressdata">
               <BsClipboardData id="icon" size={50} />
             </Link>
             <Link className="link" to="/credits">

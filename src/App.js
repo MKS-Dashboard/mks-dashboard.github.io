@@ -21,7 +21,7 @@ function App() {
   const [ApiBuildings, setApiBuildings] = useState([]);
   const [ApiAllianceBuildings, setApiAllianceBuildings] = useState([])
   const [Agree, setAgree] = React.useState(false)
-  const loggedIn = ApiVehicles.length < 1 ? true : false;
+  const loggedIn = (ApiVehicles.length > 0 || ApiBuildings.length > 0) ? true : false;
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
     apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net"
