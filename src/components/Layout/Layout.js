@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 const Layout = (props) => {
     return (
         <div className="app-wrapper">
-            <Header headerTitle={props.title} refresh={props.refresh} />
+            <Header loggedIn={props.loggedIn} />
             {props.children}
             <div className="footer-wrapper">
                 <Footer />

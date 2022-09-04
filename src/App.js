@@ -21,6 +21,7 @@ function App() {
   const [ApiBuildings, setApiBuildings] = useState([]);
   const [ApiAllianceBuildings, setApiAllianceBuildings] = useState([])
   const [Agree, setAgree] = React.useState(false)
+  const loggedIn = ApiVehicles.length < 1 ? true : false;
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
     apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net"
@@ -84,7 +85,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={
-          <Layout refresh={refreshdata}>
+          <Layout refresh={refreshdata} loggedIn={loggedIn}>
             <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
           </Layout>}
         />
@@ -96,44 +97,44 @@ function App() {
         />
 
         <Route path='/vehicles' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Vehicles vehicleData={ApiVehicles} />
           </Layout>
         } />
 
         <Route path='/buildings' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Buildings buildingsData={ApiBuildings} />
           </Layout>
         } />
 
         <Route path='/alliancebuildings' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
           </Layout>
         } />
         <Route path='/progressdata' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Progressdata Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
           </Layout>
         } />
         <Route path='/credits' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Credits />
           </Layout>
         } />
         <Route path='/voorwaarden' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Voorwaarden />
           </Layout>
         } />
         <Route path='/privacy' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Privacy />
           </Layout>
         } />
         <Route path='suggestions' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Suggestions />
           </Layout>
         } />

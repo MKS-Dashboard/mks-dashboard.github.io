@@ -9,7 +9,7 @@ import { TiGroup } from "react-icons/ti";
 import { BsClipboardData } from "react-icons/bs"; //BsPersonFill
 import React from "react";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="header-wrapper">
       <Navbar className="navbar" expand="lg">
@@ -21,16 +21,16 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Link className="link" to="/vehicles">
+            <Link hidden={props.loggedIn} className="link" to="/vehicles" >
               <RiPoliceCarFill id="icon" size={50} />
             </Link>
-            <Link className="link" to="/buildings">
+            <Link hidden={props.loggedIn} className="link" to="/buildings">
               <FaBuilding id="icon" size={50} />
             </Link>
-            <Link className="link" to="/alliancebuildings">
+            <Link hidden={props.loggedIn} className="link" to="/alliancebuildings">
               <TiGroup id="icon" size={50} />
             </Link>
-            <Link className="link" to="/progressdata">
+            <Link hidden={props.loggedIn} className="link" to="/progressdata">
               <BsClipboardData id="icon" size={50} />
             </Link>
             <Link className="link" to="/credits">
