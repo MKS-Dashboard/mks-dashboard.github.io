@@ -120,9 +120,9 @@ const Home = (props) => {
             Welkom in het mks-dashboard.<br />
             <br />
             Op deze pagina kun je verschillende gegevens over meldkamerspel vinden.<br />
-            Momenteel zijn wij nog bezig met de ontwikkeling hierdoor is het mogelijk dat niet alles werkt zoals het zou moeten.
-            En zijn er weinig opties beschikbaar.<br />
-            Wanneer meer functies beschikbaar komen ze op deze site.
+            Voor enkele functies dien je in te loggen om je eigen data te krijgen. Deze opties zijn verborgen zolang we de data niet hebben.<br />
+            De gegevens waar we geen data voor nodig hebben zijn direct zichtbaar en te bekijken.<br />
+            In de suggestie box kun je zien aan welke mogelijke uitbreidingen nog gaan komen. Hier kun je ook je eigen suggesties achterlaten.<br />
             <br />
             <br />
 
