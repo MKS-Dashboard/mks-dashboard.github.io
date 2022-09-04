@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
-import { Button } from 'react-bootstrap';
 
 const Suggestions = (props) => {
 
@@ -36,9 +35,9 @@ const Suggestions = (props) => {
 
                     {(() => {
 
-                        Issues.sort((a, b) => (a.number > b.number) ? 1 : -1)
+                        let IssuesSorted = Issues.sort((a, b) => (a.number > b.number) ? 1 : -1)
                         return (
-                            Issues.map((issue) => {
+                            IssuesSorted.map((issue) => {
                                 return (
                                     <tr key={issue.number}>
                                         <td>{issue.number}</td>
@@ -54,6 +53,32 @@ const Suggestions = (props) => {
             </table>
             <br />
             Mis je nog iets in deze lijst? Meld deze dan <a href="https://github.com/MKS-Dashboard/mks-dashboard.github.io/issues/new" target="_blank" rel="noopener noreferrer">hier.</a>
+
+            <h3>De volgende punten uit bovenstaande lijst komen live met de volgende update</h3>
+            <table className="table" id="Tabel">
+                <thead>
+                    <tr>
+                        <th>Nummer</th>
+                        <th>Titel</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {(() => {
+                        let nextUpdate = Issues.filter(issue => issue.labels.some(label => label.name === "Next Update"))
+                        return (
+                            nextUpdate.map((issue) => {
+                                return (
+                                    <tr key={issue.number}>
+                                        <td>{issue.number}</td>
+                                        <td>{issue.title}</td>
+                                    </tr>
+                                )
+                            }
+                            ))
+                    })()}
+                </tbody>
+            </table>
         </div>
     )
 }
