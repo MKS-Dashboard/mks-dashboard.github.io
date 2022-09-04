@@ -30,7 +30,6 @@ function Buildings(props) {
                 types[i].inbezit = data.filter(building => building.building_type === types[i].ID).length
 
                 if (types[i].LevelCountAsBuilding === true) {
-                    console.log(data.filter(building => building.building_type === types[i].ID).reduce((n, { level }) => n + level, 0))
                     types[i].inbezit += data.filter(building => building.building_type === types[i].ID).reduce((n, { level }) => n + level, 0)
                 }
             }

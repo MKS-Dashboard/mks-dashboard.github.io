@@ -29,7 +29,13 @@ function Credits() {
 
         async function update(versions) {
             for (let i = 0; i < versions.length; i++) {
-                versions[i].avg = await getavg(versions[i].code)
+                var data = await fetch(`https://raw.githubusercontent.com/Piet2001/Missionfiles-All-Versions/master/Missions/${versions[i].code}.json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        return data
+                    })
+                versions[i].avg = (data.filter(mission => mission.additional.only_alliance_mission !== true && mission.additional.guard_mission !== true).reduce((total, next) => total + next.average_credits, 0) / data.length).toFixed(2);
+                versions[i].missions = data.filter(mission => mission.additional.only_alliance_mission !== true && mission.additional.guard_mission !== true).length
             }
             setVersions(versions)
         }
@@ -46,6 +52,7 @@ function Credits() {
                     <tr>
                         <th>Plek</th>
                         <th>Locale</th>
+                        <th>Aantal inzetten</th>
                         <th>Gemiddelde</th>
                     </tr>
                 </thead>
@@ -62,6 +69,7 @@ function Credits() {
                                     <tr key={version.code}>
                                         <td>#{count}</td>
                                         <td>{version.code}</td>
+                                        <td>{version.missions}</td>
                                         <td>{version.avg}</td>
                                     </tr>
                                 )
@@ -75,15 +83,3 @@ function Credits() {
 }
 
 export default Credits
-
-async function getavg(locale) {
-    var data = await fetch(`https://raw.githubusercontent.com/Piet2001/Missionfiles-All-Versions/master/Missions/${locale}.json`)
-        .then(response => response.json())
-        .then(data => {
-            return data
-        })
-    data = data.filter(mission => mission.additional.only_alliance_mission !== true && mission.additional.guard_mission !== true)
-    const avg = data.reduce((total, next) => total + next.average_credits, 0) / data.length;
-
-    return `${avg.toFixed(2)} credits (${data.length} missions)`
-}
