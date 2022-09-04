@@ -13,6 +13,7 @@ import Login from "./components/Login/Login";
 import React, { useState } from "react";
 import axios from "axios";
 import './App.css';
+import Information from "./components/Information/Information";
 
 function App() {
   let apiUrl;
@@ -136,6 +137,11 @@ function App() {
         <Route path='suggestions' element={
           <Layout loggedIn={loggedIn}>
             <Suggestions />
+          </Layout>
+        } />
+        <Route path='information' element={
+          <Layout loggedIn={loggedIn}>
+            <Information />
           </Layout>
         } />
       </Routes>
