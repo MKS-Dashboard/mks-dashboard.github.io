@@ -36,8 +36,16 @@ function Credits() {
                     .then(data => {
                         return data
                     })
-                versions[i].avg = (data.filter(mission => mission.additional.only_alliance_mission !== true && mission.additional.guard_mission !== true).reduce((total, next) => total + next.average_credits, 0) / data.length).toFixed(2);
+                // amounts
                 versions[i].missions = data.filter(mission => mission.additional.only_alliance_mission !== true && mission.additional.guard_mission !== true).length
+                versions[i].plannedMissions = data.filter(mission => mission.additional.guard_mission === true).length
+                versions[i].allianceMissions = data.filter(mission => mission.additional.only_alliance_mission === true).length
+
+                // averages
+                versions[i].avg = (data.filter(mission => mission.additional.only_alliance_mission !== true && mission.additional.guard_mission !== true).reduce((total, next) => total + next.average_credits, 0) / versions[i].missions)
+                versions[i].plannedAvg = (data.filter(mission => mission.additional.guard_mission === true).reduce((total, next) => total + next.average_credits, 0) / versions[i].plannedMissions)
+                versions[i].allianceMissionsAvg = (data.filter(mission => mission.additional.only_alliance_mission === true).reduce((total, next) => total + next.average_credits, 0) / versions[i].allianceMissions)
+
             }
             setVersions(versions)
         }
@@ -66,6 +74,10 @@ function Credits() {
                         <th onClick={() => UpdateOrder("code")}>Locale</th>
                         <th onClick={() => UpdateOrder("missions")}>Aantal inzetten</th>
                         <th onClick={() => UpdateOrder("avg")}>Gemiddelde</th>
+                        <th onClick={() => UpdateOrder("plannedMissions")}>Geplande inzetten</th>
+                        <th onClick={() => UpdateOrder("plannedAvg")}>Gemiddelde geplandeinzetten</th>
+                        <th onClick={() => UpdateOrder("allianceMissions")}>Teaminzetten</th>
+                        <th onClick={() => UpdateOrder("allianceMAvg")}>Teaminzetten gemiddelde</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -87,8 +99,12 @@ function Credits() {
                                     <tr key={version.code}>
                                         <td>#{count}</td>
                                         <td>{version.code}</td>
-                                        <td>{version.missions}</td>
-                                        <td>{version.avg}</td>
+                                        <td>{version.missions.toLocaleString()}</td>
+                                        <td>{version.avg.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td>{version.plannedMissions.toLocaleString()}</td>
+                                        <td>{version.plannedAvg.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td>{version.allianceMissions.toLocaleString()}</td>
+                                        <td>{version.allianceMissionsAvg.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                                     </tr>
                                 )
                             }
