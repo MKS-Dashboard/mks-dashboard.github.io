@@ -1,7 +1,7 @@
 import "./Header.css";
-import { Nav, Navbar } from "react-bootstrap";
+import { NavDropdown, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { RiPoliceCarFill } from "react-icons/ri";
+import { RiPoliceCarFill, RiInformationLine } from "react-icons/ri";
 import { FaHome, FaBuilding } from "react-icons/fa"; //FaDollarSign FaBed
 import { FcMultipleInputs } from "react-icons/fc";
 import { BiWorld } from "react-icons/bi";
@@ -36,6 +36,9 @@ const Header = (props) => {
             <Link className="link" to="/credits">
               <BiWorld id="icon" size={50} />
             </Link>
+            <NavDropdown title={<RiInformationLine id="icon" size={50} />} id="nav-dropdown" className="link">
+              <NavDropdown.Item ><Link className="link" to="/information">Algemeen</Link></NavDropdown.Item>
+            </NavDropdown>
             <Link className="link" to="/suggestions">
               <FcMultipleInputs id="icon" size={50} />
             </Link>
