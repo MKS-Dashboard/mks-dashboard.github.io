@@ -1,45 +1,51 @@
 import "./Header.css";
-import { Nav, Navbar } from "react-bootstrap";
+import { NavDropdown, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { RiPoliceCarFill } from "react-icons/ri";
-import { FaHome, FaBuilding, FaBed } from "react-icons/fa"; //FaDollarSign
+import { RiPoliceCarFill, RiInformationLine } from "react-icons/ri";
+import { FaHome, FaBuilding } from "react-icons/fa"; //FaDollarSign FaBed
 import { FcMultipleInputs } from "react-icons/fc";
 import { BiWorld } from "react-icons/bi";
 import { TiGroup } from "react-icons/ti";
-// import { BsPersonFill } from "react-icons/bs";
+import { BsClipboardData } from "react-icons/bs"; //BsPersonFill
 import React from "react";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="header-wrapper">
       <Navbar className="navbar" expand="lg">
+        <Link className="link" to="/">
+          <Navbar.Brand>
+            <FaHome id="icon" size={50} />
+          </Navbar.Brand>
+        </Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Link className="link" to="/">
-              <FaHome id="icon" size={50} />
-            </Link>
-            <Link className="link" to="/vehicles">
+            <Link hidden={!props.loggedIn} className="link" to="/vehicles" >
               <RiPoliceCarFill id="icon" size={50} />
             </Link>
-            <Link className="link" to="/buildings">
+            <Link hidden={!props.loggedIn} className="link" to="/buildings">
               <FaBuilding id="icon" size={50} />
             </Link>
-            <Link className="link" to="/alliancebuildings">
+            <Link hidden={!props.loggedIn} className="link" to="/alliancebuildings">
               <TiGroup id="icon" size={50} />
             </Link>
-            <Link className="link" to="/beds">
-              <FaBed id="icon" size={50} />
+            <Link hidden={!props.loggedIn} className="link" to="/progressdata">
+              <BsClipboardData id="icon" size={50} />
             </Link>
             <Link className="link" to="/credits">
               <BiWorld id="icon" size={50} />
             </Link>
+            <NavDropdown hidden="true" title={<RiInformationLine id="icon" size={50} />} id="nav-dropdown" className="link">
+              <NavDropdown.Item ><Link className="link" to="/information">Algemeen</Link></NavDropdown.Item>
+            </NavDropdown>
             <Link className="link" to="/suggestions">
               <FcMultipleInputs id="icon" size={50} />
             </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </div>
+    </div >
   );
 };
 

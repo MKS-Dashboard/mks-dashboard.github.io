@@ -7,11 +7,13 @@ import AllianceBuildings from "./components/Buildings/AllianceBuildings";
 import Credits from "./components/Credits/Credits"
 import Voorwaarden from "./components/Voorwaarden/Voorwaarden"
 import Privacy from "./components/Voorwaarden/Privacy";
-import Beds from "./components/Beds/Beds"
+import Progressdata from "./components/Progressdata/Progressdata"
 import Suggestions from "./components/Suggestions/suggestions"
+import Login from "./components/Login/Login";
 import React, { useState } from "react";
 import axios from "axios";
 import './App.css';
+import Information from "./components/Information/Information";
 
 function App() {
   let apiUrl;
@@ -20,6 +22,7 @@ function App() {
   const [ApiBuildings, setApiBuildings] = useState([]);
   const [ApiAllianceBuildings, setApiAllianceBuildings] = useState([])
   const [Agree, setAgree] = React.useState(false)
+  const loggedIn = (ApiVehicles.length > 0 || ApiBuildings.length > 0) ? true : false;
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
     apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net"
@@ -83,50 +86,62 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={
-          <Layout refresh={refreshdata}>
+          <Layout refresh={refreshdata} loggedIn={loggedIn}>
             <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
           </Layout>}
         />
+
+        <Route path='/login/*' element={
+          <Layout refresh={refreshdata}>
+            <Login setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
+          </Layout>}
+        />
+
         <Route path='/vehicles' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Vehicles vehicleData={ApiVehicles} />
           </Layout>
         } />
 
         <Route path='/buildings' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Buildings buildingsData={ApiBuildings} />
           </Layout>
         } />
 
         <Route path='/alliancebuildings' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
           </Layout>
         } />
-        <Route path='/beds' element={
-          <Layout>
-            <Beds Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
+        <Route path='/progressdata' element={
+          <Layout loggedIn={loggedIn}>
+            <Progressdata Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
           </Layout>
         } />
         <Route path='/credits' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Credits />
           </Layout>
         } />
         <Route path='/voorwaarden' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Voorwaarden />
           </Layout>
         } />
         <Route path='/privacy' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Privacy />
           </Layout>
         } />
         <Route path='suggestions' element={
-          <Layout>
+          <Layout loggedIn={loggedIn}>
             <Suggestions />
+          </Layout>
+        } />
+        <Route path='information' element={
+          <Layout loggedIn={loggedIn}>
+            <Information />
           </Layout>
         } />
       </Routes>
