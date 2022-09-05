@@ -100,11 +100,11 @@ function Credits() {
                                         <td>#{count}</td>
                                         <td>{version.code}</td>
                                         <td>{version.missions.toLocaleString()}</td>
-                                        <td>{version.avg.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td>{version.avg.toLocaleString(undefined, { miniumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                                         <td>{version.plannedMissions.toLocaleString()}</td>
-                                        <td>{version.plannedAvg.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td>{version.plannedAvg.toLocaleString(undefined, { miniumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                                         <td>{version.allianceMissions.toLocaleString()}</td>
-                                        <td>{version.allianceMissionsAvg.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                                        <td>{version.allianceMissionsAvg.toLocaleString(undefined, { miniumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                                     </tr>
                                 )
                             }
