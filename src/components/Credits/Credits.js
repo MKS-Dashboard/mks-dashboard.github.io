@@ -77,7 +77,7 @@ function Credits() {
                         <th onClick={() => UpdateOrder("plannedMissions")}>Geplande inzetten</th>
                         <th onClick={() => UpdateOrder("plannedAvg")}>Gemiddelde geplandeinzetten</th>
                         <th onClick={() => UpdateOrder("allianceMissions")}>Teaminzetten</th>
-                        <th onClick={() => UpdateOrder("allianceMAvg")}>Teaminzetten gemiddelde</th>
+                        <th onClick={() => UpdateOrder("allianceMissionsAvg")}>Teaminzetten gemiddelde</th>
                     </tr>
                 </thead>
                 <tbody>
