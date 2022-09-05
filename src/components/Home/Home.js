@@ -122,7 +122,7 @@ const Home = (props) => {
             Op deze pagina kun je verschillende gegevens over meldkamerspel vinden.<br />
             Voor enkele functies dien je in te loggen om je eigen data te krijgen. Deze opties zijn verborgen zolang we de data niet hebben.<br />
             De gegevens waar we geen data voor nodig hebben zijn direct zichtbaar en te bekijken.<br />
-            In de suggestie box kun je zien aan welke mogelijke uitbreidingen nog gaan komen. Hier kun je ook je eigen suggesties achterlaten.<br />
+            In de suggestiebox kun je zien aan welke suggesties er zijn gegeven. Hier kun je ook je eigen suggesties achterlaten. Daarnaast hebben we een overzicht van welke suggesties live komen met de volgende update.<br />
             <br />
             <br />
 
