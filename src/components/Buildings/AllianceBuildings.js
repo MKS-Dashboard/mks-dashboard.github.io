@@ -4,6 +4,7 @@ import axios from "axios";
 function AllianceBuildings(props) {
 
     const [buildingTypes, setBuildingTypes] = useState([]);
+    const [extensions, setExtensions] = useState([]);
 
     useEffect(() => {
         fetchBuildingTemplate()
@@ -25,6 +26,28 @@ function AllianceBuildings(props) {
 
             types.sort((a, b) => (a.name > b.name) ? 1 : -1)
             setBuildingTypes(types)
+        }
+
+        fetchExtensions()
+
+        async function fetchExtensions() {
+            const fetchExtensions = async () => {
+                const result = await axios("https://mks-dashboard.github.io/datafiles/extensions.json");
+                return result.data;
+            };
+            fetchExtensions().then((r) => updateExtensions(r));
+        }
+
+        async function updateExtensions(data) {
+            var buildingData = props.allianceBuildingsData
+
+            for (let k = 0; k < data.length; k++) {
+                data[k].amount = 0
+                for (let l = 0; l < buildingData.length; l++) {
+                    data[k].amount += buildingData[l].extensions.filter(extension => extension.caption === data[k].name).length
+                }
+            }
+            setExtensions(data)
         }
     }, [props.allianceBuildingsData,]);
 
@@ -54,6 +77,36 @@ function AllianceBuildings(props) {
                                     <tr key={building.ID}>
                                         <td>{building.name}</td>
                                         <td>{building.inbezit.toLocaleString()}</td>
+                                    </tr>
+                                )
+                            }
+                            ))
+                    })()}
+                </tbody>
+            </table>
+
+            <h2> Uitbreidingen ({extensions.reduce(function (prev, cur) {
+                return prev + cur.amount;
+            }, 0).toLocaleString()})</h2>
+            <table className="table" id="Tabel">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Aantal</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {(() => {
+                        extensions.sort((a, b) => (a.name > b.name) ? 1 : -1)
+                        var extensionsinbezit = extensions.filter(ex => ex.amount > 0)
+
+                        return (
+                            extensionsinbezit.map((ex) => {
+                                return (
+                                    <tr key={ex.name}>
+                                        <td>{ex.name}</td>
+                                        <td>{ex.amount.toLocaleString()}</td>
                                     </tr>
                                 )
                             }

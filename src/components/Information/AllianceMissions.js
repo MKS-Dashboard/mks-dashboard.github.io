@@ -35,7 +35,7 @@ function AllianceMissions() {
 
 
             {(() => {
-                if (allianceMissions.length > 0) {
+                if (allianceMissions.length > 0 && missionTemplate.length > 0) {
                     return (
                         allianceMissions.map((mission) => {
 
