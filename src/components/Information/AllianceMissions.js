@@ -99,7 +99,7 @@ function AllianceMissions() {
                                                     )
                                                 }
                                                 return (
-                                                    <li>{`${missionTemplate[0].chances[chance.a] !== undefined ? missionTemplate[0].chances[chance.a] : chance.a}: ${chance.b}`}</li>
+                                                    <li>{`${missionTemplate[0].chances[chance.a] !== undefined ? missionTemplate[0].chances[chance.a] : chance.a}: ${chance.b}%`}</li>
                                                 )
                                             }
                                             ))
