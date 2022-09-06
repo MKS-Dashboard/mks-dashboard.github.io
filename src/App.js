@@ -14,6 +14,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import './App.css';
 import Information from "./components/Information/Information";
+import Awards from "./components/Information/Awards";
 
 function App() {
   let apiUrl;
@@ -142,6 +143,11 @@ function App() {
         <Route path='information' element={
           <Layout loggedIn={loggedIn}>
             <Information />
+          </Layout>
+        } />
+        <Route path='information/awards' element={
+          <Layout loggedIn={loggedIn}>
+            <Awards />
           </Layout>
         } />
       </Routes>
