@@ -43,6 +43,9 @@ const Header = (props) => {
               <NavDropdown.Item>
                 <Link className="Link" to="/information/awards">Awards</Link>
               </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="Link" to="/information/poi">POI</Link>
+              </NavDropdown.Item>
             </NavDropdown>
             <Link className="link" to="/suggestions">
               <FcMultipleInputs id="icon" size={50} />

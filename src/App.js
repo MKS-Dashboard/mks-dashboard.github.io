@@ -15,6 +15,7 @@ import axios from "axios";
 import './App.css';
 import Information from "./components/Information/Information";
 import Awards from "./components/Information/Awards";
+import Poi from "./components/Information/Poi";
 
 function App() {
   let apiUrl;
@@ -148,6 +149,11 @@ function App() {
         <Route path='information/awards' element={
           <Layout loggedIn={loggedIn}>
             <Awards />
+          </Layout>
+        } />
+        <Route path='information/poi' element={
+          <Layout loggedIn={loggedIn}>
+            <Poi />
           </Layout>
         } />
       </Routes>
