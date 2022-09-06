@@ -35,82 +35,90 @@ function AllianceMissions() {
 
 
             {(() => {
-                return (
-                    allianceMissions.map((mission) => {
+                if (allianceMissions.length > 0) {
+                    return (
+                        allianceMissions.map((mission) => {
 
-                        let requirements = [];
-                        for (var key in mission.requirements) {
-                            var value = mission.requirements[key];
-                            requirements.push({ a: key, b: value })
-                        }
+                            let requirements = [];
+                            for (var key in mission.requirements) {
+                                var value = mission.requirements[key];
+                                requirements.push({ a: key, b: value })
+                            }
 
-                        let additional = []
-                        for (var key2 in mission.additional) {
-                            var value2 = mission.additional[key2];
-                            additional.push({ a: key2, b: value2 })
-                        }
+                            let additional = []
+                            for (var key2 in mission.additional) {
+                                var value2 = mission.additional[key2];
+                                additional.push({ a: key2, b: value2 })
+                            }
 
-                        let chances = []
-                        for (var key3 in mission.chances) {
-                            var value3 = mission.chances[key3];
-                            chances.push({ a: key3, b: value3 })
-                        }
+                            let chances = []
+                            for (var key3 in mission.chances) {
+                                var value3 = mission.chances[key3];
+                                chances.push({ a: key3, b: value3 })
+                            }
 
-                        requirements.sort((a, b) => (a.b < b.b) ? 1 : -1)
-                        return (
-                            <>
-                                <h1>{mission.id.toLocaleString()} - {mission.name}</h1>
-                                <p>
-                                    Credits: {mission.average_credits.toLocaleString()}<br />
-                                    Benodigdheden:<br />
-                                    {(() => {
-                                        return (
-                                            requirements.map((req) => {
-                                                return (
-                                                    <li>{`${req.b.toLocaleString()} ${req.b === 1 ? (missionTemplate[0].requirements[req.a] !== undefined ? missionTemplate[0].requirements[req.a].one : req.a) : (missionTemplate[0].requirements[req.a] !== undefined ? missionTemplate[0].requirements[req.a].more : req.a)}`}</li>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                    <br />
-                                    Overig:
-                                    {(() => {
-                                        return (
-                                            additional.map((add) => {
-                                                if (ExcludedMissionKeysAllianceMissions.includes(add.a)) {
+                            requirements.sort((a, b) => (a.b < b.b) ? 1 : -1)
+                            return (
+                                <>
+                                    <h1>{mission.id.toLocaleString()} - {mission.name}</h1>
+                                    <p>
+                                        Credits: {mission.average_credits.toLocaleString()}<br />
+                                        Benodigdheden:<br />
+                                        {(() => {
+                                            return (
+                                                requirements.map((req) => {
                                                     return (
-                                                        ""
+                                                        <li>{`${req.b.toLocaleString()} ${req.b === 1 ? (missionTemplate[0].requirements[req.a] !== undefined ? missionTemplate[0].requirements[req.a].one : req.a) : (missionTemplate[0].requirements[req.a] !== undefined ? missionTemplate[0].requirements[req.a].more : req.a)}`}</li>
                                                     )
                                                 }
-                                                return (
-                                                    <li>{`${missionTemplate[0].additional[add.a] !== undefined ? missionTemplate[0].additional[add.a] : add.a}: ${add.b}`}</li>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                    <br />
-                                    Kansen:
-                                    {(() => {
-                                        return (
-                                            chances.map((chance) => {
-                                                if (ExcludedMissionKeysAllianceMissions.includes(chance.a)) {
+                                                ))
+                                        })()}
+                                        <br />
+                                        Overig:
+                                        {(() => {
+                                            return (
+                                                additional.map((add) => {
+                                                    if (ExcludedMissionKeysAllianceMissions.includes(add.a)) {
+                                                        return (
+                                                            ""
+                                                        )
+                                                    }
                                                     return (
-                                                        ""
+                                                        <li>{`${missionTemplate[0].additional[add.a] !== undefined ? missionTemplate[0].additional[add.a] : add.a}: ${add.b}`}</li>
                                                     )
                                                 }
-                                                return (
-                                                    <li>{`${missionTemplate[0].chances[chance.a] !== undefined ? missionTemplate[0].chances[chance.a] : chance.a}: ${chance.b}%`}</li>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </p>
-                            </>
+                                                ))
+                                        })()}
+                                        <br />
+                                        Kansen:
+                                        {(() => {
+                                            return (
+                                                chances.map((chance) => {
+                                                    if (ExcludedMissionKeysAllianceMissions.includes(chance.a)) {
+                                                        return (
+                                                            ""
+                                                        )
+                                                    }
+                                                    return (
+                                                        <li>{`${missionTemplate[0].chances[chance.a] !== undefined ? missionTemplate[0].chances[chance.a] : chance.a}: ${chance.b}%`}</li>
+                                                    )
+                                                }
+                                                ))
+                                        })()}
+                                    </p>
+                                </>
 
-                        )
-                    }
-                    ))
+                            )
+                        }
+                        ))
+                }
+                else {
+                    return (
+                        <p>Momenteel verzamelen wij de data over de inzetten</p>
+                    )
+                }
             })()}
+
         </div>
     )
 }
