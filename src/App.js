@@ -16,6 +16,7 @@ import './App.css';
 import Information from "./components/Information/Information";
 import Awards from "./components/Information/Awards";
 import Poi from "./components/Information/Poi";
+import AllianceMissions from "./components/Information/AllianceMissions";
 
 function App() {
   let apiUrl;
@@ -154,6 +155,11 @@ function App() {
         <Route path='information/poi' element={
           <Layout loggedIn={loggedIn}>
             <Poi />
+          </Layout>
+        } />
+        <Route path='information/alliancemissions' element={
+          <Layout loggedIn={loggedIn}>
+            <AllianceMissions />
           </Layout>
         } />
       </Routes>
