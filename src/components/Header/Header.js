@@ -36,8 +36,19 @@ const Header = (props) => {
             <Link className="link" to="/credits">
               <BiWorld id="icon" size={50} />
             </Link>
-            <NavDropdown hidden="true" title={<RiInformationLine id="icon" size={50} />} id="nav-dropdown" className="link">
-              <NavDropdown.Item ><Link className="link" to="/information">Algemeen</Link></NavDropdown.Item>
+            <NavDropdown title={<RiInformationLine id="icon" size={50} />} id="nav-dropdown" className="link">
+              <NavDropdown.Item >
+                <Link className="link" to="/information">Algemeen</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="Link" to="/information/awards">Awards</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="Link" to="/information/poi">POI</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="Link" to="/information/alliancemissions">Teaminzetten</Link>
+              </NavDropdown.Item>
             </NavDropdown>
             <Link className="link" to="/suggestions">
               <FcMultipleInputs id="icon" size={50} />

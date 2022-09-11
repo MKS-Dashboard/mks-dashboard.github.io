@@ -14,6 +14,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import './App.css';
 import Information from "./components/Information/Information";
+import Awards from "./components/Information/Awards";
+import Poi from "./components/Information/Poi";
+import AllianceMissions from "./components/Information/AllianceMissions";
 
 function App() {
   let apiUrl;
@@ -142,6 +145,21 @@ function App() {
         <Route path='information' element={
           <Layout loggedIn={loggedIn}>
             <Information />
+          </Layout>
+        } />
+        <Route path='information/awards' element={
+          <Layout loggedIn={loggedIn}>
+            <Awards />
+          </Layout>
+        } />
+        <Route path='information/poi' element={
+          <Layout loggedIn={loggedIn}>
+            <Poi />
+          </Layout>
+        } />
+        <Route path='information/alliancemissions' element={
+          <Layout loggedIn={loggedIn}>
+            <AllianceMissions />
           </Layout>
         } />
       </Routes>
