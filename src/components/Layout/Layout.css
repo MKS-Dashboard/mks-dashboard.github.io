@@ -9,3 +9,13 @@
 .footer-wrapper {
   margin-top: auto;
 }
+
+#timer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  color: white;
+  background-color: blue;
+}
