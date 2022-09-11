@@ -626,6 +626,22 @@ export const lists_vehicleGroups = [
             66
         ],
         "type": "Waterredding"
+    },
+    {
+        "name": "Boten",
+        "vehicles": [
+            36,
+            67
+        ],
+        "type": "Waterredding"
+    },
+    {
+        "name": "Boten",
+        "vehicles": [
+            36,
+            67
+        ],
+        "type": "Brandweer"
     }
 ]
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import axios from "axios";
 import { lists_BuildingExtensionsOverview, lists_BuildingInformation } from "../../Lists/buildings";
 
 function Buildings(props) {
