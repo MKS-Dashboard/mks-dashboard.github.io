@@ -62,32 +62,45 @@ function AllianceMissions() {
                                                 }
                                                 ))
                                         })()}
-                                        <br />
-                                        Overig:
+                                        {(() => {
+                                            for (let i = 0; i < lists_ExcludedMissionKeysAllianceMissions.length; i++) {
+                                                let index = additional.findIndex(item => item.a === lists_ExcludedMissionKeysAllianceMissions[i])
+                                                if (index >= 0) {
+                                                    additional.splice(index)
+                                                }
+                                            }
+                                            if (additional.length > 0) {
+                                                return (
+                                                    <><br />Overige:</>
+                                                )
+                                            }
+                                        })()}
                                         {(() => {
                                             return (
                                                 additional.map((add) => {
-                                                    if (lists_ExcludedMissionKeysAllianceMissions.includes(add.a)) {
-                                                        return (
-                                                            ""
-                                                        )
-                                                    }
                                                     return (
                                                         <li>{`${lists_Codetranslations[0].additional[add.a] !== undefined ? lists_Codetranslations[0].additional[add.a] : add.a}: ${add.b}`}</li>
                                                     )
                                                 }
                                                 ))
                                         })()}
-                                        <br />
-                                        Kansen:
+                                        {(() => {
+                                            for (let j = 0; j < lists_ExcludedMissionKeysAllianceMissions.length; j++) {
+                                                let index = chances.findIndex(item => item.a === lists_ExcludedMissionKeysAllianceMissions[j])
+                                                if (index >= 0) {
+                                                    chances.splice(index)
+                                                }
+                                            }
+                                            if (chances.length > 0) {
+                                                return (
+                                                    <> <br />Kansen: </>
+
+                                                )
+                                            }
+                                        })()}
                                         {(() => {
                                             return (
                                                 chances.map((chance) => {
-                                                    if (lists_ExcludedMissionKeysAllianceMissions.includes(chance.a)) {
-                                                        return (
-                                                            ""
-                                                        )
-                                                    }
                                                     return (
                                                         <li>{`${lists_Codetranslations[0].chances[chance.a] !== undefined ? lists_Codetranslations[0].chances[chance.a] : chance.a}: ${chance.b}%`}</li>
                                                     )
