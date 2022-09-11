@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
+import { lists_games } from '../../Lists/games';
 
 function Credits() {
 
@@ -19,15 +20,7 @@ function Credits() {
             fetchUpdate().then((r) => setLastUpdate(r));
         }
 
-        fetchVersions()
-
-        async function fetchVersions() {
-            const fetchVersions = async () => {
-                const result = await axios("https://mks-dashboard.github.io/datafiles/games.json");
-                return result.data;
-            };
-            fetchVersions().then((r) => update(r));
-        }
+        update(lists_games)
 
         async function update(versions) {
             for (let i = 0; i < versions.length; i++) {

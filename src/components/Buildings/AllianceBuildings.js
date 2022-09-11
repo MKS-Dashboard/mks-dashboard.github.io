@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { lists_BuildingExtensionsOverview, lists_BuildingInformation } from "../../Lists/buildings";
 
 function AllianceBuildings(props) {
 
@@ -7,15 +7,8 @@ function AllianceBuildings(props) {
     const [extensions, setExtensions] = useState([]);
 
     useEffect(() => {
-        fetchBuildingTemplate()
 
-        async function fetchBuildingTemplate() {
-            const fetchBuildings = async () => {
-                const result = await axios("https://mks-dashboard.github.io/datafiles/buildings.json");
-                return result.data;
-            };
-            fetchBuildings().then((r) => update(r));
-        }
+        update(lists_BuildingInformation)
 
         async function update(types) {
             var data = props.allianceBuildingsData
@@ -28,15 +21,7 @@ function AllianceBuildings(props) {
             setBuildingTypes(types)
         }
 
-        fetchExtensions()
-
-        async function fetchExtensions() {
-            const fetchExtensions = async () => {
-                const result = await axios("https://mks-dashboard.github.io/datafiles/extensions.json");
-                return result.data;
-            };
-            fetchExtensions().then((r) => updateExtensions(r));
-        }
+        updateExtensions(lists_BuildingExtensionsOverview)
 
         async function updateExtensions(data) {
             var buildingData = props.allianceBuildingsData

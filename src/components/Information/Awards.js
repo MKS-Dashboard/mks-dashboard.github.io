@@ -1,22 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import axios from "axios"
+import React from 'react'
+import { lists_awards } from '../../Lists/awards'
 
 function Awards() {
-
-    const [awards, setAwards] = useState([])
-
-    useEffect(() => {
-        fetchAwards()
-
-        async function fetchAwards() {
-            const fetchAward = async () => {
-                const result = await axios("https://mks-dashboard.github.io/datafiles/Information/awards.json");
-                return result.data;
-            };
-            fetchAward().then((r) => setAwards(r));
-        }
-    }, []);
-
     return (
         <div id="Container">
             Hieronder vind je alle awards in het spel en welke doelen er aan verbonden zitten.
@@ -34,7 +19,7 @@ function Awards() {
                 <tbody>
 
                     {(() => {
-                        let doorlopend = awards.filter(award => award.type === "Doorlopend")
+                        let doorlopend = lists_awards.filter(award => award.type === "Doorlopend")
                         doorlopend.sort((a, b) => (a.naam > b.naam) ? 1 : -1)
                         return (
                             doorlopend.map((award) => {
@@ -65,7 +50,7 @@ function Awards() {
                 <tbody>
 
                     {(() => {
-                        let doorlopend = awards.filter(award => award.type === "Eenmalig")
+                        let doorlopend = lists_awards.filter(award => award.type === "Eenmalig")
                         doorlopend.sort((a, b) => (a.naam > b.naam) ? 1 : -1)
                         return (
                             doorlopend.map((award) => {
