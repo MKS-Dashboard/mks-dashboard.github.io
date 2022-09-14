@@ -18,7 +18,7 @@ const Layout = (props) => {
                 if (props.countdownGoal > 0) {
                     return (
                         <div hidden={!props.loggedIn} id="timer">
-                            Data refresh in: {(() => {
+                            Verwachte data refresh in: {(() => {
                                 let [minutes, seconds] = getReturnValues(props.countdownGoal)
                                 return (`${minutes > 9 ? minutes : `0` + minutes}:${seconds > 9 ? seconds : `0` + seconds}`)
                             })()}
