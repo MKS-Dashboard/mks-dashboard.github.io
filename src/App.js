@@ -38,7 +38,7 @@ function App() {
 
   function LoadData() {
     setTimeout(() => {
-      setTimer(5 * 60)
+      setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
       fetchUser();
       refreshdata();
       setInterval(() => {
@@ -91,7 +91,7 @@ function App() {
   useEffect(() => {
     Timer > 0 && setTimeout(() => setTimer(Timer - 1), 1000);
     if (Timer === 0) {
-      setTimer((newTimer - new Date()) / 1000)
+      setTimer(Math.floor((newTimer - new Date()) / 1000))
     }
   }, [Timer, newTimer]);
 
