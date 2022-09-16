@@ -93,7 +93,7 @@ function App() {
     if (Timer === 0) {
       setTimer((newTimer - new Date()) / 1000)
     }
-  }, [Timer]);
+  }, [Timer, newTimer]);
 
 
   return (
