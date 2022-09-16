@@ -27,6 +27,7 @@ function App() {
   const [Agree, setAgree] = React.useState(false)
   const loggedIn = (ApiVehicles.length > 0 || ApiBuildings.length > 0) ? true : false;
   const [Timer, setTimer] = useState(0);
+  const [newTimer, setNewTimer] = UseState();
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
     apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net"
@@ -41,7 +42,7 @@ function App() {
       fetchUser();
       refreshdata();
       setInterval(() => {
-        setTimer(5 * 60)
+        setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
         refreshdata();
       }, 5 * 60 * 1000)
     }, 1000);
@@ -89,6 +90,9 @@ function App() {
 
   useEffect(() => {
     Timer > 0 && setTimeout(() => setTimer(Timer - 1), 1000);
+    if (Timer === 0) {
+      setTimer((newTimer - new Date()) / 1000)
+    }
   }, [Timer]);
 
 
