@@ -27,7 +27,7 @@ function App() {
   const [Agree, setAgree] = React.useState(false)
   const loggedIn = (ApiVehicles.length > 0 || ApiBuildings.length > 0) ? true : false;
   const [Timer, setTimer] = useState(0);
-  const [newTimer, setNewTimer] = UseState();
+  const [newTimer, setNewTimer] = useState();
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
     apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net"
