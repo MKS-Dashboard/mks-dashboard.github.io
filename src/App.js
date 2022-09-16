@@ -38,7 +38,7 @@ function App() {
 
   function LoadData() {
     setTimeout(() => {
-      setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
+      setTimer(5 * 60)
       fetchUser();
       refreshdata();
       setInterval(() => {
