@@ -52,10 +52,16 @@ function AllianceMissions() {
                                     <h1>{mission.id.toLocaleString()} - {mission.name}</h1>
                                     <p>
                                         Credits: {mission.average_credits.toLocaleString()}<br />
-                                        Benodigdheden:<br />
+                                        {(() => {
+                                            if (requirements.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).length > 0) {
+                                                return (
+                                                    <>Benodigdheeden:</>
+                                                )
+                                            }
+                                        })()}
                                         {(() => {
                                             return (
-                                                requirements.map((req) => {
+                                                requirements.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).map((req) => {
                                                     return (
                                                         <li>{`${req.b.toLocaleString()} ${req.b === 1 ? (lists_Codetranslations[0].requirements[req.a] !== undefined ? lists_Codetranslations[0].requirements[req.a].one : req.a) : (lists_Codetranslations[0].requirements[req.a] !== undefined ? lists_Codetranslations[0].requirements[req.a].more : req.a)}`}</li>
                                                     )
@@ -63,13 +69,7 @@ function AllianceMissions() {
                                                 ))
                                         })()}
                                         {(() => {
-                                            for (let i = 0; i < lists_ExcludedMissionKeysAllianceMissions.length; i++) {
-                                                let index = additional.findIndex(item => item.a === lists_ExcludedMissionKeysAllianceMissions[i])
-                                                if (index >= 0) {
-                                                    additional.splice(index)
-                                                }
-                                            }
-                                            if (additional.length > 0) {
+                                            if (additional.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).length > 0) {
                                                 return (
                                                     <><br />Overige:</>
                                                 )
@@ -77,7 +77,7 @@ function AllianceMissions() {
                                         })()}
                                         {(() => {
                                             return (
-                                                additional.map((add) => {
+                                                additional.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).map((add) => {
                                                     return (
                                                         <li>{`${lists_Codetranslations[0].additional[add.a] !== undefined ? lists_Codetranslations[0].additional[add.a] : add.a}: ${add.b}`}</li>
                                                     )
@@ -85,13 +85,7 @@ function AllianceMissions() {
                                                 ))
                                         })()}
                                         {(() => {
-                                            for (let j = 0; j < lists_ExcludedMissionKeysAllianceMissions.length; j++) {
-                                                let index = chances.findIndex(item => item.a === lists_ExcludedMissionKeysAllianceMissions[j])
-                                                if (index >= 0) {
-                                                    chances.splice(index)
-                                                }
-                                            }
-                                            if (chances.length > 0) {
+                                            if (chances.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).length > 0) {
                                                 return (
                                                     <> <br />Kansen: </>
 
@@ -100,7 +94,7 @@ function AllianceMissions() {
                                         })()}
                                         {(() => {
                                             return (
-                                                chances.map((chance) => {
+                                                chances.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).map((chance) => {
                                                     return (
                                                         <li>{`${lists_Codetranslations[0].chances[chance.a] !== undefined ? lists_Codetranslations[0].chances[chance.a] : chance.a}: ${chance.b}%`}</li>
                                                     )

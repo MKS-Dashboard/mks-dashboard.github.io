@@ -1,4 +1,9 @@
-export const lists_ExcludedMissionKeysAllianceMissions = ["only_alliance_mission", "filter_id"]
+export const lists_ExcludedMissionKeysAllianceMissions = [
+    "only_alliance_mission",
+    "filter_id",
+    "patient_specialization_ids",
+    "patient_specialization_captions"
+]
 
 export const lists_Codetranslations = [
     {
@@ -54,6 +59,10 @@ export const lists_Codetranslations = [
             "gwmess": {
                 "one": "Verkenningseenheid",
                 "more": "Verkenningseenheden"
+            },
+            "foam": {
+                "one": "Schuimblusvoertuig",
+                "more": "Schuimblusvoertuigen"
             }
         },
         "additional": {
