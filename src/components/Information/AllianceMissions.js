@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
-import { ExcludedMissionKeysAllianceMissions } from '../../Lists/missions';
+import { lists_Codetranslations, lists_ExcludedMissionKeysAllianceMissions } from '../../Lists/missions';
 
 function AllianceMissions() {
-    const [missionTemplate, setMissionTemplate] = useState([])
     const [allianceMissions, setAllianceMissions] = useState([])
 
     useEffect(() => {
-        fetchMissionsTemplate()
-
-        async function fetchMissionsTemplate() {
-            const fetchMissionTemplate = async () => {
-                const result = await axios("https://raw.githubusercontent.com/MKS-Dashboard/datafiles/main/Information/codeTranslations.json");
-                return result.data;
-            };
-            fetchMissionTemplate().then((r) => setMissionTemplate(r));
-        }
-
         fetchAllianceMissions()
 
         async function fetchAllianceMissions() {
@@ -35,7 +24,7 @@ function AllianceMissions() {
 
 
             {(() => {
-                if (allianceMissions.length > 0 && missionTemplate.length > 0) {
+                if (allianceMissions.length > 0 && lists_Codetranslations.length > 0) {
                     return (
                         allianceMissions.map((mission) => {
 
@@ -63,44 +52,51 @@ function AllianceMissions() {
                                     <h1>{mission.id.toLocaleString()} - {mission.name}</h1>
                                     <p>
                                         Credits: {mission.average_credits.toLocaleString()}<br />
-                                        Benodigdheden:<br />
+                                        {(() => {
+                                            if (requirements.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).length > 0) {
+                                                return (
+                                                    <>Benodigdheeden:</>
+                                                )
+                                            }
+                                        })()}
                                         {(() => {
                                             return (
-                                                requirements.map((req) => {
+                                                requirements.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).map((req) => {
                                                     return (
-                                                        <li>{`${req.b.toLocaleString()} ${req.b === 1 ? (missionTemplate[0].requirements[req.a] !== undefined ? missionTemplate[0].requirements[req.a].one : req.a) : (missionTemplate[0].requirements[req.a] !== undefined ? missionTemplate[0].requirements[req.a].more : req.a)}`}</li>
+                                                        <li>{`${req.b.toLocaleString()} ${req.b === 1 ? (lists_Codetranslations[0].requirements[req.a] !== undefined ? lists_Codetranslations[0].requirements[req.a].one : req.a) : (lists_Codetranslations[0].requirements[req.a] !== undefined ? lists_Codetranslations[0].requirements[req.a].more : req.a)}`}</li>
                                                     )
                                                 }
                                                 ))
                                         })()}
-                                        <br />
-                                        Overig:
+                                        {(() => {
+                                            if (additional.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).length > 0) {
+                                                return (
+                                                    <><br />Overige:</>
+                                                )
+                                            }
+                                        })()}
                                         {(() => {
                                             return (
-                                                additional.map((add) => {
-                                                    if (ExcludedMissionKeysAllianceMissions.includes(add.a)) {
-                                                        return (
-                                                            ""
-                                                        )
-                                                    }
+                                                additional.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).map((add) => {
                                                     return (
-                                                        <li>{`${missionTemplate[0].additional[add.a] !== undefined ? missionTemplate[0].additional[add.a] : add.a}: ${add.b}`}</li>
+                                                        <li>{`${lists_Codetranslations[0].additional[add.a] !== undefined ? lists_Codetranslations[0].additional[add.a] : add.a}: ${add.b}`}</li>
                                                     )
                                                 }
                                                 ))
                                         })()}
-                                        <br />
-                                        Kansen:
+                                        {(() => {
+                                            if (chances.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).length > 0) {
+                                                return (
+                                                    <> <br />Kansen: </>
+
+                                                )
+                                            }
+                                        })()}
                                         {(() => {
                                             return (
-                                                chances.map((chance) => {
-                                                    if (ExcludedMissionKeysAllianceMissions.includes(chance.a)) {
-                                                        return (
-                                                            ""
-                                                        )
-                                                    }
+                                                chances.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).map((chance) => {
                                                     return (
-                                                        <li>{`${missionTemplate[0].chances[chance.a] !== undefined ? missionTemplate[0].chances[chance.a] : chance.a}: ${chance.b}%`}</li>
+                                                        <li>{`${lists_Codetranslations[0].chances[chance.a] !== undefined ? lists_Codetranslations[0].chances[chance.a] : chance.a}: ${chance.b}%`}</li>
                                                     )
                                                 }
                                                 ))

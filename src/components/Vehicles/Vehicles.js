@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { lists_additionalVehicleValues, lists_vehicleGroups, lists_Vehicles } from "../../Lists/vehicles";
 
 function Vehicles(props) {
 
@@ -8,15 +8,7 @@ function Vehicles(props) {
     const [additionalValues, setAdditionalvValues] = useState([])
 
     useEffect(() => {
-        fetchVehicleTemplate()
-
-        async function fetchVehicleTemplate() {
-            const fetchVehicleTemplate = async () => {
-                const result = await axios("https://mks-dashboard.github.io/datafiles/vehicles.json");
-                return result.data;
-            };
-            fetchVehicleTemplate().then((r) => update(r));
-        }
+        update(lists_Vehicles)
 
         async function update(types) {
             var data = props.vehicleData
@@ -31,15 +23,7 @@ function Vehicles(props) {
     }, [props.vehicleData]);
 
     useEffect(() => {
-        fetchVehicleGroups();
-
-        async function fetchVehicleGroups() {
-            const fetchGroups = async () => {
-                const result = await axios("https://mks-dashboard.github.io/datafiles/vehiclegroups.json");
-                return result.data;
-            };
-            fetchGroups().then((r) => updateGroups(r));
-        }
+        updateGroups(lists_vehicleGroups)
 
         async function updateGroups(groups) {
             var data = props.vehicleData
@@ -60,15 +44,7 @@ function Vehicles(props) {
 
             groups.sort((a, b) => (a.name > b.name) ? 1 : -1)
             setVehicleGroups(groups)
-            fetchadditionalvalues()
-        }
-
-        async function fetchadditionalvalues() {
-            const fetchGroups = async () => {
-                const result = await axios("https://mks-dashboard.github.io/datafiles/additionalvalues.json");
-                return result.data;
-            };
-            fetchGroups().then((r) => updateadditionalvalues(r));
+            updateadditionalvalues(lists_additionalVehicleValues)
         }
 
         async function updateadditionalvalues(additionalvalues) {

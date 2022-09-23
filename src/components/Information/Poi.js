@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
+import { lists_poi } from '../../Lists/poi';
 
 function Poi() {
 
-    const [poi, setPoi] = useState([])
     const [missions, setMissions] = useState([])
 
     useEffect(() => {
-        fetchPoi()
-
-        async function fetchPoi() {
-            const fetchPoi = async () => {
-                const result = await axios("https://mks-dashboard.github.io/datafiles/Information/poi.json");
-                return result.data;
-            };
-            fetchPoi().then((r) => setPoi(r));
-        }
-
         fetchMissions()
 
         async function fetchMissions() {
@@ -43,9 +33,9 @@ function Poi() {
                 <tbody>
 
                     {(() => {
-                        poi.sort((a, b) => (a.name > b.name) ? 1 : -1)
+                        lists_poi.sort((a, b) => (a.name > b.name) ? 1 : -1)
                         return (
-                            poi.map((poi) => {
+                            lists_poi.map((poi) => {
                                 return (
                                     <tr key={poi.name}>
                                         <td>{poi.name.toLocaleString()}</td>

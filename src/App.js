@@ -10,7 +10,7 @@ import Privacy from "./components/Voorwaarden/Privacy";
 import Progressdata from "./components/Progressdata/Progressdata"
 import Suggestions from "./components/Suggestions/suggestions"
 import Login from "./components/Login/Login";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './App.css';
 import Information from "./components/Information/Information";
@@ -26,6 +26,8 @@ function App() {
   const [ApiAllianceBuildings, setApiAllianceBuildings] = useState([])
   const [Agree, setAgree] = React.useState(false)
   const loggedIn = (ApiVehicles.length > 0 || ApiBuildings.length > 0) ? true : false;
+  const [Timer, setTimer] = useState(0);
+  const [newTimer, setNewTimer] = useState();
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
     apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net"
@@ -36,9 +38,11 @@ function App() {
 
   function LoadData() {
     setTimeout(() => {
+      setTimer(5 * 60)
       fetchUser();
       refreshdata();
       setInterval(() => {
+        setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
         refreshdata();
       }, 5 * 60 * 1000)
     }, 1000);
@@ -84,12 +88,19 @@ function App() {
     });
   }
 
+  useEffect(() => {
+    Timer > 0 && setTimeout(() => setTimer(Timer - 1), 1000);
+    if (Timer === 0) {
+      setTimer(Math.floor((newTimer - new Date()) / 1000))
+    }
+  }, [Timer, newTimer]);
+
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={
-          <Layout refresh={refreshdata} loggedIn={loggedIn}>
+          <Layout refresh={refreshdata} loggedIn={loggedIn} countdownGoal={Timer}>
             <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
           </Layout>}
         />
@@ -101,24 +112,24 @@ function App() {
         />
 
         <Route path='/vehicles' element={
-          <Layout loggedIn={loggedIn}>
+          <Layout loggedIn={loggedIn} countdownGoal={Timer}>
             <Vehicles vehicleData={ApiVehicles} />
           </Layout>
         } />
 
         <Route path='/buildings' element={
-          <Layout loggedIn={loggedIn}>
+          <Layout loggedIn={loggedIn} countdownGoal={Timer}>
             <Buildings buildingsData={ApiBuildings} />
           </Layout>
         } />
 
         <Route path='/alliancebuildings' element={
-          <Layout loggedIn={loggedIn}>
+          <Layout loggedIn={loggedIn} countdownGoal={Timer}>
             <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
           </Layout>
         } />
         <Route path='/progressdata' element={
-          <Layout loggedIn={loggedIn}>
+          <Layout loggedIn={loggedIn} countdownGoal={Timer}>
             <Progressdata Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
           </Layout>
         } />
