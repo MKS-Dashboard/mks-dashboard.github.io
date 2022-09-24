@@ -93,11 +93,11 @@ function App() {
     if (Timer === 0) {
       UpdateTimer()
     }
-  }, [Timer]);
+  }, [Timer, UpdateTimer()]);
 
   useEffect(() => {
     FallBackTimer();
-  }, [newTimer]);
+  }, [newTimer, FallBackTimer()]);
 
   function UpdateTimer() {
     setTimer(Math.floor((newTimer - new Date()) / 1000));
