@@ -91,10 +91,23 @@ function App() {
   useEffect(() => {
     Timer > 0 && setTimeout(() => setTimer(Timer - 1), 1000);
     if (Timer === 0) {
-      setTimer(Math.floor((newTimer - new Date()) / 1000))
+      UpdateTimer()
     }
   }, [Timer, newTimer]);
 
+  useEffect(() => {
+    FallBackTimer();
+  }, [newTimer]);
+
+  function UpdateTimer() {
+    setTimer(Math.floor((newTimer - new Date()) / 1000));
+  }
+
+  function FallBackTimer() {
+    if (Timer === 0) {
+      UpdateTimer();
+    }
+  }
 
   return (
     <BrowserRouter>
