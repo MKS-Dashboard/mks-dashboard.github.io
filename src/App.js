@@ -93,7 +93,7 @@ function App() {
     if (Timer === 0) {
       UpdateTimer()
     }
-  }, [Timer, newTimer]);
+  }, [Timer]);
 
   useEffect(() => {
     FallBackTimer();
