@@ -11,7 +11,7 @@ import Progressdata from "./components/Progressdata/Progressdata"
 import Suggestions from "./components/Suggestions/suggestions"
 import Login from "./components/Login/Login";
 import React, { useState, useEffect } from "react";
-import { axios } from "axios";
+import { Axios } from "axios";
 import './App.css';
 import Information from "./components/Information/Information";
 import Awards from "./components/Information/Awards";
@@ -56,7 +56,7 @@ function App() {
 
   async function fetchVehicles() {
     const fetchVersions = async () => {
-      const result = await axios(`${apiUrl}/vehicles/${inputvalue}`);
+      const result = await Axios(`${apiUrl}/vehicles/${inputvalue}`);
       return result.data;
     };
     fetchVersions().then((r) => setApiVehicles(r))
@@ -64,7 +64,7 @@ function App() {
 
   async function fetchBuildings() {
     const fetchBuildings = async () => {
-      const result = await axios(`${apiUrl}/buildings/${inputvalue}`);
+      const result = await Axios(`${apiUrl}/buildings/${inputvalue}`);
       return result.data;
     };
     fetchBuildings().then((r) => setApiBuildings(r))
@@ -72,7 +72,7 @@ function App() {
 
   async function fetchAllianceBuildings() {
     const fetchAllianceBuildings = async () => {
-      const result = await axios(`${apiUrl}/alliancebuildings/${inputvalue}`);
+      const result = await Axios(`${apiUrl}/alliancebuildings/${inputvalue}`);
       return result.data;
     };
     fetchAllianceBuildings().then((r) => setApiAllianceBuildings(r))
@@ -80,7 +80,7 @@ function App() {
 
   async function fetchUser() {
     const fetchVersions = async () => {
-      const result = await axios(`${apiUrl}/credits/${inputvalue}`);
+      const result = await Axios(`${apiUrl}/credits/${inputvalue}`);
       return result.data;
     };
     fetchVersions().then((r) => alert(`Welkom ${r.user_name}`)).catch(function error() {

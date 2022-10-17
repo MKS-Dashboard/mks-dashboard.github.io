@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { axios } from "axios";
+import { Axios } from "axios";
 import { HiInformationCircle } from "react-icons/hi";
 
 const Home = (props) => {
@@ -39,7 +39,7 @@ const Home = (props) => {
 
         async function gitInfo() {
             const fetch = async () => {
-                const result = await axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io");
+                const result = await Axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io");
                 return result.data;
             };
             fetch().then((r) => setGitInfo(r));
@@ -49,7 +49,7 @@ const Home = (props) => {
 
         async function fetchLastUpdate() {
             const fetch = async () => {
-                const result = await axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/branches/gh-pages");
+                const result = await Axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/branches/gh-pages");
                 return result.data;
             };
             fetch().then((r) => setGitInfomaster(r));
@@ -59,7 +59,7 @@ const Home = (props) => {
 
         async function fetchLastUpdateDEV() {
             const fetch = async () => {
-                const result = await axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/branches/dev");
+                const result = await Axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/branches/dev");
                 return result.data;
             };
             fetch().then((r) => setGitInfoDev(r));
@@ -69,7 +69,7 @@ const Home = (props) => {
 
         async function fetchContributors() {
             const fetch = async () => {
-                const result = await axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/contributors");
+                const result = await Axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/contributors");
                 return result.data;
             };
             fetch().then((r) => setContributors(r));
@@ -79,7 +79,7 @@ const Home = (props) => {
 
         async function fetchStars() {
             const fetch = async () => {
-                const result = await axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/stargazers");
+                const result = await Axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/stargazers");
                 return result.data;
             };
             fetch().then((r) => setStars(r));
@@ -89,7 +89,7 @@ const Home = (props) => {
 
         async function fetchCode() {
             const fetch = async () => {
-                const result = await axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/languages");
+                const result = await Axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/languages");
                 return result.data;
             };
             fetch().then((r) => setCode(r));

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { axios } from "axios"
+import { Axios } from "axios"
 
 const Suggestions = (props) => {
 
@@ -10,7 +10,7 @@ const Suggestions = (props) => {
 
         async function Issues() {
             const fetch = async () => {
-                const result = await axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/issues");
+                const result = await Axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/issues");
                 return result.data;
             };
             fetch().then((r) => setIssues(r));

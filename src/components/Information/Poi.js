@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { axios } from "axios"
+import { Axios } from "axios"
 import { lists_poi } from '../../Lists/poi';
 
 function Poi() {
@@ -11,7 +11,7 @@ function Poi() {
 
         async function fetchMissions() {
             const fetchMission = async () => {
-                const result = await axios("https://raw.githubusercontent.com/Piet2001/Missionfiles-All-Versions/master/Missions/nl_NL.json");
+                const result = await Axios("https://raw.githubusercontent.com/Piet2001/Missionfiles-All-Versions/master/Missions/nl_NL.json");
                 return result.data;
             };
             fetchMission().then((r) => setMissions(r));

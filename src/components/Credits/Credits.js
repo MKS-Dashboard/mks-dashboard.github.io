@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { axios } from "axios"
+import { Axios } from "axios"
 import { lists_games } from '../../Lists/games';
 
 function Credits() {
@@ -14,7 +14,7 @@ function Credits() {
 
         async function fetchLastUpdate() {
             const fetchUpdate = async () => {
-                const result = await axios("https://api.github.com/repos/Piet2001/Missionfiles-All-Versions/branches/master");
+                const result = await Axios("https://api.github.com/repos/Piet2001/Missionfiles-All-Versions/branches/master");
                 return new Date(result.data.commit.commit.author.date);
             };
             fetchUpdate().then((r) => setLastUpdate(r));

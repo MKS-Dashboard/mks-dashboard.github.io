@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { axios } from "axios"
+import { Axios } from "axios"
 import { lists_Codetranslations, lists_ExcludedMissionKeysAllianceMissions } from '../../Lists/missions';
 
 function AllianceMissions() {
@@ -10,7 +10,7 @@ function AllianceMissions() {
 
         async function fetchAllianceMissions() {
             const fetchMission = async () => {
-                const result = await axios("https://raw.githubusercontent.com/Piet2001/Missionfiles-All-Versions/master/Missions/nl_NL.json");
+                const result = await Axios("https://raw.githubusercontent.com/Piet2001/Missionfiles-All-Versions/master/Missions/nl_NL.json");
                 return result.data.filter(mission => mission.additional.only_alliance_mission === true);
             };
             fetchMission().then((r) => setAllianceMissions(r));
