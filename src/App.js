@@ -90,9 +90,6 @@ function App() {
 
   useEffect(() => {
     Timer > 0 && setTimeout(() => setTimer(Math.floor((newTimer - new Date()) / 1000)), 1000);
-    if (Timer === 0) {
-      setTimer(Math.floor((newTimer - new Date()) / 1000))
-    }
   }, [Timer, newTimer]);
 
   function SetNewTime() {
