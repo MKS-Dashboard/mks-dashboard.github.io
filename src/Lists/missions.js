@@ -63,13 +63,46 @@ export const lists_Codetranslations = [
             "foam": {
                 "one": "Schuimblusvoertuig",
                 "more": "Schuimblusvoertuigen"
+            },
+            "police_horse": {
+                "one": "Politie paard",
+                "more": "Politie paarden"
+            },
+            "gefkw": {
+                "one": "Dienstbus - Arrestantenvervoer",
+                "more": "Dienstbussen - Arrestantenvervoer"
+            },
+            "grukw": {
+                "one": "ME - Flexbus",
+                "more": "ME - Flexbussen"
+            },
+            "lebefkw": {
+                "one": "ME - Commandovoertuig",
+                "more": "ME - Commandovoertuigen"
+            },
+            "detention_unit": {
+                "one": "ME - Aanhoudingseenheid",
+                "more": "ME - Aanhoudingseenheden"
+            },
+            "hondengeleider": {
+                "one": "Hondengeleider",
+                "more": "Hondengeleiders"
+            },
+            "ovdp": {
+                "one": "Officier van dienst - Politie",
+                "more": "Officieren van dienst - Politie"
+            },
+            "police_helicopters": {
+                "one": "Politiehelikopter",
+                "more": "Politiehelikopters"
             }
         },
         "additional": {
             "max_possible_prisoners": "Maximaal aantal gevangenen",
             "possible_patient": "Maximaal aantal patiënten",
             "possible_patient_min": "Minimaal aantal patiënten",
-            "patient_specializations": "Ziekenhuisafdeling"
+            "patient_specializations": "Ziekenhuisafdeling(en)",
+            "patient_at_end_of_mission": "Patiënten na afronden inzet"
         },
         "chances": {
             "patient_transport": "Vervoer kans voor patiënt",

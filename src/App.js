@@ -38,11 +38,11 @@ function App() {
 
   function LoadData() {
     setTimeout(() => {
-      setTimer(5 * 60)
+      SetNewTime()
       fetchUser();
       refreshdata();
       setInterval(() => {
-        setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
+        SetNewTime()
         refreshdata();
       }, 5 * 60 * 1000)
     }, 1000);
@@ -89,12 +89,18 @@ function App() {
   }
 
   useEffect(() => {
-    Timer > 0 && setTimeout(() => setTimer(Timer - 1), 1000);
-    if (Timer === 0) {
-      setTimer(Math.floor((newTimer - new Date()) / 1000))
-    }
+    Timer > 0 && setTimeout(() => setTimer(Math.floor((newTimer - new Date()) / 1000)), 1000);
   }, [Timer, newTimer]);
 
+  function SetNewTime() {
+    if (Timer > 0) {
+      setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
+    }
+    else {
+      setTimer(3)
+      setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
+    }
+  }
 
   return (
     <BrowserRouter>
@@ -128,46 +134,55 @@ function App() {
             <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
           </Layout>
         } />
+
         <Route path='/progressdata' element={
           <Layout loggedIn={loggedIn} countdownGoal={Timer}>
             <Progressdata Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
           </Layout>
         } />
+
         <Route path='/credits' element={
           <Layout loggedIn={loggedIn}>
             <Credits />
           </Layout>
         } />
+
         <Route path='/voorwaarden' element={
           <Layout loggedIn={loggedIn}>
             <Voorwaarden />
           </Layout>
         } />
+
         <Route path='/privacy' element={
           <Layout loggedIn={loggedIn}>
             <Privacy />
           </Layout>
         } />
+
         <Route path='suggestions' element={
           <Layout loggedIn={loggedIn}>
             <Suggestions />
           </Layout>
         } />
+
         <Route path='information' element={
           <Layout loggedIn={loggedIn}>
             <Information />
           </Layout>
         } />
+
         <Route path='information/awards' element={
           <Layout loggedIn={loggedIn}>
             <Awards />
           </Layout>
         } />
+
         <Route path='information/poi' element={
           <Layout loggedIn={loggedIn}>
             <Poi />
           </Layout>
         } />
+
         <Route path='information/alliancemissions' element={
           <Layout loggedIn={loggedIn}>
             <AllianceMissions />
