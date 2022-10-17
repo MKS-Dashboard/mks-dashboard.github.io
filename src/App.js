@@ -11,7 +11,7 @@ import Progressdata from "./components/Progressdata/Progressdata"
 import Suggestions from "./components/Suggestions/suggestions"
 import Login from "./components/Login/Login";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { axios } from "axios";
 import './App.css';
 import Information from "./components/Information/Information";
 import Awards from "./components/Information/Awards";

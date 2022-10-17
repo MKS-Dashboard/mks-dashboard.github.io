@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from "axios"
+import { axios } from "axios"
 import { lists_poi } from '../../Lists/poi';
 
 function Poi() {
