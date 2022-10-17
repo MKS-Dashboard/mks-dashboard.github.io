@@ -38,11 +38,11 @@ function App() {
 
   function LoadData() {
     setTimeout(() => {
-      setTimer(5 * 60)
+      SetNewTime()
       fetchUser();
       refreshdata();
       setInterval(() => {
-        setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
+        SetNewTime()
         refreshdata();
       }, 5 * 60 * 1000)
     }, 1000);
@@ -89,12 +89,21 @@ function App() {
   }
 
   useEffect(() => {
-    Timer > 0 && setTimeout(() => setTimer(Timer - 1), 1000);
+    Timer > 0 && setTimeout(() => setTimer(Math.floor((newTimer - new Date()) / 1000)), 1000);
     if (Timer === 0) {
       setTimer(Math.floor((newTimer - new Date()) / 1000))
     }
   }, [Timer, newTimer]);
 
+  function SetNewTime() {
+    if (Timer > 0) {
+      setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
+    }
+    else {
+      setTimer(3)
+      setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
+    }
+  }
 
   return (
     <BrowserRouter>
