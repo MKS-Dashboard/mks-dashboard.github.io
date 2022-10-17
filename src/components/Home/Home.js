@@ -99,7 +99,6 @@ const Home = (props) => {
     const handleKeyDown = event => {
         console.log('User pressed: ', event.key);
         if (event.key === 'Enter') {
-            console.log('Enter key pressed ✅');
             props.GetData()
         }
     };
