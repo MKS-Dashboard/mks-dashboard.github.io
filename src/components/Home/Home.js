@@ -96,11 +96,13 @@ const Home = (props) => {
         }
     }, []);
 
-    handleKeyPress = (e) => {
-        if (e.key === 'Enter') {
+    const handleKeyDown = event => {
+        console.log('User pressed: ', event.key);
+        if (event.key === 'Enter') {
+            console.log('Enter key pressed ✅');
             props.GetData()
         }
-    }
+    };
 
     return (
         <div id="Container">
@@ -122,7 +124,7 @@ const Home = (props) => {
             </label>
             <br /><br />
             Uw SessionID van <a href="https://meldkamerspel.com">Meldkamerspel.com</a>:<HiInformationCircle size={15} title={`Chrome/Edge: F12(element inspecteren) --> Application --> Cookies --> _session_id\nFirefox: F12(element inspecteren) --> Storage --> Cookies --> _session_id`} /><br />
-            <input name='sessionId' type='password' value={props.template} onChange={e => props.setInputValue(e.target.value)} disabled={!props.agree} onKeyPress={this.handleKeyPress} />
+            <input name='sessionId' type='password' value={props.template} onChange={e => props.setInputValue(e.target.value)} disabled={!props.agree} onKeyDown={handleKeyDown} />
             <input name='submit' type='submit' value='Gegevens ophalen' onClick={() => props.GetData()} disabled={!props.agree} />
 
             <br /> <br /> <br /> <br /> <br />
