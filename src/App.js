@@ -134,46 +134,55 @@ function App() {
             <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
           </Layout>
         } />
+
         <Route path='/progressdata' element={
           <Layout loggedIn={loggedIn} countdownGoal={Timer}>
             <Progressdata Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
           </Layout>
         } />
+
         <Route path='/credits' element={
           <Layout loggedIn={loggedIn}>
             <Credits />
           </Layout>
         } />
+
         <Route path='/voorwaarden' element={
           <Layout loggedIn={loggedIn}>
             <Voorwaarden />
           </Layout>
         } />
+
         <Route path='/privacy' element={
           <Layout loggedIn={loggedIn}>
             <Privacy />
           </Layout>
         } />
+
         <Route path='suggestions' element={
           <Layout loggedIn={loggedIn}>
             <Suggestions />
           </Layout>
         } />
+
         <Route path='information' element={
           <Layout loggedIn={loggedIn}>
             <Information />
           </Layout>
         } />
+
         <Route path='information/awards' element={
           <Layout loggedIn={loggedIn}>
             <Awards />
           </Layout>
         } />
+
         <Route path='information/poi' element={
           <Layout loggedIn={loggedIn}>
             <Poi />
           </Layout>
         } />
+
         <Route path='information/alliancemissions' element={
           <Layout loggedIn={loggedIn}>
             <AllianceMissions />
