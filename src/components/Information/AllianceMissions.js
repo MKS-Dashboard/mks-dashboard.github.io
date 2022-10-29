@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
 import { lists_Codetranslations, lists_ExcludedMissionKeysAllianceMissions } from '../../Lists/missions';
+import Loading from '../Default/Loading';
 
 function AllianceMissions() {
     const [allianceMissions, setAllianceMissions] = useState([])
@@ -110,7 +111,7 @@ function AllianceMissions() {
                 }
                 else {
                     return (
-                        <p>Momenteel verzamelen wij de data over de inzetten</p>
+                        <Loading />
                     )
                 }
             })()}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import Loading from '../Default/Loading';
 import "./Progressdata.css";
 
 function Progressdata(props) {
@@ -59,29 +60,46 @@ function Progressdata(props) {
     return (
         <div id="Container">
             <h4>Hieronder vind je informatie over de bedden van ziekenhuizen</h4>
-            Eigen ({(usedBedsUser / totalBedsUser * 100).toFixed(2)}% in gebruik):
-            <ProgressBar>
-                <ProgressBar animated striped variant="danger" now={usedBedsUser} key={1} min={0} max={totalBedsUser} label={usedBedsUser?.toLocaleString()} />
-                <ProgressBar animated striped variant="success" now={totalBedsUser - usedBedsUser} key={2} min={0} max={totalBedsUser} label={(totalBedsUser - usedBedsUser)?.toLocaleString()} />
-            </ProgressBar>
-            Team ({(usedBedsTeam / totalBedsTeam * 100).toFixed(2)}% in gebruik):
-            <ProgressBar>
-                <ProgressBar animated striped variant="danger" now={usedBedsTeam} key={1} min={0} max={totalBedsTeam} label={usedBedsTeam?.toLocaleString()} />
-                <ProgressBar animated striped variant="success" now={totalBedsTeam - usedBedsTeam} key={2} min={0} max={totalBedsTeam} label={(totalBedsTeam - usedBedsTeam)?.toLocaleString()} />
-            </ProgressBar>
-            <br />
-            <h4>Hieronder vind je informatie over de cellen</h4>
-            Eigen ({(usedCellsUser / totalCellsUser * 100).toFixed(2)}% in gebruik):
-            <ProgressBar>
-                <ProgressBar animated striped variant="danger" now={usedCellsUser} key={1} min={0} max={totalCellsUser} label={usedCellsUser?.toLocaleString()} />
-                <ProgressBar animated striped variant="success" now={totalCellsUser - usedCellsUser} key={2} min={0} max={totalCellsUser} label={(totalCellsUser - usedCellsUser)?.toLocaleString()} />
-            </ProgressBar>
-            Team ({(usedCellsTeam / totalCellsTeam * 100).toFixed(2)}% in gebruik):
-            <ProgressBar>
-                <ProgressBar animated striped variant="danger" now={usedCellsTeam} key={1} min={0} max={totalCellsTeam} label={usedCellsTeam?.toLocaleString()} />
-                <ProgressBar animated striped variant="success" now={totalCellsTeam - usedCellsTeam} key={2} min={0} max={totalCellsTeam} label={(totalCellsTeam - usedCellsTeam)?.toLocaleString()} />
-            </ProgressBar>
-            <br />
+
+            {(() => {
+                if (props.Buildings.length > 0 && props.AllianceBuildings.length > 0) {
+                    return (
+                        <>
+                            Eigen ({(usedBedsUser / totalBedsUser * 100).toFixed(2)}% in gebruik):
+                            <ProgressBar>
+                                <ProgressBar animated striped variant="danger" now={usedBedsUser} key={1} min={0} max={totalBedsUser} label={usedBedsUser?.toLocaleString()} />
+                                <ProgressBar animated striped variant="success" now={totalBedsUser - usedBedsUser} key={2} min={0} max={totalBedsUser} label={(totalBedsUser - usedBedsUser)?.toLocaleString()} />
+                            </ProgressBar>
+                            Team ({(usedBedsTeam / totalBedsTeam * 100).toFixed(2)}% in gebruik):
+                            <ProgressBar>
+                                <ProgressBar animated striped variant="danger" now={usedBedsTeam} key={1} min={0} max={totalBedsTeam} label={usedBedsTeam?.toLocaleString()} />
+                                <ProgressBar animated striped variant="success" now={totalBedsTeam - usedBedsTeam} key={2} min={0} max={totalBedsTeam} label={(totalBedsTeam - usedBedsTeam)?.toLocaleString()} />
+                            </ProgressBar>
+                            <br />
+                            <h4>Hieronder vind je informatie over de cellen</h4>
+                            Eigen ({(usedCellsUser / totalCellsUser * 100).toFixed(2)}% in gebruik):
+                            <ProgressBar>
+                                <ProgressBar animated striped variant="danger" now={usedCellsUser} key={1} min={0} max={totalCellsUser} label={usedCellsUser?.toLocaleString()} />
+                                <ProgressBar animated striped variant="success" now={totalCellsUser - usedCellsUser} key={2} min={0} max={totalCellsUser} label={(totalCellsUser - usedCellsUser)?.toLocaleString()} />
+                            </ProgressBar>
+                            Team ({(usedCellsTeam / totalCellsTeam * 100).toFixed(2)}% in gebruik):
+                            <ProgressBar>
+                                <ProgressBar animated striped variant="danger" now={usedCellsTeam} key={1} min={0} max={totalCellsTeam} label={usedCellsTeam?.toLocaleString()} />
+                                <ProgressBar animated striped variant="success" now={totalCellsTeam - usedCellsTeam} key={2} min={0} max={totalCellsTeam} label={(totalCellsTeam - usedCellsTeam)?.toLocaleString()} />
+                            </ProgressBar>
+                            <br />
+                        </>
+                    )
+                }
+                else {
+                    return (
+                        <Loading loadingtext='Momenteel verzamelen we de data, duurt dit lang? Controleer of je bent ingelogd.' />
+                    )
+                }
+
+            })()}
+
+
         </div>
     );
 }

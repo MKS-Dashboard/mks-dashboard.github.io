@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { lists_BuildingExtensionsOverview, lists_BuildingInformation } from "../../Lists/buildings";
+import Loading from "../Default/Loading";
 
 function Buildings(props) {
 
@@ -51,64 +52,80 @@ function Buildings(props) {
         <div id="Container">
             Je bevind je nu op de gebouwen pagina.
 
-            <h2> Gebouwen ({buildingTypes.reduce(function (prev, cur) {
-                return prev + cur.inbezit;
-            }, 0).toLocaleString()})</h2>
-            <table className="table" id="Tabel">
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Aantal</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    {(() => {
-
-                        var buildingsinbezit = buildingTypes.filter(building => building.inbezit > 0)
-                        return (
-                            buildingsinbezit.map((building) => {
-                                return (
-                                    <tr key={building.ID}>
-                                        <td>{building.name}</td>
-                                        <td>{building.inbezit.toLocaleString()}</td>
+            {(() => {
+                if (buildingTypes.length > 0 && extensions.length > 0) {
+                    return (
+                        <>
+                            <h2> Gebouwen ({buildingTypes.reduce(function (prev, cur) {
+                                return prev + cur.inbezit;
+                            }, 0).toLocaleString()})</h2>
+                            <table className="table" id="Tabel">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Aantal</th>
                                     </tr>
-                                )
-                            }
-                            ))
-                    })()}
-                </tbody>
-            </table>
+                                </thead>
+                                <tbody>
 
-            <h2> Uitbreidingen ({extensions.reduce(function (prev, cur) {
-                return prev + cur.amount;
-            }, 0).toLocaleString()})</h2>
-            <table className="table" id="Tabel">
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Aantal</th>
-                    </tr>
-                </thead>
-                <tbody>
+                                    {(() => {
 
-                    {(() => {
-                        extensions.sort((a, b) => (a.name > b.name) ? 1 : -1)
-                        var extensionsinbezit = extensions.filter(ex => ex.amount > 0)
+                                        var buildingsinbezit = buildingTypes.filter(building => building.inbezit > 0)
+                                        return (
+                                            buildingsinbezit.map((building) => {
+                                                return (
+                                                    <tr key={building.ID}>
+                                                        <td>{building.name}</td>
+                                                        <td>{building.inbezit.toLocaleString()}</td>
+                                                    </tr>
+                                                )
+                                            }
+                                            ))
+                                    })()}
+                                </tbody>
+                            </table>
 
-                        return (
-                            extensionsinbezit.map((ex) => {
-                                return (
-                                    <tr key={ex.name}>
-                                        <td>{ex.name}</td>
-                                        <td>{ex.amount.toLocaleString()}</td>
+                            <h2> Uitbreidingen ({extensions.reduce(function (prev, cur) {
+                                return prev + cur.amount;
+                            }, 0).toLocaleString()})</h2>
+                            <table className="table" id="Tabel">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Aantal</th>
                                     </tr>
-                                )
-                            }
-                            ))
-                    })()}
-                </tbody>
-            </table>
+                                </thead>
+                                <tbody>
+
+                                    {(() => {
+                                        extensions.sort((a, b) => (a.name > b.name) ? 1 : -1)
+                                        var extensionsinbezit = extensions.filter(ex => ex.amount > 0)
+
+                                        return (
+                                            extensionsinbezit.map((ex) => {
+                                                return (
+                                                    <tr key={ex.name}>
+                                                        <td>{ex.name}</td>
+                                                        <td>{ex.amount.toLocaleString()}</td>
+                                                    </tr>
+                                                )
+                                            }
+                                            ))
+                                    })()}
+                                </tbody>
+                            </table>
+                        </>
+                    )
+                }
+                else {
+                    return (
+                        <Loading />
+                    )
+                }
+
+            })()}
+
+
         </div>
     )
 }
