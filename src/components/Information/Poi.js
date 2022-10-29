@@ -26,7 +26,6 @@ function Poi() {
             for (let i = 0; i < poi_check.length; i++) {
                 poi_check[i].used = missions.filter(mission => mission.place_array.includes(poi_check[i].name)).length
             }
-            console.log(poi_check)
             setPoi(poi_check);
         }
     }, []);
