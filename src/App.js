@@ -17,6 +17,7 @@ import Information from "./components/Information/Information";
 import Awards from "./components/Information/Awards";
 import Poi from "./components/Information/Poi";
 import AllianceMissions from "./components/Information/AllianceMissions";
+import NotFound from "./components/Default/NotFound";
 
 function App() {
   let apiUrl;
@@ -188,6 +189,12 @@ function App() {
             <AllianceMissions />
           </Layout>
         } />
+        <Route path="*" element={
+          <Layout>
+            <NotFound />
+          </Layout>
+        }
+        />
       </Routes>
     </BrowserRouter>
   );
