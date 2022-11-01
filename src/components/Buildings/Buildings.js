@@ -21,10 +21,20 @@ function Buildings(props) {
             }
 
             for (let i = 0; i < types.length; i++) {
-                types[i].inbezit = data.filter(building => building.building_type === types[i].ID).length
+                if (types[i].BuildingCounter === true) {
+                    types[i].inbezit = data.filter(building => building.building_type === types[i].ID).length
 
-                if (types[i].LevelCountAsBuilding === true) {
-                    types[i].inbezit += data.filter(building => building.building_type === types[i].ID).reduce((n, { level }) => n + level, 0)
+                    if (types[i].LevelCountAsBuilding === true) {
+                        types[i].inbezit += data.filter(building => building.building_type === types[i].ID).reduce((n, { level }) => n + level, 0)
+                    }
+                }
+
+                if (types[i].ExtensionCountAsBuilding === true) {
+                    var buildingsSelected = data.filter(building => types[i].ExtensionPossibleOnBuilding.includes(building.building_type))
+                    types[i].inbezit = 0
+                    for (let j = 0; j < buildingsSelected.length; j++) {
+                        types[i].inbezit += buildingsSelected[j].extensions.filter(ex => types[i].ExtensionNames.includes(ex.caption)).length
+                    }
                 }
             }
 
@@ -57,7 +67,12 @@ function Buildings(props) {
                     return (
                         <>
                             <h2> Gebouwen ({buildingTypes.reduce(function (prev, cur) {
-                                return prev + cur.inbezit;
+                                if (cur.inbezit > 0) {
+                                    return prev + cur.inbezit;
+                                }
+                                else {
+                                    return prev
+                                }
                             }, 0).toLocaleString()})</h2>
                             <table className="table" id="Tabel">
                                 <thead>

@@ -335,10 +335,10 @@ function Vehicles(props) {
                                 </tbody>
                             </table>
 
-                            <h2> KNRM/RB ({vehicleTypes.filter(vehicle => vehicle.categorie === "Waterredding").reduce(function (prev, cur) {
+                            <h2> Kustwacht ({vehicleTypes.filter(vehicle => vehicle.categorie === "Kustwacht").reduce(function (prev, cur) {
                                 return prev + cur.inbezit;
                             }, 0).toLocaleString()})</h2>
-                            <table className="table" id="Waterredding">
+                            <table className="table" id="Kustwacht">
                                 <thead>
                                     <tr>
                                         <th>Afkorting</th>
@@ -350,7 +350,7 @@ function Vehicles(props) {
 
                                     {(() => {
 
-                                        var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === "Waterredding")
+                                        var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === "Kustwacht")
                                         return (
                                             vehicleinbezit.map((vehicle) => {
                                                 return (
@@ -366,7 +366,7 @@ function Vehicles(props) {
                                 </tbody>
                             </table>
                             <br />
-                            <table className="table" id="Waterredding">
+                            <table className="table" id="Kustwacht">
                                 <thead>
                                     <tr>
                                         <th>Groep</th>
@@ -378,7 +378,7 @@ function Vehicles(props) {
 
                                     {(() => {
 
-                                        var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === "Waterredding")
+                                        var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === "Kustwacht")
                                         return (
                                             groepen.map((groep) => {
                                                 return (

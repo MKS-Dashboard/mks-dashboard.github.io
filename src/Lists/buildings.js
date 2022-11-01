@@ -10,12 +10,14 @@ export const lists_BuildingInformation = [
             "Haakarmbak parkeerplaats",
             "Schuimblussing"
         ],
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 1,
         "name": "Meldkamer",
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 2,
@@ -31,13 +33,15 @@ export const lists_BuildingInformation = [
             "Cardiologie",
             "Cardiochirurgie"
         ],
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 3,
         "name": "Ambulance, Standplaats",
         "smallBuildingId": 13,
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 4,
@@ -45,7 +49,8 @@ export const lists_BuildingInformation = [
         "extentions": [
             "Extra klaslokaal"
         ],
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 5,
@@ -55,12 +60,14 @@ export const lists_BuildingInformation = [
             "Gevangeniscel",
             "Extra cel"
         ],
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 6,
         "name": "MMT, Standplaats",
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 7,
@@ -68,7 +75,8 @@ export const lists_BuildingInformation = [
         "extentions": [
             "Extra klaslokaal"
         ],
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 8,
@@ -76,17 +84,20 @@ export const lists_BuildingInformation = [
         "extentions": [
             "Extra klaslokaal"
         ],
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 9,
         "name": "Politiehelikoper standplaats",
-        "LevelCountAsBuilding": true
+        "LevelCountAsBuilding": true,
+        "BuildingCounter": true,
     },
     {
         "ID": 10,
         "name": "Uitgangstelling (UGS)",
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 11,
@@ -101,7 +112,8 @@ export const lists_BuildingInformation = [
             "Bereden Brigade",
             "Arrestatieteam"
         ],
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 12,
@@ -110,27 +122,35 @@ export const lists_BuildingInformation = [
             "Gevangeniscel",
             "Extra cel"
         ],
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 13,
         "name": "Ambulance, VWS-post",
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 14,
         "name": "Groot gebouwencomplex",
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 15,
         "name": "Klein gebouwencomplex",
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 16,
         "name": "Waterreddingspost",
-        "LevelCountAsBuilding": false
+        "extentions": [
+            "Boten"
+        ],
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 17,
@@ -142,7 +162,8 @@ export const lists_BuildingInformation = [
             "Haakarmbak parkeerplaats",
             "Schuimblussing"
         ],
-        "LevelCountAsBuilding": false
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
     {
         "ID": 18,
@@ -151,8 +172,40 @@ export const lists_BuildingInformation = [
             "Gevangeniscel",
             "Extra cel"
         ],
-        "LevelCountAsBuilding": false
-    }
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
+    },
+    {
+        "ID": 19,
+        "name": "Kustwacht haven",
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
+    },
+    {
+        "ID": 20,
+        "name": "SAR academie",
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
+    },
+    {
+        "ID": 21,
+        "name": "SAR Helikopter platform",
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": false,
+    },
+    // counters
+    {
+        "ID": "a",
+        "name": "SAR Helikopter platform",
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": false,
+        "ExtensionCountAsBuilding": true,
+        "ExtensionPossibleOnBuilding": [21],
+        "ExtensionNames": [
+            "SAR Helikopter Hangar",
+            "Extra SAR Helikopter Hangar"
+        ]
+    },
 ]
 
 export const lists_BuildingExtensionsOverview = [
@@ -230,5 +283,14 @@ export const lists_BuildingExtensionsOverview = [
     },
     {
         "name": "Arrestatieteam"
+    },
+    {
+        "name": "Boten"
+    },
+    {
+        "name": "SAR Helikopter Hangar"
+    },
+    {
+        "name": "Extra SAR Helikopter Hangar"
     }
 ]

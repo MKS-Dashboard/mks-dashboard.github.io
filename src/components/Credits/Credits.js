@@ -62,8 +62,6 @@ function Credits() {
         setLanguage(event.target.value)
     };
 
-    console.log(lists_translations_credits[0][language])
-
     return (
 
         <div id="Container">
