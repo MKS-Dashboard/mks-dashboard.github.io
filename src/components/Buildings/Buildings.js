@@ -66,14 +66,14 @@ function Buildings(props) {
                 if (buildingTypes.length > 0 && extensions.length > 0) {
                     return (
                         <>
-                            <h2> Gebouwen ({buildingTypes.reduce(function (prev, cur) {
+                            <h2> Gebouwen (Technisch: {buildingTypes.reduce(function (prev, cur) {
                                 if (cur.inbezit > 0) {
                                     return prev + cur.inbezit;
                                 }
                                 else {
                                     return prev
                                 }
-                            }, 0).toLocaleString()})</h2>
+                            }, 0).toLocaleString()} / Fysiek: {props.buildingsData.length} )</h2>
                             <table className="table" id="Tabel">
                                 <thead>
                                     <tr>
