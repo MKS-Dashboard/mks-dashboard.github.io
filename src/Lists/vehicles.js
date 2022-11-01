@@ -387,19 +387,19 @@ export const lists_Vehicles = [
         "ID": 65,
         "name": "DAT-RB",
         "namelong": "Dienstauto Terreinwaardig - Reddingsbrigade",
-        "categorie": "Waterredding"
+        "categorie": "Kustwacht"
     },
     {
         "ID": 66,
         "name": "KHV",
         "namelong": "Kusthulpverleningsvoertuig",
-        "categorie": "Waterredding"
+        "categorie": "Kustwacht"
     },
     {
         "ID": 67,
         "name": "BA-RB",
         "namelong": "Bootaanhanger Reddingsbrigade",
-        "categorie": "Waterredding"
+        "categorie": "Kustwacht"
     },
     {
         "ID": 68,
@@ -448,6 +448,36 @@ export const lists_Vehicles = [
         "name": "DAT-NH",
         "namelong": "Dienstauto terreinvaardig - Noodhulp",
         "categorie": "Politie"
+    },
+    {
+        "ID": 76,
+        "name": "Quad",
+        "namelong": "Quad Reddingsbrigade",
+        "categorie": "Kustwacht"
+    },
+    {
+        "ID": 77,
+        "name": "KW-Boot",
+        "namelong": "Kustwacht boot",
+        "categorie": "Kustwacht"
+    },
+    {
+        "ID": 78,
+        "name": "RB-K",
+        "namelong": "Reddingsboot klein",
+        "categorie": "Kustwacht"
+    },
+    {
+        "ID": 79,
+        "name": "RB-G",
+        "namelong": "Reddingsboot groot",
+        "categorie": "Kustwacht"
+    },
+    {
+        "ID": 80,
+        "name": "SAR-Heli",
+        "namelong": "SAR helikopter",
+        "categorie": "Kustwacht"
     }
 ]
 
@@ -456,7 +486,8 @@ export const lists_vehicleGroups = [
         "name": "Mobiel Medisch Team",
         "vehicles": [
             23,
-            37
+            37,
+            80
         ],
         "type": "Ambulance"
     },
@@ -623,9 +654,10 @@ export const lists_vehicleGroups = [
         "name": "Strandvoertuigen",
         "vehicles": [
             65,
-            66
+            66,
+            76
         ],
-        "type": "Waterredding"
+        "type": "Kustwacht"
     },
     {
         "name": "Boten",
@@ -633,7 +665,7 @@ export const lists_vehicleGroups = [
             36,
             67
         ],
-        "type": "Waterredding"
+        "type": "Kustwacht"
     },
     {
         "name": "Boten",
@@ -642,6 +674,14 @@ export const lists_vehicleGroups = [
             67
         ],
         "type": "Brandweer"
+    },
+    {
+        "name": "Reddingsboten",
+        "vehicles": [
+            78,
+            79
+        ],
+        "type": "Kustwacht"
     }
 ]
 
