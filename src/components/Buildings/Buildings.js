@@ -73,7 +73,7 @@ function Buildings(props) {
                                 else {
                                     return prev
                                 }
-                            }, 0).toLocaleString()} / Fysiek: {props.buildingsData.length} )</h2>
+                            }, 0).toLocaleString()} / Fysiek: {props.buildingsData.length.toLocaleString()} )</h2>
                             <table className="table" id="Tabel">
                                 <thead>
                                     <tr>
