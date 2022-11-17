@@ -99,6 +99,7 @@ export const lists_Codetranslations = [
         },
         "additional": {
             "max_possible_prisoners": "Maximaal aantal gevangenen",
+            "min_possible_prisoners": "Minimaal aantal gevangenen",
             "possible_patient": "Maximaal aantal patiënten",
             "possible_patient_min": "Minimaal aantal patiënten",
             "patient_specializations": "Ziekenhuisafdeling(en)",
