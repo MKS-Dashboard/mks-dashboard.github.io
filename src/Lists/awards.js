@@ -194,5 +194,12 @@ export const lists_awards = [
         "zilver": 15,
         "goud": 50,
         "type": "Doorlopend"
+    },
+    {
+        "naam": "Wereldkampioenschap voetbal 2022 - Award",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
     }
 ]
