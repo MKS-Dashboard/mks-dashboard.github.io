@@ -22,8 +22,8 @@ function Hospitals(props) {
 
         function selectHospitals() {
             var hospitalList = props.buildingsData.filter(b => b.building_type === 2)
-            for (let i = 0; i < hospitals.length; i++) {
-                hospitals[i].beds = 10 + (hospitals[i].level ?? 0)
+            for (let i = 0; i < hospitalList.length; i++) {
+                hospitalList[i].beds = 10 + (hospitalList[i].level ?? 0)
             }
             setHospitals(hospitalList)
         }
@@ -54,11 +54,12 @@ function Hospitals(props) {
                                                 {(() => {
 
                                                     if (!orderDesc) {
-                                                        hospitals.sort((a, b) => (a[orderby] - b[orderby]) || a.caption.localeCompare(b.caption),)
+                                                        hospitals.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1)
                                                     }
                                                     else {
-                                                        hospitals.sort((a, b) => (a[orderby] - b[orderby]) || a.caption.localeCompare(b.caption),)
+                                                        hospitals.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1)
                                                     }
+
                                                     return (
                                                         hospitals.map((building) => {
                                                             return (
