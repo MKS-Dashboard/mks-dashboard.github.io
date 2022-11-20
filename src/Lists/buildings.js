@@ -294,3 +294,18 @@ export const lists_BuildingExtensionsOverview = [
         "name": "Extra SAR Helikopter Hangar"
     }
 ]
+
+export const lists_BuildingSpecialisations = [
+    {
+        "name": "Luchthaven Specialisatie",
+        "type": "airport"
+    },
+    {
+        "name": "Schuimblussing Specialisatie",
+        "type": "fire_support"
+    },
+    {
+        "name": "Waterongevallen Specialisatie",
+        "type": "water_rescue"
+    }
+]

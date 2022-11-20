@@ -24,9 +24,14 @@ const Header = (props) => {
             <Link hidden={!props.loggedIn} className="link" to="/vehicles" >
               <RiPoliceCarFill id="icon" size={50} />
             </Link>
-            <Link hidden={!props.loggedIn} className="link" to="/buildings">
-              <FaBuilding id="icon" size={50} />
-            </Link>
+            <NavDropdown hidden={!props.loggedIn} title={<FaBuilding id="icon" size={50} />} id="nav-dropdown" className="link">
+              <NavDropdown.Item >
+                <Link className="link" to="/buildings">Overzicht</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="Link" to="/buildings/specialisations">Specialisaties</Link>
+              </NavDropdown.Item>
+            </NavDropdown>
             <Link hidden={!props.loggedIn} className="link" to="/alliancebuildings">
               <TiGroup id="icon" size={50} />
             </Link>

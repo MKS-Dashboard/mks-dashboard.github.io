@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { lists_BuildingExtensionsOverview, lists_BuildingInformation } from "../../Lists/buildings";
+import { lists_BuildingExtensionsOverview, lists_BuildingInformation, lists_BuildingSpecialisations } from "../../Lists/buildings";
 import Loading from "../Default/Loading";
 
 function Buildings(props) {
 
     const [buildingTypes, setBuildingTypes] = useState([]);
     const [extensions, setExtensions] = useState([]);
+    const [specialisations, setSpecialisations] = useState([])
 
     useEffect(() => {
         update(lists_BuildingInformation)
@@ -55,6 +56,16 @@ function Buildings(props) {
             setExtensions(data)
         }
 
+        updateSpecialisations(lists_BuildingSpecialisations)
+        async function updateSpecialisations(data) {
+            var buildingData = props.buildingsData.filter(b => b.hasOwnProperty('specialization'))
+
+            for (let m = 0; m < data.length; m++) {
+                data[m].amount = buildingData.filter(building => building.specialization.type === data[m].type).length
+            }
+            setSpecialisations(data)
+        }
+
     }, [props.buildingsData,]);
 
 
@@ -63,7 +74,7 @@ function Buildings(props) {
             Je bevind je nu op de gebouwen pagina.
 
             {(() => {
-                if (buildingTypes.length > 0 && extensions.length > 0) {
+                if (buildingTypes.length > 0 && extensions.length > 0 && specialisations.length > 0) {
                     return (
                         <>
                             <h2> Gebouwen (Technisch: {buildingTypes.reduce(function (prev, cur) {
@@ -122,6 +133,36 @@ function Buildings(props) {
                                                     <tr key={ex.name}>
                                                         <td>{ex.name}</td>
                                                         <td>{ex.amount.toLocaleString()}</td>
+                                                    </tr>
+                                                )
+                                            }
+                                            ))
+                                    })()}
+                                </tbody>
+                            </table>
+
+                            <h2>Specialisaties ({specialisations.reduce(function (prev, cur) {
+                                return prev + cur.amount;
+                            }, 0).toLocaleString()})</h2>
+                            <table className="table" id="Tabel">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Aantal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {(() => {
+                                        specialisations.sort((a, b) => (a.name > b.name) ? 1 : -1)
+                                        var specialisationsinbezit = specialisations.filter(sp => sp.amount > 0)
+
+                                        return (
+                                            specialisationsinbezit.map((sp) => {
+                                                return (
+                                                    <tr key={sp.name}>
+                                                        <td>{sp.name}</td>
+                                                        <td>{sp.amount.toLocaleString()}</td>
                                                     </tr>
                                                 )
                                             }

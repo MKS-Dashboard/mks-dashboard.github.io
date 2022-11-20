@@ -18,6 +18,7 @@ import Awards from "./components/Information/Awards";
 import Poi from "./components/Information/Poi";
 import AllianceMissions from "./components/Information/AllianceMissions";
 import NotFound from "./components/Default/NotFound";
+import BuildingSpecialisations from "./components/Buildings/BuildingSpecialisations";
 
 function App() {
   let apiUrl;
@@ -32,7 +33,6 @@ function App() {
   const [RememberSession, SetRememberSession] = useState(Boolean(JSON.parse(localStorage.getItem('remember_session'))) || false)
 
 
-  console.log(`test: ${Boolean(JSON.parse(localStorage.getItem('remember_session'))) || false}`)
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
     apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net"
   }
@@ -176,11 +176,24 @@ function App() {
         <Route
           path='/buildings'
           element={
-            <Layout l
-              oggedIn={loggedIn}
+            <Layout
+              loggedIn={loggedIn}
               countdownGoal={Timer}
             >
               <Buildings
+                buildingsData={ApiBuildings}
+              />
+            </Layout>
+          } />
+
+        <Route
+          path='/buildings/specialisations'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <BuildingSpecialisations
                 buildingsData={ApiBuildings}
               />
             </Layout>
@@ -226,7 +239,9 @@ function App() {
         <Route
           path='/voorwaarden'
           element={
-            <Layout>
+            <Layout
+              loggedIn={loggedIn}
+            >
               <Voorwaarden />
             </Layout>
           } />
@@ -234,7 +249,9 @@ function App() {
         <Route
           path='/privacy'
           element={
-            <Layout    >
+            <Layout
+              loggedIn={loggedIn}
+            >
               <Privacy />
             </Layout>
           } />
@@ -272,7 +289,9 @@ function App() {
         <Route
           path='information/poi'
           element={
-            <Layout>
+            <Layout
+              loggedIn={loggedIn}
+            >
               <Poi />
             </Layout>
           } />
@@ -289,7 +308,9 @@ function App() {
         <Route
           path="*"
           element={
-            <Layout>
+            <Layout
+              loggedIn={loggedIn}
+            >
               <NotFound />
             </Layout>
           }
