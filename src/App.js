@@ -124,106 +124,175 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={
-          <Layout
-            refresh={refreshdata}
-            loggedIn={loggedIn}
-            countdownGoal={Timer}
-          >
-            <Home
-              setInputValue={setSessionId}
-              GetData={LoadData}
-              template={sessionId}
-              agree={Agree}
-              updateAgree={updateAgree}
-              rememberSession={RememberSession}
-              updateRememberSession={updateRememberSession}
-            />
-          </Layout>}
+        <Route
+          path='/'
+          element={
+            <Layout
+              refresh={refreshdata}
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <Home
+                setInputValue={setSessionId}
+                GetData={LoadData}
+                template={sessionId}
+                agree={Agree}
+                updateAgree={updateAgree}
+                rememberSession={RememberSession}
+                updateRememberSession={updateRememberSession}
+              />
+            </Layout>}
         />
 
-        <Route path='/login/*' element={
-          <Layout refresh={refreshdata}>
-            <Login setInputValue={setSessionId} GetData={LoadData} template={sessionId} agree={Agree} setAgree={setAgree} />
-          </Layout>}
+        <Route
+          path='/login/*'
+          element={
+            <Layout
+              refresh={refreshdata}
+            >
+              <Login
+                setInputValue={setSessionId}
+                GetData={LoadData}
+                template={sessionId}
+                agree={Agree}
+                setAgree={setAgree}
+              />
+            </Layout>}
         />
 
-        <Route path='/vehicles' element={
-          <Layout loggedIn={loggedIn} countdownGoal={Timer}>
-            <Vehicles vehicleData={ApiVehicles} />
-          </Layout>
-        } />
+        <Route
+          path='/vehicles'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <Vehicles v
+                ehicleData={ApiVehicles}
+              />
+            </Layout>
+          } />
 
-        <Route path='/buildings' element={
-          <Layout loggedIn={loggedIn} countdownGoal={Timer}>
-            <Buildings buildingsData={ApiBuildings} />
-          </Layout>
-        } />
+        <Route
+          path='/buildings'
+          element={
+            <Layout l
+              oggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <Buildings
+                buildingsData={ApiBuildings}
+              />
+            </Layout>
+          } />
 
-        <Route path='/alliancebuildings' element={
-          <Layout loggedIn={loggedIn} countdownGoal={Timer}>
-            <AllianceBuildings allianceBuildingsData={ApiAllianceBuildings} />
-          </Layout>
-        } />
+        <Route
+          path='/alliancebuildings'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <AllianceBuildings
+                allianceBuildingsData={ApiAllianceBuildings}
+              />
+            </Layout>
+          } />
 
-        <Route path='/progressdata' element={
-          <Layout loggedIn={loggedIn} countdownGoal={Timer}>
-            <Progressdata Buildings={ApiBuildings} AllianceBuildings={ApiAllianceBuildings} />
-          </Layout>
-        } />
+        <Route
+          path='/progressdata'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <Progressdata
+                Buildings={ApiBuildings}
+                AllianceBuildings={ApiAllianceBuildings}
+              />
+            </Layout>
+          } />
 
-        <Route path='/credits' element={
-          <Layout loggedIn={loggedIn}>
-            <Credits />
-          </Layout>
-        } />
+        <Route
+          path='/credits'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+            >
+              <Credits />
+            </Layout>
+          } />
 
-        <Route path='/voorwaarden' element={
-          <Layout loggedIn={loggedIn}>
-            <Voorwaarden />
-          </Layout>
-        } />
+        <Route
+          path='/voorwaarden'
+          element={
+            <Layout>
+              <Voorwaarden />
+            </Layout>
+          } />
 
-        <Route path='/privacy' element={
-          <Layout loggedIn={loggedIn}>
-            <Privacy />
-          </Layout>
-        } />
+        <Route
+          path='/privacy'
+          element={
+            <Layout    >
+              <Privacy />
+            </Layout>
+          } />
 
-        <Route path='suggestions' element={
-          <Layout loggedIn={loggedIn}>
-            <Suggestions />
-          </Layout>
-        } />
+        <Route
+          path='suggestions'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+            >
+              <Suggestions />
+            </Layout>
+          } />
 
-        <Route path='information' element={
-          <Layout loggedIn={loggedIn}>
-            <Information />
-          </Layout>
-        } />
+        <Route
+          path='information'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+            >
+              <Information />
+            </Layout>
+          } />
 
-        <Route path='information/awards' element={
-          <Layout loggedIn={loggedIn}>
-            <Awards />
-          </Layout>
-        } />
+        <Route
+          path='information/awards'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+            >
+              <Awards />
+            </Layout>
+          } />
 
-        <Route path='information/poi' element={
-          <Layout loggedIn={loggedIn}>
-            <Poi />
-          </Layout>
-        } />
+        <Route
+          path='information/poi'
+          element={
+            <Layout>
+              <Poi />
+            </Layout>
+          } />
 
-        <Route path='information/alliancemissions' element={
-          <Layout loggedIn={loggedIn}>
-            <AllianceMissions />
-          </Layout>
-        } />
-        <Route path="*" element={
-          <Layout>
-            <NotFound />
-          </Layout>
-        }
+        <Route
+          path='information/alliancemissions'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+            >
+              <AllianceMissions />
+            </Layout>
+          } />
+        <Route
+          path="*"
+          element={
+            <Layout>
+              <NotFound />
+            </Layout>
+          }
         />
       </Routes>
     </BrowserRouter>
