@@ -46,7 +46,6 @@ function BuildingSpecialisations(props) {
                                                         {(() => {
                                                             return (
                                                                 specialisation.buildings.map((building) => {
-                                                                    console.log(building.specialization.active)
                                                                     return (
                                                                         <tr key={building.id}>
                                                                             <td>{building.id}</td>
