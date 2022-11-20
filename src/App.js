@@ -21,15 +21,18 @@ import NotFound from "./components/Default/NotFound";
 
 function App() {
   let apiUrl;
-  const [inputvalue, setInputValue] = useState("")
+  const [sessionId, setSessionId] = useState(localStorage.getItem('session') || "dit is een test")
   const [ApiVehicles, setApiVehicles] = useState([]);
   const [ApiBuildings, setApiBuildings] = useState([]);
   const [ApiAllianceBuildings, setApiAllianceBuildings] = useState([])
-  const [Agree, setAgree] = React.useState(false)
+  const [Agree, setAgree] = useState(false)
   const loggedIn = (ApiVehicles.length > 0 || ApiBuildings.length > 0) ? true : false;
   const [Timer, setTimer] = useState(0);
   const [newTimer, setNewTimer] = useState();
+  const [RememberSession, SetRememberSession] = useState(Boolean(JSON.parse(localStorage.getItem('remember_session'))) || false)
 
+
+  console.log(`test: ${Boolean(JSON.parse(localStorage.getItem('remember_session'))) || false}`)
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
     apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net"
   }
@@ -49,6 +52,11 @@ function App() {
     }, 1000);
   }
 
+  function updateRememberSession() {
+    localStorage.setItem('remember_session', !RememberSession)
+    SetRememberSession(!RememberSession)
+  }
+
   function refreshdata() {
     fetchVehicles();
     fetchBuildings();
@@ -57,7 +65,7 @@ function App() {
 
   async function fetchVehicles() {
     const fetchVersions = async () => {
-      const result = await axios(`${apiUrl}/vehicles/${inputvalue}`);
+      const result = await axios(`${apiUrl}/vehicles/${sessionId}`);
       return result.data;
     };
     fetchVersions().then((r) => setApiVehicles(r))
@@ -65,7 +73,7 @@ function App() {
 
   async function fetchBuildings() {
     const fetchBuildings = async () => {
-      const result = await axios(`${apiUrl}/buildings/${inputvalue}`);
+      const result = await axios(`${apiUrl}/buildings/${sessionId}`);
       return result.data;
     };
     fetchBuildings().then((r) => setApiBuildings(r))
@@ -73,7 +81,7 @@ function App() {
 
   async function fetchAllianceBuildings() {
     const fetchAllianceBuildings = async () => {
-      const result = await axios(`${apiUrl}/alliancebuildings/${inputvalue}`);
+      const result = await axios(`${apiUrl}/alliancebuildings/${sessionId}`);
       return result.data;
     };
     fetchAllianceBuildings().then((r) => setApiAllianceBuildings(r))
@@ -81,11 +89,16 @@ function App() {
 
   async function fetchUser() {
     const fetchVersions = async () => {
-      const result = await axios(`${apiUrl}/credits/${inputvalue}`);
+      const result = await axios(`${apiUrl}/credits/${sessionId}`);
       return result.data;
     };
-    fetchVersions().then((r) => alert(`Welkom ${r.user_name}`)).catch(function error() {
-      alert("Ophalen usergegevens mislukt, probeer opnieuw!")
+    fetchVersions().then((r) => {
+      if (RememberSession) {
+        localStorage.setItem("session", sessionId)
+      }
+      alert(`Welkom ${r.user_name}`)
+    }).catch(function error() {
+      alert("Ophalen usergegevens mislukt, probeer opnieuw!\nAls je een oud id gebruikt is deze mogelijk verlopen.")
     });
   }
 
@@ -107,14 +120,26 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={
-          <Layout refresh={refreshdata} loggedIn={loggedIn} countdownGoal={Timer}>
-            <Home setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
+          <Layout
+            refresh={refreshdata}
+            loggedIn={loggedIn}
+            countdownGoal={Timer}
+          >
+            <Home
+              setInputValue={setSessionId}
+              GetData={LoadData}
+              template={sessionId}
+              agree={Agree}
+              setAgree={setAgree}
+              rememberSession={RememberSession}
+              updateRememberSession={updateRememberSession}
+            />
           </Layout>}
         />
 
         <Route path='/login/*' element={
           <Layout refresh={refreshdata}>
-            <Login setInputValue={setInputValue} GetData={LoadData} template={inputvalue} agree={Agree} setAgree={setAgree} />
+            <Login setInputValue={setSessionId} GetData={LoadData} template={sessionId} agree={Agree} setAgree={setAgree} />
           </Layout>}
         />
 
