@@ -19,6 +19,7 @@ import Poi from "./components/Information/Poi";
 import AllianceMissions from "./components/Information/AllianceMissions";
 import NotFound from "./components/Default/NotFound";
 import BuildingSpecialisations from "./components/Buildings/BuildingSpecialisations";
+import Hospitals from "./components/Buildings/Hospitals";
 
 function App() {
   let apiUrl;
@@ -194,6 +195,19 @@ function App() {
               countdownGoal={Timer}
             >
               <BuildingSpecialisations
+                buildingsData={ApiBuildings}
+              />
+            </Layout>
+          } />
+
+        <Route
+          path='/buildings/hospitals'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <Hospitals
                 buildingsData={ApiBuildings}
               />
             </Layout>
