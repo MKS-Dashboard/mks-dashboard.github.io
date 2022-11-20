@@ -167,8 +167,8 @@ function App() {
               loggedIn={loggedIn}
               countdownGoal={Timer}
             >
-              <Vehicles v
-                ehicleData={ApiVehicles}
+              <Vehicles
+                vehicleData={ApiVehicles}
               />
             </Layout>
           } />
