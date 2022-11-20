@@ -38,6 +38,7 @@ function BuildingSpecialisations(props) {
                                                         <tr>
                                                             <th>Gebouw ID</th>
                                                             <th>Naam</th>
+                                                            <th>Actief</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -45,10 +46,12 @@ function BuildingSpecialisations(props) {
                                                         {(() => {
                                                             return (
                                                                 specialisation.buildings.map((building) => {
+                                                                    console.log(building.specialization.active)
                                                                     return (
                                                                         <tr key={building.id}>
                                                                             <td>{building.id}</td>
                                                                             <td>{building.caption}</td>
+                                                                            <td>{building.specialization.active.toLocaleString()}</td>
                                                                         </tr>
                                                                     )
                                                                 }
