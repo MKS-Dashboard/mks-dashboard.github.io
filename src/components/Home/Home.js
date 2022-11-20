@@ -116,7 +116,7 @@ const Home = (props) => {
             <label>
                 <input type="checkbox"
                     defaultChecked={props.agree}
-                    onChange={() => props.setAgree(!props.agree)}
+                    onChange={() => props.updateAgree()}
                     id="Checkbox_agree"
                 />
                 Ik ga akkoord met de <a href="/voorwaarden">Algemene Voorwaarden</a> en <a href="/privacy">Privacyverklaring</a>

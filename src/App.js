@@ -25,7 +25,7 @@ function App() {
   const [ApiVehicles, setApiVehicles] = useState([]);
   const [ApiBuildings, setApiBuildings] = useState([]);
   const [ApiAllianceBuildings, setApiAllianceBuildings] = useState([])
-  const [Agree, setAgree] = useState(false)
+  const [Agree, setAgree] = useState(Boolean(JSON.parse(localStorage.getItem('agree'))) || false)
   const loggedIn = (ApiVehicles.length > 0 || ApiBuildings.length > 0) ? true : false;
   const [Timer, setTimer] = useState(0);
   const [newTimer, setNewTimer] = useState();
@@ -55,6 +55,11 @@ function App() {
   function updateRememberSession() {
     localStorage.setItem('remember_session', !RememberSession)
     SetRememberSession(!RememberSession)
+  }
+
+  function updateAgree() {
+    localStorage.setItem('agree', !Agree)
+    setAgree(!Agree)
   }
 
   function refreshdata() {
@@ -130,7 +135,7 @@ function App() {
               GetData={LoadData}
               template={sessionId}
               agree={Agree}
-              setAgree={setAgree}
+              updateAgree={updateAgree}
               rememberSession={RememberSession}
               updateRememberSession={updateRememberSession}
             />
