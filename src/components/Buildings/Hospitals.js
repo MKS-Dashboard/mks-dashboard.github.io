@@ -36,10 +36,15 @@ function Hospitals(props) {
                 hospitalList[i].beds = 10 + (hospitalList[i].level ?? 0)
             }
             setHospitals(hospitalList)
-            OrderHospitals()
+            if (!orderDesc) {
+                setHospitalsOrdered(hospitalList.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1))
+            }
+            else {
+                setHospitalsOrdered(hospitalList.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1))
+            }
         }
 
-    }, [props.buildingsData, OrderHospitals]);
+    }, [props.buildingsData, orderDesc, orderby]);
 
     return (
         <div id="Container">
@@ -63,9 +68,6 @@ function Hospitals(props) {
                                             <tbody>
 
                                                 {(() => {
-
-
-
                                                     return (
                                                         hospitalsOrdered.map((building) => {
                                                             return (
