@@ -3,17 +3,27 @@ import Loading from "../Default/Loading";
 
 function Hospitals(props) {
     const [hospitals, setHospitals] = useState([])
+    const [hospitalsOrdered, setHospitalsOrdered] = useState([])
     const [orderby, setOrderBy] = useState("caption")
     const [orderDesc, setOrderDesc] = useState(false)
 
     function UpdateOrder(column) {
-        console.log("Update")
         if (orderby !== column) {
             setOrderBy(column)
             setOrderDesc(true)
         }
         else if (orderby === column) {
             setOrderDesc(!orderDesc)
+        }
+        OrderHospitals()
+    }
+
+    function OrderHospitals() {
+        if (!orderDesc) {
+            setHospitalsOrdered(hospitals.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1))
+        }
+        else {
+            setHospitalsOrdered(hospitals.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1))
         }
     }
 
@@ -26,6 +36,7 @@ function Hospitals(props) {
                 hospitalList[i].beds = 10 + (hospitalList[i].level ?? 0)
             }
             setHospitals(hospitalList)
+            OrderHospitals()
         }
 
     }, [props.buildingsData,]);
@@ -40,7 +51,7 @@ function Hospitals(props) {
                             {(() => {
                                 return (
                                     <>
-                                        <h2> Ziekenhuizen ({hospitals.length.toLocaleString()})</h2>
+                                        <h2> Ziekenhuizen ({hospitalsOrdered.length.toLocaleString()})</h2>
                                         <table className="table" id="Tabel">
                                             <thead>
                                                 <tr>
@@ -53,15 +64,10 @@ function Hospitals(props) {
 
                                                 {(() => {
 
-                                                    if (!orderDesc) {
-                                                        hospitals.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1)
-                                                    }
-                                                    else {
-                                                        hospitals.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1)
-                                                    }
+
 
                                                     return (
-                                                        hospitals.map((building) => {
+                                                        hospitalsOrdered.map((building) => {
                                                             return (
                                                                 <tr key={building.id}>
                                                                     <td>{building.caption}</td>
