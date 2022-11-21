@@ -22,7 +22,7 @@ import BuildingSpecialisations from "./components/Buildings/BuildingSpecialisati
 
 function App() {
   let apiUrl;
-  const [sessionId, setSessionId] = useState(localStorage.getItem('session') || "dit is een test")
+  const [sessionId, setSessionId] = useState(localStorage.getItem('session') || "")
   const [ApiVehicles, setApiVehicles] = useState([]);
   const [ApiBuildings, setApiBuildings] = useState([]);
   const [ApiAllianceBuildings, setApiAllianceBuildings] = useState([])
