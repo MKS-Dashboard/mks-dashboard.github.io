@@ -227,6 +227,19 @@ function App() {
           } />
 
         <Route
+          path='/alliancebuildings/hospitals'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <AllianceBuildings
+                allianceBuildingsData={ApiAllianceBuildings}
+              />
+            </Layout>
+          } />
+
+        <Route
           path='/progressdata'
           element={
             <Layout
