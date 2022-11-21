@@ -50,7 +50,7 @@ function BuildingSpecialisations(props) {
                                                                         <tr key={building.id}>
                                                                             <td>{building.id}</td>
                                                                             <td>{building.caption}</td>
-                                                                            <td>{building.specialization.active.toLocaleString()}</td>
+                                                                            <td>{building.specialization.active? 'Ja' : 'Nee'}</td>
                                                                         </tr>
                                                                     )
                                                                 }
