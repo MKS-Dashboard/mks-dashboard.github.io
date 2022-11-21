@@ -40,7 +40,7 @@ const Header = (props) => {
                 <Link className="link" to="/alliancebuildings">Gebouwen Overzicht</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className="Link" to="/alliancebuildings/hospitals">Ziekenhuizen</Link>
+                <Link className="Link" to="/alliancebuildings/hospitals">Teamziekenhuizen</Link>
               </NavDropdown.Item>
             </NavDropdown>
             <Link hidden={!props.loggedIn} className="link" to="/progressdata">
