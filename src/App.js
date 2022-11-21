@@ -20,6 +20,7 @@ import AllianceMissions from "./components/Information/AllianceMissions";
 import NotFound from "./components/Default/NotFound";
 import BuildingSpecialisations from "./components/Buildings/BuildingSpecialisations";
 import Hospitals from "./components/Buildings/Hospitals";
+import AllianceHospitals from "./components/Buildings/AllianceHospitals";
 
 function App() {
   let apiUrl;
@@ -233,7 +234,7 @@ function App() {
               loggedIn={loggedIn}
               countdownGoal={Timer}
             >
-              <AllianceBuildings
+              <AllianceHospitals
                 allianceBuildingsData={ApiAllianceBuildings}
               />
             </Layout>
