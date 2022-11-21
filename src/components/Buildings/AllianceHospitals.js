@@ -58,7 +58,7 @@ function AllianceHospitals(props) {
                             {(() => {
                                 return (
                                     <>
-                                        <h2> Ziekenhuizen ({hospitalsOrdered.length.toLocaleString()})</h2>
+                                        <h2> Team Ziekenhuizen ({hospitalsOrdered.length.toLocaleString()})</h2>
                                         <table className="table" id="Tabel">
                                             <thead>
                                                 <tr>
