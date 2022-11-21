@@ -19,6 +19,8 @@ import Poi from "./components/Information/Poi";
 import AllianceMissions from "./components/Information/AllianceMissions";
 import NotFound from "./components/Default/NotFound";
 import BuildingSpecialisations from "./components/Buildings/BuildingSpecialisations";
+import Hospitals from "./components/Buildings/Hospitals";
+import AllianceHospitals from "./components/Buildings/AllianceHospitals";
 
 function App() {
   let apiUrl;
@@ -200,6 +202,19 @@ function App() {
           } />
 
         <Route
+          path='/buildings/hospitals'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <Hospitals
+                buildingsData={ApiBuildings}
+              />
+            </Layout>
+          } />
+
+        <Route
           path='/alliancebuildings'
           element={
             <Layout
@@ -207,6 +222,19 @@ function App() {
               countdownGoal={Timer}
             >
               <AllianceBuildings
+                allianceBuildingsData={ApiAllianceBuildings}
+              />
+            </Layout>
+          } />
+
+        <Route
+          path='/alliancebuildings/hospitals'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <AllianceHospitals
                 allianceBuildingsData={ApiAllianceBuildings}
               />
             </Layout>
