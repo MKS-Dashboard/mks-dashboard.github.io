@@ -29,10 +29,10 @@ const Header = (props) => {
                 <Link className="link" to="/buildings">Overzicht</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className="Link" to="/buildings/specialisations">Specialisaties</Link>
+                <Link className="link" to="/buildings/specialisations">Specialisaties</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className="Link" to="/buildings/hospitals">Ziekenhuizen</Link>
+                <Link className="link" to="/buildings/hospitals">Ziekenhuizen</Link>
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown hidden={!props.loggedIn} title={<TiGroup id="icon" size={50} />} id="nav-dropdown" className="link">
@@ -40,7 +40,7 @@ const Header = (props) => {
                 <Link className="link" to="/alliancebuildings">Gebouwen Overzicht</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className="Link" to="/alliancebuildings/hospitals">Teamziekenhuizen</Link>
+                <Link className="link" to="/alliancebuildings/hospitals">Teamziekenhuizen</Link>
               </NavDropdown.Item>
             </NavDropdown>
             <Link hidden={!props.loggedIn} className="link" to="/progressdata">
@@ -54,13 +54,13 @@ const Header = (props) => {
                 <Link className="link" to="/information">Algemeen</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className="Link" to="/information/awards">Awards</Link>
+                <Link className="link" to="/information/awards">Awards</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className="Link" to="/information/poi">POI</Link>
+                <Link className="link" to="/information/poi">POI</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className="Link" to="/information/alliancemissions">Teaminzetten</Link>
+                <Link className="link" to="/information/alliancemissions">Teaminzetten</Link>
               </NavDropdown.Item>
             </NavDropdown>
             <Link className="link" to="/suggestions">
