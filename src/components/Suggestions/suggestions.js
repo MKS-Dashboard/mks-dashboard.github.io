@@ -14,7 +14,7 @@ const Suggestions = (props) => {
                 const result = await axios("https://api.github.com/repos/MKS-Dashboard/mks-dashboard.github.io/issues");
                 return result.data;
             };
-            fetch().then((r) => setIssues(r));
+            fetch().then((r) => setIssues(r.filter(i => !i.hasOwnProperty('pull_request')));
         }
     }, []);
 
