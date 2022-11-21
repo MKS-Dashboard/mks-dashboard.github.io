@@ -36,11 +36,13 @@ function Hospitals(props) {
                 hospitalList[i].beds = 10 + (hospitalList[i].level ?? 0)
             }
             setHospitals(hospitalList)
-            if (!orderDesc) {
-                setHospitalsOrdered(hospitalList.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1))
-            }
-            else {
-                setHospitalsOrdered(hospitalList.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1))
+            if (hospitalList.length > 0) {
+                if (!orderDesc) {
+                    setHospitalsOrdered(hospitalList.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1))
+                }
+                else {
+                    setHospitalsOrdered(hospitalList.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1))
+                }
             }
         }
 
