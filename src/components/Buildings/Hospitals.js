@@ -39,7 +39,7 @@ function Hospitals(props) {
             OrderHospitals()
         }
 
-    }, [props.buildingsData,]);
+    }, [props.buildingsData, OrderHospitals]);
 
     return (
         <div id="Container">
