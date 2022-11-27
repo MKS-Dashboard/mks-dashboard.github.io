@@ -34,6 +34,9 @@ const Header = (props) => {
               <NavDropdown.Item>
                 <Link className="link" to="/buildings/hospitals">Ziekenhuizen</Link>
               </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/buildings/cells">Cellen</Link>
+              </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown hidden={!props.loggedIn} title={<TiGroup id="icon" size={50} />} id="nav-dropdown" className="link">
               <NavDropdown.Item >
@@ -41,6 +44,9 @@ const Header = (props) => {
               </NavDropdown.Item>
               <NavDropdown.Item>
                 <Link className="link" to="/alliancebuildings/hospitals">Teamziekenhuizen</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/alliancebuildings/cells">TeamCellen</Link>
               </NavDropdown.Item>
             </NavDropdown>
             <Link hidden={!props.loggedIn} className="link" to="/progressdata">

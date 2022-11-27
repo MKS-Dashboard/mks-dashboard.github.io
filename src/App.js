@@ -21,6 +21,8 @@ import NotFound from "./components/Default/NotFound";
 import BuildingSpecialisations from "./components/Buildings/BuildingSpecialisations";
 import Hospitals from "./components/Buildings/Hospitals";
 import AllianceHospitals from "./components/Buildings/AllianceHospitals";
+import AllianceCells from "./components/Buildings/AllianceCells";
+import Cells from "./components/Buildings/Cells";
 
 function App() {
   let apiUrl;
@@ -215,6 +217,19 @@ function App() {
           } />
 
         <Route
+          path='/buildings/cells'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <Cells
+                buildingsData={ApiBuildings}
+              />
+            </Layout>
+          } />
+
+        <Route
           path='/alliancebuildings'
           element={
             <Layout
@@ -235,6 +250,19 @@ function App() {
               countdownGoal={Timer}
             >
               <AllianceHospitals
+                allianceBuildingsData={ApiAllianceBuildings}
+              />
+            </Layout>
+          } />
+
+        <Route
+          path='/alliancebuildings/cells'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <AllianceCells
                 allianceBuildingsData={ApiAllianceBuildings}
               />
             </Layout>
