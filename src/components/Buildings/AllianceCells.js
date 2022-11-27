@@ -64,7 +64,7 @@ function AllianceCells(props) {
                                                 <tr>
                                                     <th onClick={() => UpdateOrder("caption")}>Naam</th>
                                                     <th onClick={() => UpdateOrder("cells")}>Cellen</th>
-                                                    <th onClick={() => UpdateOrder("prisoner_count")}>Bedden bezet</th>
+                                                    <th onClick={() => UpdateOrder("prisoner_count")}>Cellen bezet</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
