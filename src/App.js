@@ -23,6 +23,7 @@ import Hospitals from "./components/Buildings/Hospitals";
 import AllianceHospitals from "./components/Buildings/AllianceHospitals";
 import AllianceCells from "./components/Buildings/AllianceCells";
 import Cells from "./components/Buildings/Cells";
+import AllianceInfo from "./components/AllianceInfo/AllianceInfo";
 
 function App() {
   let apiUrl;
@@ -30,6 +31,7 @@ function App() {
   const [ApiVehicles, setApiVehicles] = useState([]);
   const [ApiBuildings, setApiBuildings] = useState([]);
   const [ApiAllianceBuildings, setApiAllianceBuildings] = useState([])
+  const [ApiAllianceInfo, setApiAllianceInfo] = useState({})
   const [Agree, setAgree] = useState(Boolean(JSON.parse(localStorage.getItem('agree'))) || false)
   const loggedIn = (ApiVehicles.length > 0 || ApiBuildings.length > 0) ? true : false;
   const [Timer, setTimer] = useState(0);
@@ -70,6 +72,7 @@ function App() {
     fetchVehicles();
     fetchBuildings();
     fetchAllianceBuildings();
+    fetchAllianceInfo();
   }
 
   async function fetchVehicles() {
@@ -94,6 +97,14 @@ function App() {
       return result.data;
     };
     fetchAllianceBuildings().then((r) => setApiAllianceBuildings(r))
+  }
+
+  async function fetchAllianceInfo() {
+    const fetchAllianceInfo = async () => {
+      const result = await axios(`${apiUrl}/allianceinfo/${sessionId}`);
+      return result.data;
+    };
+    fetchAllianceInfo().then((r) => setApiAllianceInfo(r))
   }
 
   async function fetchUser() {
@@ -225,6 +236,19 @@ function App() {
             >
               <Cells
                 buildingsData={ApiBuildings}
+              />
+            </Layout>
+          } />
+
+        <Route
+          path='/allianceinfo'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+              countdownGoal={Timer}
+            >
+              <AllianceInfo
+                allianceInfoData={ApiAllianceInfo}
               />
             </Layout>
           } />

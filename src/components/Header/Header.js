@@ -40,6 +40,9 @@ const Header = (props) => {
             </NavDropdown>
             <NavDropdown hidden={!props.loggedIn} title={<TiGroup id="icon" size={50} />} id="nav-dropdown" className="link">
               <NavDropdown.Item >
+                <Link className="link" to="/allianceinfo">Teaminformatie</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item >
                 <Link className="link" to="/alliancebuildings">Gebouwen Overzicht</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
