@@ -22,6 +22,8 @@ function Buildings(props) {
             }
 
             for (let i = 0; i < types.length; i++) {
+                types[i].real = data.filter(building => building.building_type === types[i].ID).length;
+
                 if (types[i].BuildingCounter === true) {
                     types[i].inbezit = data.filter(building => building.building_type === types[i].ID).length
 
@@ -89,7 +91,8 @@ function Buildings(props) {
                                 <thead>
                                     <tr>
                                         <th>Type</th>
-                                        <th>Aantal</th>
+                                        <th>Aantal fysiek</th>
+                                        <th>Aantal Technisch</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -102,6 +105,7 @@ function Buildings(props) {
                                                 return (
                                                     <tr key={building.ID}>
                                                         <td>{building.name}</td>
+                                                        <td>{building.real}</td>
                                                         <td>{building.inbezit.toLocaleString()}</td>
                                                     </tr>
                                                 )

@@ -192,13 +192,6 @@ export const lists_BuildingInformation = [
         "name": "SAR Helikopter platform",
         "LevelCountAsBuilding": false,
         "BuildingCounter": false,
-    },
-    // counters
-    {
-        "ID": "a",
-        "name": "SAR Helikopter platform",
-        "LevelCountAsBuilding": false,
-        "BuildingCounter": false,
         "ExtensionCountAsBuilding": true,
         "ExtensionPossibleOnBuilding": [21],
         "ExtensionNames": [
