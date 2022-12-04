@@ -5,6 +5,10 @@ export const lists_ExcludedMissionKeysAllianceMissions = [
     "patient_specialization_captions"
 ]
 
+export const lists_ExcludedMissionKeysAllianceEvents = [
+
+]
+
 export const lists_Codetranslations = [
     {
         "requirements": {
@@ -95,6 +99,10 @@ export const lists_Codetranslations = [
             "police_helicopters": {
                 "one": "Politiehelikopter",
                 "more": "Politiehelikopters"
+            },
+            "bike_police": {
+                "one": "Biketeam",
+                "more": "Biketeams"
             }
         },
         "additional": {
@@ -103,11 +111,21 @@ export const lists_Codetranslations = [
             "possible_patient": "Maximaal aantal patiënten",
             "possible_patient_min": "Minimaal aantal patiënten",
             "patient_specializations": "Ziekenhuisafdeling(en)",
-            "patient_at_end_of_mission": "Patiënten na afronden inzet"
+            "patient_at_end_of_mission": "Patiënten na afronden inzet",
+            "allow_rw_instead_of_lf": "Hulpverleningsvoertuig i.p.v. Tankautospuit",
+            "expansion_missions_ids": "Kan opschalen naar",
+            "allow_ktw_instead_of_rtw": "Zorgambulance i.p.v. Ambulance",
+            "need_bike_police_only_if_present": "Bike-team alleen indien in bezit",
+            "fire_alarm_system_possible": "OMS/PAC mogelijk"
         },
         "chances": {
             "patient_transport": "Vervoer kans voor patiënt",
-            "nef": "Kans dat het MMT nodig is"
+            "nef": "Kans dat het MMT nodig is",
+            "platform_trucks": "Kans dat de redvoertuigen benodigd zijn",
+            "heavy_rescue_vehicles": "Kans dat de hulpverleningsvoertuigen benodigd zijn",
+            "water_tankers": "Kans dat de slangenwagens benodigd zijn",
+            "bike_police": "Kans dat de biketeams benodigd zijn",
+            "ovdp": "Kans dat de Officiers van Dienst Politie benodigd zijn"
         }
     }
 ]

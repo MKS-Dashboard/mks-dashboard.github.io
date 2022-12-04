@@ -24,6 +24,7 @@ import AllianceHospitals from "./components/Buildings/AllianceHospitals";
 import AllianceCells from "./components/Buildings/AllianceCells";
 import Cells from "./components/Buildings/Cells";
 import AllianceInfo from "./components/AllianceInfo/AllianceInfo";
+import AllianceEvents from "./components/Information/AllianceEvents";
 
 function App() {
   let apiUrl;
@@ -37,6 +38,7 @@ function App() {
   const [Timer, setTimer] = useState(0);
   const [newTimer, setNewTimer] = useState();
   const [RememberSession, SetRememberSession] = useState(Boolean(JSON.parse(localStorage.getItem('remember_session'))) || false)
+  const [Missions, setMissions] = useState([])
 
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
@@ -135,6 +137,18 @@ function App() {
       setNewTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
     }
   }
+
+  useEffect(() => {
+    fetchMissions()
+
+    async function fetchMissions() {
+      const fetchMission = async () => {
+        const result = await axios("https://raw.githubusercontent.com/Piet2001/Missionfiles-All-Versions/master/Missions/nl_NL.json");
+        return result.data;
+      };
+      fetchMission().then((r) => setMissions(r));
+    }
+  }, []);
 
   return (
     <BrowserRouter>
@@ -385,6 +399,17 @@ function App() {
               <AllianceMissions />
             </Layout>
           } />
+
+        <Route
+          path='information/alliance_events'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+            >
+              <AllianceEvents missions={Missions} />
+            </Layout>
+          } />
+
         <Route
           path="*"
           element={
