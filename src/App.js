@@ -25,6 +25,7 @@ import AllianceCells from "./components/Buildings/AllianceCells";
 import Cells from "./components/Buildings/Cells";
 import AllianceInfo from "./components/AllianceInfo/AllianceInfo";
 import AllianceEvents from "./components/Information/AllianceEvents";
+import Missions from "./components/Information/Missions";
 
 function App() {
   let apiUrl;
@@ -38,7 +39,7 @@ function App() {
   const [Timer, setTimer] = useState(0);
   const [newTimer, setNewTimer] = useState();
   const [RememberSession, SetRememberSession] = useState(Boolean(JSON.parse(localStorage.getItem('remember_session'))) || false)
-  const [Missions, setMissions] = useState([])
+  const [missions, setMissions] = useState([])
 
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
@@ -406,7 +407,17 @@ function App() {
             <Layout
               loggedIn={loggedIn}
             >
-              <AllianceEvents missions={Missions} />
+              <AllianceEvents missions={missions} />
+            </Layout>
+          } />
+
+        <Route
+          path='information/missions'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+            >
+              <Missions missions={missions} />
             </Layout>
           } />
 

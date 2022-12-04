@@ -22,7 +22,6 @@ function AllianceEvents(props) {
                 const missionsInEvent = events[i].mission_type_ids.map(num => { return String(num); })
                 events[i].missions = props.missions.filter(m => missionsInEvent.includes(String(m.id)))
             }
-            console.log(events)
 
             setAllianceEvents(events)
         }
@@ -86,8 +85,6 @@ function AllianceEvents(props) {
 export default AllianceEvents
 
 function GetMissionRequirements(mission) {
-
-    console.log(mission)
 
     let requirements = [];
     for (var key in mission.requirements) {
