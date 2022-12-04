@@ -19,8 +19,7 @@ function AllianceEvents(props) {
 
         function findMissions(events) {
             for (let i = 0; i < events.length; i++) {
-                const missionsInEvent = events[i].mission_type_ids.map(num => { return String(num); })
-                events[i].missions = props.missions.filter(m => missionsInEvent.includes(String(m.id)))
+                events[i].missions = props.missions.filter(m => events[i].mission_type_ids.includes(m.base_mission_id))
             }
 
             setAllianceEvents(events)
