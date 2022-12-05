@@ -203,7 +203,7 @@ export const lists_awards = [
         "type": "Eenmalig"
     },
     {
-        "naam": "Kerstfeest gered!",
+        "naam": "Kerstmis 2022",
         "brons": 5,
         "zilver": 15,
         "goud": 50,
