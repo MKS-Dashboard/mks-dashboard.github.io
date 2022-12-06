@@ -77,6 +77,9 @@ const Header = (props) => {
               <NavDropdown.Item>
                 <Link className="link" to="/information/missions">Inzetten</Link>
               </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/information/events">Thema Events</Link>
+              </NavDropdown.Item>
             </NavDropdown>
             <Link className="link" to="/suggestions">
               <FcMultipleInputs id="icon" size={50} />

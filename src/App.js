@@ -26,6 +26,7 @@ import Cells from "./components/Buildings/Cells";
 import AllianceInfo from "./components/AllianceInfo/AllianceInfo";
 import AllianceEvents from "./components/Information/AllianceEvents";
 import Missions from "./components/Information/Missions";
+import Events from "./components/Information/Events";
 
 function App() {
   let apiUrl;
@@ -418,6 +419,16 @@ function App() {
               loggedIn={loggedIn}
             >
               <Missions missions={missions} />
+            </Layout>
+          } />
+
+        <Route
+          path='information/events'
+          element={
+            <Layout
+              loggedIn={loggedIn}
+            >
+              <Events missions={missions} />
             </Layout>
           } />
 
