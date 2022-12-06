@@ -17,7 +17,7 @@ function Events(props) {
 
     return (
         <div id="Container">
-            Het spel bevat momenteel de volgende Team events<br />
+            Het spel bevat momenteel de volgende events<br />
 
 
             {(() => {
