@@ -302,3 +302,23 @@ export const lists_BuildingSpecialisations = [
         "type": "water_rescue"
     }
 ]
+
+export const lists_Schools = [
+    {
+        "name": "Brandweer, Academie",
+        "building_id": 4
+    },
+    {
+        "name": "Politie, Academie",
+        "building_id": 8
+    }
+    ,
+    {
+        "name": "Universiteit Faculteit Geneeskunde",
+        "building_id": 7
+    },
+    {
+        "name": "SAR academie",
+        "building_id": 20
+    }
+]

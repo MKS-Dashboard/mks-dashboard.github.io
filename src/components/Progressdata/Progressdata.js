@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import { lists_Schools } from '../../Lists/buildings';
 import Loading from '../Default/Loading';
 import "./Progressdata.css";
 
@@ -13,6 +14,7 @@ function Progressdata(props) {
     const [usedCellsUser, setUsedCellsUser] = useState();
     const [totalCellsTeam, setTotalCellsTeam] = useState();
     const [usedCellsTeam, setUsedCellsTeam] = useState();
+    const [schools, setSchools] = useState([]);
 
     useEffect(() => {
         var ziekenhuizen = props.Buildings.filter(building => building.building_type === 2)
@@ -55,6 +57,31 @@ function Progressdata(props) {
         setTotalCellsTeam(totalCellTeam)
         setUsedCellsTeam(TeamCellUsed)
 
+        for (let m = 0; m < lists_Schools.length; m++) {
+            var schoolOfType = props.Buildings.filter(building => building.building_type === lists_Schools[m].building_id)
+            var classes = 0
+            var classes_used = 0
+            for (var a = 0; a < schoolOfType.length; a++) {
+                classes += (schoolOfType[a].extensions.filter(ex => (ex.caption === "Extra klaslokaal") && ex.available === true).length + 1)
+                classes_used += (schoolOfType[a].schoolings.length)
+            }
+
+            var allianceSchoolOfType = props.AllianceBuildings.filter(building => building.building_type === lists_Schools[m].building_id)
+            var allianceClasses = 0
+            var allianceClasses_used = 0
+            for (var b = 0; b < allianceSchoolOfType.length; b++) {
+                allianceClasses += (allianceSchoolOfType[b].extensions.filter(ex => (ex.caption === "Extra klaslokaal") && ex.available === true).length + 1)
+                allianceClasses_used += (allianceSchoolOfType[b].schoolings.length)
+            }
+
+            lists_Schools[m].classes = classes ?? 0;
+            lists_Schools[m].classes_used = classes_used ?? 0
+            lists_Schools[m].allianceClasses = allianceClasses ?? 0
+            lists_Schools[m].allianceClasses_used = allianceClasses_used ?? 0
+        }
+
+        setSchools(lists_Schools)
+
     }, [props.Buildings, props.AllianceBuildings]);
 
     return (
@@ -88,6 +115,38 @@ function Progressdata(props) {
                                 <ProgressBar animated striped variant="success" now={totalCellsTeam - usedCellsTeam} key={2} min={0} max={totalCellsTeam} label={(totalCellsTeam - usedCellsTeam)?.toLocaleString()} />
                             </ProgressBar>
                             <br />
+                            <br />
+
+                            {(() => {
+                                if (schools.length > 0) {
+                                    return (
+                                        <>
+                                            <h2>Scholen</h2>
+                                            {(() => {
+                                                return (
+                                                    schools.map((school) => {
+                                                        return (
+                                                            <>
+                                                                <h4>{school.name}</h4>
+                                                                Eigen: <br />
+                                                                <ProgressBar>
+                                                                    <ProgressBar animated striped variant="danger" now={school.classes_used} key={1} min={0} max={school.classes} label={school.classes_used?.toLocaleString()} />
+                                                                    <ProgressBar animated striped variant="success" now={school.classes - school.classes_used} key={2} min={0} max={school.classes} label={(school.classes - school.classes_used)?.toLocaleString()} />
+                                                                </ProgressBar>
+                                                                Team:
+                                                                <ProgressBar>
+                                                                    <ProgressBar animated striped variant="danger" now={school.allianceClasses_used} key={1} min={0} max={school.allianceClasses} label={school.allianceClasses_used?.toLocaleString()} />
+                                                                    <ProgressBar animated striped variant="success" now={school.allianceClasses - school.allianceClasses_used} key={2} min={0} max={school.allianceClasses} label={(school.allianceClasses - school.allianceClasses_used)?.toLocaleString()} />
+                                                                </ProgressBar>
+                                                            </>
+                                                        )
+                                                    }))
+                                            })()}
+                                        </>
+
+                                    )
+                                }
+                            })()}
                         </>
                     )
                 }
