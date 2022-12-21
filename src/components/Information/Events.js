@@ -9,7 +9,9 @@ function Events(props) {
 
         for (let i = 0; i < lists_EventMissions.length; i++) {
             lists_EventMissions[i].missions = props.missions.filter(m => lists_EventMissions[i].mission_ids.includes(m.base_mission_id))
-            lists_EventMissions[i].date = lists_EventMissions[i].missions[0].additional.date_start
+            if (lists_EventMissions[i].missions.length > 0) {
+                lists_EventMissions[i].date = lists_EventMissions[i].missions[0].additional.date_start
+            }
         }
         setEvents(lists_EventMissions)
 
@@ -22,8 +24,7 @@ function Events(props) {
 
             {(() => {
                 if (events.length > 0 && lists_Codetranslations.length > 0) {
-                    events.filter(e => e.missions.length > 0)
-                    events.sort((a, b) => (a.name > b.name) ? 1 : -1)
+                    events.filter(e => e.missions.length > 0).sort((a, b) => (a.name > b.name) ? 1 : -1)
                     return (
                         events.map((event) => {
                             return (
