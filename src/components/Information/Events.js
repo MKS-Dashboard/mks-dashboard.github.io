@@ -22,6 +22,7 @@ function Events(props) {
 
             {(() => {
                 if (events.length > 0 && lists_Codetranslations.length > 0) {
+                    events.filter(e => e.missions.length > 0)
                     events.sort((a, b) => (a.name > b.name) ? 1 : -1)
                     return (
                         events.map((event) => {
