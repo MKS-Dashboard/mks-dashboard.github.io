@@ -192,13 +192,6 @@ export const lists_BuildingInformation = [
         "name": "SAR Helikopter platform",
         "LevelCountAsBuilding": false,
         "BuildingCounter": false,
-    },
-    // counters
-    {
-        "ID": "a",
-        "name": "SAR Helikopter platform",
-        "LevelCountAsBuilding": false,
-        "BuildingCounter": false,
         "ExtensionCountAsBuilding": true,
         "ExtensionPossibleOnBuilding": [21],
         "ExtensionNames": [
@@ -292,5 +285,40 @@ export const lists_BuildingExtensionsOverview = [
     },
     {
         "name": "Extra SAR Helikopter Hangar"
+    }
+]
+
+export const lists_BuildingSpecialisations = [
+    {
+        "name": "Luchthaven Specialisatie",
+        "type": "airport"
+    },
+    {
+        "name": "Schuimblussing Specialisatie",
+        "type": "fire_support"
+    },
+    {
+        "name": "Waterongevallen Specialisatie",
+        "type": "water_rescue"
+    }
+]
+
+export const lists_Schools = [
+    {
+        "name": "Brandweer, Academie",
+        "building_id": 4
+    },
+    {
+        "name": "Politie, Academie",
+        "building_id": 8
+    }
+    ,
+    {
+        "name": "Universiteit Faculteit Geneeskunde",
+        "building_id": 7
+    },
+    {
+        "name": "SAR academie",
+        "building_id": 20
     }
 ]

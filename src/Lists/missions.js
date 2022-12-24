@@ -5,6 +5,20 @@ export const lists_ExcludedMissionKeysAllianceMissions = [
     "patient_specialization_captions"
 ]
 
+export const lists_ExcludedMissionKeysAllianceEvents = [
+    "filter_id",
+    "patient_specialization_ids",
+    "patient_specialization_captions"
+]
+
+export const lists_ExcludedMissionKeysMissions = [
+    "filter_id",
+    "patient_specialization_captions",
+    "patient_specialization_ids",
+    "duration",
+    "patient_allow_first_responder_chance"
+]
+
 export const lists_Codetranslations = [
     {
         "requirements": {
@@ -95,18 +109,166 @@ export const lists_Codetranslations = [
             "police_helicopters": {
                 "one": "Politiehelikopter",
                 "more": "Politiehelikopters"
+            },
+            "bike_police": {
+                "one": "Biketeam",
+                "more": "Biketeams"
+            },
+            "ambulances": {
+                "one": "Ambulance",
+                "more": "Ambulances"
+            },
+            "diver_units": {
+                "one": "Waterongevallenvoertuig of oppervlaktereddingsvoertuig",
+                "more": "Waterongevallenvoertuigen of oppervlaktereddingsvoertuigen"
+            },
+            "at_o": {
+                "one": "AT Operator",
+                "more": "AT Operators"
+            },
+            "at_m": {
+                "one": "AT Materiaalwagen",
+                "more": "AT Materiaalwagens"
+            },
+            "at_c": {
+                "one": "AT Commandant",
+                "more": "AT Commandanten"
+            },
+            "coastal_boat": {
+                "one": "Reddingsboot",
+                "more": "Reddingsboten"
+            },
+            "coastal_guard_boat": {
+                "one": "Kustwachtboot",
+                "more": "Kustwachtboten"
+            },
+            "coastal_helicopter": {
+                "one": "SAR Helikopter",
+                "more": "SAR Helikopters"
+            },
+            "water_rescue": {
+                "one": "Strandvoertuig",
+                "more": "Strandvoetuigen"
+            },
+            "spokesman": {
+                "one": "Voorlichter",
+                "more": "Voorlichters"
+            },
+            "boats": {
+                "one": "Bootaanhanger",
+                "more": "Bootaanhangers"
+            },
+            "arff": {
+                "one": "Crashtender",
+                "more": "Crashtenders"
+            },
+            "elw_airport": {
+                "one": "AFO/OSC",
+                "more": "AFO's/OSC's"
             }
         },
         "additional": {
             "max_possible_prisoners": "Maximaal aantal gevangenen",
+            "min_possible_prisoners": "Minimaal aantal gevangenen",
             "possible_patient": "Maximaal aantal patiënten",
             "possible_patient_min": "Minimaal aantal patiënten",
             "patient_specializations": "Ziekenhuisafdeling(en)",
-            "patient_at_end_of_mission": "Patiënten na afronden inzet"
+            "patient_at_end_of_mission": "Patiënten na afronden inzet",
+            "allow_rw_instead_of_lf": "Hulpverleningsvoertuig i.p.v. Tankautospuit",
+            "expansion_missions_ids": "Kan opschalen naar",
+            "allow_ktw_instead_of_rtw": "Zorgambulance i.p.v. Ambulance",
+            "need_bike_police_only_if_present": "Bike-team alleen indien in bezit",
+            "fire_alarm_system_possible": "OMS/PAC mogelijk",
+            "only_alliance_mission": "Alleen Teaminzet",
+            "guard_mission": "Geplande inzet",
+            "duration_text": "Duur",
+            "average_min_fire_personnel": "Benodigd brandweer personeel",
+            "subsequent_missions_ids": "Mogelijke vervolginzetten",
+            "followup_missions_ids": "Mogelijke verspreidingen",
+            "date_end": "Beschikbaar tot",
+            "date_start": "Beschikbaar vanaf",
+            "followup_mission_only": "Alleen als verspreiding",
+            "vehicle_groups": "Voertuiggroepen beschikbaar voor inzet",
+            "uses_custom_spawn_area": "Gebruikt eigen inzetgebied",
+            "handoff_possible_via_building_types": "Patiënt of gevangenen overdracht via gebouwtype",
+            "subsequent_mission_only": "Alleen als vervolginzet",
+            "allow_arff_instead_of_lf": "Crashtender i.p.v. Tankautospuit",
+            "optional_event_mission": "Uitschakelbare event melding"
         },
         "chances": {
             "patient_transport": "Vervoer kans voor patiënt",
-            "nef": "Kans dat het MMT nodig is"
+            "nef": "Kans dat het MMT nodig is",
+            "platform_trucks": "Kans dat de redvoertuigen benodigd zijn",
+            "heavy_rescue_vehicles": "Kans dat de hulpverleningsvoertuigen benodigd zijn",
+            "water_tankers": "Kans dat de slangenwagens benodigd zijn",
+            "bike_police": "Kans dat de biketeams benodigd zijn",
+            "ovdp": "Kans dat de Officiers van Dienst Politie benodigd zijn",
+            "mobile_command_vehicles": "Kans dat de Hoofd officieren van Dienst benodigd zijn",
+            "mobile_air_vehicles": "Kans dat de Adembeschermingsvoertuigen benodigd zijn",
+            "hazmat_vehicles": "Kans dat de Advieseurs gevaarlijke stoffen benodigd zijn",
+            "gwmess": "Kans dat de Verkenningseenheden benodigd zijn",
+            "elw3": "Kans dat de Commandovoertuigen benodigd zijn",
+            "battalion_chief_vehicles": "Kans dat de Officiers van Dienst Brandweer benodigd zijn",
+            "diver_units": "Kans dat de waterongevallenvoertuigen benodigd zijn",
+            "coastal_helicopter": "Kans dat de SAR Helikopters benodigd zijn",
+            "police_horse": "Kans dat de politie paarden benodigd zijn",
+            "boats": "Kans dat de bootaanhangers benodigd zijn",
+            "arff": "Kans dat de Crashtenders benodigd zijn"
         }
+    }
+]
+
+export const lists_EventMissions = [
+    {
+        "name": "Halloween",
+        "mission_ids": [146, 147, 148, 149, 150, 151, 152, 153, 154]
+    },
+    {
+        "name": "Sinterklaas",
+        "mission_ids": [160, 161, 162, 163, 164, 165, 166, 167, 168, 253]
+    },
+    {
+        "name": "Kerst",
+        "mission_ids": [169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 371, 372, 373, 374, 375, 542, 543, 544, 545, 545, 546, 547, 997, 998, 999, 1000]
+    },
+    {
+        "name": "Vuurwerk",
+        "mission_ids": [525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702]
+    },
+    {
+        "name": "Valentijn",
+        "mission_ids": [562, 563, 727, 728, 729, 730, 731, 732, 733, 734, 735]
+    },
+    {
+        "name": "Pasen",
+        "mission_ids": [578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588]
+    },
+    {
+        "name": "Zomer",
+        "mission_ids": [617, 618, 619, 620, 621]
+    },
+    {
+        "name": "Verjaardag",
+        "mission_ids": [736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752]
+    },
+    {
+        "name": "Voetbal",
+        "mission_ids": [820, 821, 822, 823, 824, 825, 826, 827, 828, 829]
+    },
+    {
+        "name": "Herfst",
+        "mission_ids": [856, 857, 858, 859, 860, 861, 862, 863, 864, 865]
+    },
+    {
+        "name": "112-dag",
+        "mission_ids": [902, 903, 904, 905, 906]
+    },
+    {
+        "name": "Carnaval",
+        "mission_ids": [907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917]
+    },
+    {
+        "name": "Lente",
+        "mission_ids": [920, 921, 922, 923, 924, 925, 926, 927, 928]
     }
 ]

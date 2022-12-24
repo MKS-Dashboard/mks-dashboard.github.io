@@ -116,9 +116,19 @@ const Home = (props) => {
             <label>
                 <input type="checkbox"
                     defaultChecked={props.agree}
-                    onChange={() => props.setAgree(!props.agree)}
+                    onChange={() => props.updateAgree()}
+                    id="Checkbox_agree"
                 />
                 Ik ga akkoord met de <a href="/voorwaarden">Algemene Voorwaarden</a> en <a href="/privacy">Privacyverklaring</a>
+            </label>
+            <br />
+            <label>
+                <input type="checkbox"
+                    defaultChecked={props.rememberSession}
+                    onChange={() => props.updateRememberSession()}
+                    id="Checkbox_remember"
+                />
+                SessionID onthouden.
             </label>
             <br /><br />
             Uw SessionID van <a href="https://meldkamerspel.com">Meldkamerspel.com</a>:<HiInformationCircle size={15} title={`Chrome/Edge: F12(element inspecteren) --> Application --> Cookies --> _session_id\nFirefox: F12(element inspecteren) --> Storage --> Cookies --> _session_id`} /><br />

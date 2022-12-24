@@ -660,7 +660,7 @@ export const lists_vehicleGroups = [
         "type": "Kustwacht"
     },
     {
-        "name": "Boten",
+        "name": "Bootaanhangers",
         "vehicles": [
             36,
             67
@@ -668,7 +668,7 @@ export const lists_vehicleGroups = [
         "type": "Kustwacht"
     },
     {
-        "name": "Boten",
+        "name": "Bootaanhangers",
         "vehicles": [
             36,
             67

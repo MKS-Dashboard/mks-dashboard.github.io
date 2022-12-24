@@ -24,12 +24,34 @@ const Header = (props) => {
             <Link hidden={!props.loggedIn} className="link" to="/vehicles" >
               <RiPoliceCarFill id="icon" size={50} />
             </Link>
-            <Link hidden={!props.loggedIn} className="link" to="/buildings">
-              <FaBuilding id="icon" size={50} />
-            </Link>
-            <Link hidden={!props.loggedIn} className="link" to="/alliancebuildings">
-              <TiGroup id="icon" size={50} />
-            </Link>
+            <NavDropdown hidden={!props.loggedIn} title={<FaBuilding id="icon" size={50} />} id="nav-dropdown" className="link">
+              <NavDropdown.Item >
+                <Link className="link" to="/buildings">Overzicht</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/buildings/specialisations">Specialisaties</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/buildings/hospitals">Ziekenhuizen</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/buildings/cells">Cellen</Link>
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown hidden={!props.loggedIn} title={<TiGroup id="icon" size={50} />} id="nav-dropdown" className="link">
+              <NavDropdown.Item >
+                <Link className="link" to="/allianceinfo">Teaminformatie</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item >
+                <Link className="link" to="/alliancebuildings">Gebouwen Overzicht</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/alliancebuildings/hospitals">Teamziekenhuizen</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/alliancebuildings/cells">TeamCellen</Link>
+              </NavDropdown.Item>
+            </NavDropdown>
             <Link hidden={!props.loggedIn} className="link" to="/progressdata">
               <BsClipboardData id="icon" size={50} />
             </Link>
@@ -41,13 +63,22 @@ const Header = (props) => {
                 <Link className="link" to="/information">Algemeen</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className="Link" to="/information/awards">Awards</Link>
+                <Link className="link" to="/information/awards">Awards</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className="Link" to="/information/poi">POI</Link>
+                <Link className="link" to="/information/poi">POI</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className="Link" to="/information/alliancemissions">Teaminzetten</Link>
+                <Link className="link" to="/information/alliancemissions">Teaminzetten</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/information/alliance_events">Teamevents</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/information/missions">Inzetten</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link className="link" to="/information/events">Thema Events</Link>
               </NavDropdown.Item>
             </NavDropdown>
             <Link className="link" to="/suggestions">
