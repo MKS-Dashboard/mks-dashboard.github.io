@@ -241,11 +241,11 @@ export const lists_EventMissions = [
     },
     {
         "name": "Pasen",
-        "mission_ids": [578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588]
+        "mission_ids": [578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 935, 936, 937, 938]
     },
     {
         "name": "Zomer",
-        "mission_ids": [617, 618, 619, 620, 621]
+        "mission_ids": [617, 618, 619, 620, 621, 830, 831, 832, 833]
     },
     {
         "name": "Verjaardag",
