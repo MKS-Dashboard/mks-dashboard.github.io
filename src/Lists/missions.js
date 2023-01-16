@@ -245,7 +245,7 @@ export const lists_EventMissions = [
     },
     {
         "name": "Zomer",
-        "mission_ids": [617, 618, 619, 620, 621, 830, 831, 832, 833]
+        "mission_ids": [617, 618, 619, 620, 621, 830, 831, 832]
     },
     {
         "name": "Verjaardag",
