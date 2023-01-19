@@ -302,7 +302,7 @@ export const lists_EventMissions_filterkeys = [
         "key": "all"
     },
     {
-        "name": "Seizoen",
+        "name": "Seizoenen",
         "key": "seasonal"
     },
     {
