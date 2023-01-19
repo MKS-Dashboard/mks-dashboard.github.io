@@ -10,6 +10,7 @@ function Credits() {
     const [VersionsList, setVersions] = useState([]);
     const [LastUpdate, setLastUpdate] = useState(new Date(1, 1, 1))
     const [orderby, setOrderBy] = useState("avg")
+    const [versionsOrderd, setVersionsOrderd] = useState([])
     const [orderDesc, setOrderDesc] = useState(true)
     const [language, setLanguage] = useState("nl_NL")
 
@@ -45,8 +46,15 @@ function Credits() {
 
             }
             setVersions(versions)
+
+            if (!orderDesc) {
+                setVersionsOrderd(versions.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1))
+            }
+            else {
+                setVersionsOrderd(versions.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1))
+            }
         }
-    }, []);
+    }, [orderDesc, orderby]);
 
     function UpdateOrder(column) {
         if (orderby !== column) {
@@ -55,6 +63,14 @@ function Credits() {
         }
         else if (orderby === column) {
             setOrderDesc(!orderDesc)
+        }
+
+
+        if (!orderDesc) {
+            setVersionsOrderd(VersionsList.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1))
+        }
+        else {
+            setVersionsOrderd(VersionsList.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1))
         }
     }
 
@@ -77,7 +93,7 @@ function Credits() {
 
             <br /><br />
             {(() => {
-                if (VersionsList.length > 0) {
+                if (versionsOrderd.length > 0) {
                     return (
                         <table className="table" id="Tabel">
                             <thead>
@@ -95,13 +111,6 @@ function Credits() {
                             <tbody>
 
                                 {(() => {
-
-                                    if (!orderDesc) {
-                                        VersionsList.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1)
-                                    }
-                                    else {
-                                        VersionsList.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1)
-                                    }
 
                                     var count = 0
                                     return (
