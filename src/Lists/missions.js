@@ -165,6 +165,10 @@ export const lists_Codetranslations = [
             "elw_airport": {
                 "one": "AFO/OSC",
                 "more": "AFO's/OSC's"
+            },
+            "traffic_unit": {
+                "one": "Signalisatievoertuig",
+                "more": "Signalisatievoertuigen"
             }
         },
         "additional": {
