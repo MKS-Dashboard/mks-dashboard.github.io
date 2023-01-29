@@ -22,5 +22,11 @@ export const lists_Load_Vehicles = [
         "key": "waterrescue",
         "vehicle_category": "Kustwacht",
         "table": "Oranje"
+    },
+    {
+        "name": "Rijkswaterstaat",
+        "key": "traffic",
+        "vehicle_category": "RWS",
+        "table": "Geel"
     }
 ]

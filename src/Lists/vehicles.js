@@ -478,6 +478,24 @@ export const lists_Vehicles = [
         "name": "SAR-Heli",
         "namelong": "SAR helikopter",
         "categorie": "Kustwacht"
+    },
+    {
+        "ID": 81,
+        "name": "DA-RWS",
+        "namelong": "Dienstvoertuig weginspecteur Rijkswaterstaat",
+        "categorie": "RWS"
+    },
+    {
+        "ID": 82,
+        "name": "DM-RWS",
+        "namelong": "Dienstmotor weginspecteur Rijkswaterstaat",
+        "categorie": "RWS"
+    },
+    {
+        "ID": 83,
+        "name": "DA-SIG",
+        "namelong": "Signalisatievoertuig",
+        "categorie": "Brandweer"
     }
 ]
 
@@ -682,6 +700,24 @@ export const lists_vehicleGroups = [
             79
         ],
         "type": "Kustwacht"
+    },
+    {
+        "name": "Signalisatievoertuigen",
+        "vehicles": [
+            81,
+            82,
+            83
+        ],
+        "type": "RWS"
+    },
+    {
+        "name": "Signalisatievoertuigen",
+        "vehicles": [
+            81,
+            82,
+            83
+        ],
+        "type": "Brandweer"
     }
 ]
 

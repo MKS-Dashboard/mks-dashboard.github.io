@@ -8,7 +8,8 @@ export const lists_BuildingInformation = [
             "Waterongevallenbestrijding",
             "Vliegtuigbrandbestrijding",
             "Haakarmbak parkeerplaats",
-            "Schuimblussing"
+            "Schuimblussing",
+            "Signalisatie"
         ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
@@ -160,7 +161,8 @@ export const lists_BuildingInformation = [
             "Waterongevallenbestrijding",
             "Vliegtuigbrandbestrijding",
             "Haakarmbak parkeerplaats",
-            "Schuimblussing"
+            "Schuimblussing",
+            "Signalisatie"
         ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
@@ -198,6 +200,12 @@ export const lists_BuildingInformation = [
             "SAR Helikopter Hangar",
             "Extra SAR Helikopter Hangar"
         ]
+    },
+    {
+        "ID": 22,
+        "name": "Steunpunt Rijkswaterstaat",
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
     },
 ]
 
@@ -285,6 +293,9 @@ export const lists_BuildingExtensionsOverview = [
     },
     {
         "name": "Extra SAR Helikopter Hangar"
+    },
+    {
+        "name": "Signalisatie"
     }
 ]
 
