@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { lists_Load_Vehicles } from "../../Lists/loadfiles";
 import { lists_additionalVehicleValues, lists_vehicleGroups, lists_Vehicles } from "../../Lists/vehicles";
 import Loading from '../Default/Loading';
 
@@ -29,7 +30,6 @@ function Vehicles(props) {
         async function updateGroups(groups) {
             var data = props.vehicleData
             for (let i = 0; i < groups.length; i++) {
-                //types[i].inbezit = data.filter(vehicle => vehicle.vehicle_type === types[i].ID).length
                 let count = 0;
                 var types = ""
 
@@ -79,321 +79,122 @@ function Vehicles(props) {
                     return (
                         <>
                             <h2>Je hebt {props.vehicleData.length.toLocaleString()} voertuigen in totaal.</h2>
-
-                            <h2> Brandweer ({vehicleTypes.filter(vehicle => vehicle.categorie === "Brandweer").reduce(function (prev, cur) {
-                                return prev + cur.inbezit;
-                            }, 0).toLocaleString()}) </h2>
-                            <table className="table" id="Brandweer">
-                                <thead>
-                                    <tr>
-                                        <th>Afkorting</th>
-                                        <th>Omschrijving</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    {(() => {
-
-                                        var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === "Brandweer")
+                            {(() => {
+                                return (
+                                    lists_Load_Vehicles.map((load) => {
                                         return (
-                                            vehicleinbezit.map((vehicle) => {
-                                                return (
-                                                    <tr key={vehicle.ID}>
-                                                        <td>{vehicle.name}</td>
-                                                        <td>{vehicle.namelong}</td>
-                                                        <td>{vehicle.inbezit.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
-                            <br />
-                            <table className="table" id="Brandweer">
-                                <thead>
-                                    <tr>
-                                        <th>Groep</th>
-                                        <th>Voertuigen</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                                            <>
+                                                {(() => {
+                                                    var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === load.vehicle_category)
+                                                    if (vehicleinbezit.length > 0) {
+                                                        return (
+                                                            <>
+                                                                <h2> {load.name} ({vehicleTypes.filter(vehicle => vehicle.categorie === load.vehicle_category).reduce(function (prev, cur) {
+                                                                    return prev + cur.inbezit;
+                                                                }, 0).toLocaleString()}) </h2>
+                                                                <table className="table" id={load.table}>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Afkorting</th>
+                                                                            <th>Omschrijving</th>
+                                                                            <th>Aantal</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
 
-                                    {(() => {
+                                                                        {(() => {
+                                                                            return (
+                                                                                vehicleinbezit.map((vehicle) => {
+                                                                                    return (
+                                                                                        <tr key={vehicle.ID}>
+                                                                                            <td>{vehicle.name}</td>
+                                                                                            <td>{vehicle.namelong}</td>
+                                                                                            <td>{vehicle.inbezit.toLocaleString()}</td>
+                                                                                        </tr>
+                                                                                    )
+                                                                                }
+                                                                                ))
+                                                                        })()}
+                                                                    </tbody>
+                                                                </table>
+                                                            </>
+                                                        )
+                                                    }
+                                                })()}
 
-                                        var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === "Brandweer")
-                                        return (
-                                            groepen.map((groep) => {
-                                                return (
-                                                    <tr key={groep.name}>
-                                                        <td>{groep.name}</td>
-                                                        <td>{groep.types}</td>
-                                                        <td>{groep.count.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
-                            <br />
-                            <table className="table" id="Brandweer">
-                                <thead>
-                                    <tr>
-                                        <th>Waarde</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                                                {(() => {
+                                                    var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === load.vehicle_category)
+                                                    if (groepen.length > 0) {
+                                                        return (
+                                                            <>
+                                                                <br />
+                                                                <table className="table" id={load.table}>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Groep</th>
+                                                                            <th>Voertuigen</th>
+                                                                            <th>Aantal</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
 
-                                    {(() => {
+                                                                        {(() => {
 
-                                        var values = additionalValues.filter(value => value.total > 0 && value.type === "Brandweer")
-                                        return (
-                                            values.map((value) => {
-                                                return (
-                                                    <tr key={value.name}>
-                                                        <td>{value.name}</td>
-                                                        <td>{value.total.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
+                                                                            return (
+                                                                                groepen.map((groep) => {
+                                                                                    return (
+                                                                                        <tr key={groep.name}>
+                                                                                            <td>{groep.name}</td>
+                                                                                            <td>{groep.types}</td>
+                                                                                            <td>{groep.count.toLocaleString()}</td>
+                                                                                        </tr>
+                                                                                    )
+                                                                                }
+                                                                                ))
+                                                                        })()}
+                                                                    </tbody>
+                                                                </table>
+                                                            </>
+                                                        )
+                                                    }
+                                                })()}
 
-                            <h2> Politie ({vehicleTypes.filter(vehicle => vehicle.categorie === "Politie").reduce(function (prev, cur) {
-                                return prev + cur.inbezit;
-                            }, 0).toLocaleString()})</h2>
-                            <table className="table" id="Politie">
-                                <thead>
-                                    <tr>
-                                        <th>Afkorting</th>
-                                        <th>Omschrijving</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    {(() => {
-
-                                        var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === "Politie")
-                                        return (
-                                            vehicleinbezit.map((vehicle) => {
-                                                return (
-                                                    <tr key={vehicle.ID}>
-                                                        <td>{vehicle.name}</td>
-                                                        <td>{vehicle.namelong}</td>
-                                                        <td>{vehicle.inbezit.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
-                            <br />
-                            <table className="table" id="Politie">
-                                <thead>
-                                    <tr>
-                                        <th>Groep</th>
-                                        <th>Voertuigen</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    {(() => {
-
-                                        var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === "Politie")
-                                        return (
-                                            groepen.map((groep) => {
-                                                return (
-                                                    <tr key={groep.name}>
-                                                        <td>{groep.name}</td>
-                                                        <td>{groep.types}</td>
-                                                        <td>{groep.count.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
-                            <br />
-                            <table className="table" id="Politie">
-                                <thead>
-                                    <tr>
-                                        <th>Waarde</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    {(() => {
-
-                                        var values = additionalValues.filter(value => value.total > 0 && value.type === "Politie")
-                                        return (
-                                            values.map((value) => {
-                                                return (
-                                                    <tr key={value.name}>
-                                                        <td>{value.name}</td>
-                                                        <td>{value.total.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
-
-                            <h2> Ambulance ({vehicleTypes.filter(vehicle => vehicle.categorie === "Ambulance").reduce(function (prev, cur) {
-                                return prev + cur.inbezit;
-                            }, 0).toLocaleString()})</h2>
-                            <table className="table" id="Ambulance">
-                                <thead>
-                                    <tr>
-                                        <th>Afkorting</th>
-                                        <th>Omschrijving</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    {(() => {
-
-                                        var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === "Ambulance")
-                                        return (
-                                            vehicleinbezit.map((vehicle) => {
-                                                return (
-                                                    <tr key={vehicle.ID}>
-                                                        <td>{vehicle.name}</td>
-                                                        <td>{vehicle.namelong}</td>
-                                                        <td>{vehicle.inbezit.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
-                            <br />
-                            <table className="table" id="Ambulance">
-                                <thead>
-                                    <tr>
-                                        <th>Groep</th>
-                                        <th>Voertuigen</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    {(() => {
-
-                                        var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === "Ambulance")
-                                        return (
-                                            groepen.map((groep) => {
-                                                return (
-                                                    <tr key={groep.name}>
-                                                        <td>{groep.name}</td>
-                                                        <td>{groep.types}</td>
-                                                        <td>{groep.count.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
-                            <br />
-                            <table className="table" id="Ambulance">
-                                <thead>
-                                    <tr>
-                                        <th>Waarde</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    {(() => {
-
-                                        var values = additionalValues.filter(value => value.total > 0 && value.type === "Ambulance")
-                                        return (
-                                            values.map((value) => {
-                                                return (
-                                                    <tr key={value.name}>
-                                                        <td>{value.name}</td>
-                                                        <td>{value.total.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
-
-                            <h2> Kustwacht ({vehicleTypes.filter(vehicle => vehicle.categorie === "Kustwacht").reduce(function (prev, cur) {
-                                return prev + cur.inbezit;
-                            }, 0).toLocaleString()})</h2>
-                            <table className="table" id="Kustwacht">
-                                <thead>
-                                    <tr>
-                                        <th>Afkorting</th>
-                                        <th>Omschrijving</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    {(() => {
-
-                                        var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === "Kustwacht")
-                                        return (
-                                            vehicleinbezit.map((vehicle) => {
-                                                return (
-                                                    <tr key={vehicle.ID}>
-                                                        <td>{vehicle.name}</td>
-                                                        <td>{vehicle.namelong}</td>
-                                                        <td>{vehicle.inbezit.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
-                            <br />
-                            <table className="table" id="Kustwacht">
-                                <thead>
-                                    <tr>
-                                        <th>Groep</th>
-                                        <th>Voertuigen</th>
-                                        <th>Aantal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    {(() => {
-
-                                        var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === "Kustwacht")
-                                        return (
-                                            groepen.map((groep) => {
-                                                return (
-                                                    <tr key={groep.name}>
-                                                        <td>{groep.name}</td>
-                                                        <td>{groep.types}</td>
-                                                        <td>{groep.count.toLocaleString()}</td>
-                                                    </tr>
-                                                )
-                                            }
-                                            ))
-                                    })()}
-                                </tbody>
-                            </table>
-
+                                                {(() => {
+                                                    var values = additionalValues.filter(value => value.total > 0 && value.type === load.vehicle_category)
+                                                    if (values.length > 0) {
+                                                        return (
+                                                            <>
+                                                                <br />
+                                                                <table className="table" id={load.table}>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Waarde</th>
+                                                                            <th>Aantal</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {(() => {
+                                                                            return (
+                                                                                values.map((value) => {
+                                                                                    return (
+                                                                                        <tr key={value.name}>
+                                                                                            <td>{value.name}</td>
+                                                                                            <td>{value.total.toLocaleString()}</td>
+                                                                                        </tr>
+                                                                                    )
+                                                                                }
+                                                                                ))
+                                                                        })()}
+                                                                    </tbody>
+                                                                </table>
+                                                            </>
+                                                        )
+                                                    }
+                                                })()}
+                                            </>
+                                        )
+                                    }))
+                            })()}
                         </>
                     )
                 }
