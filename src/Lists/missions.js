@@ -165,6 +165,10 @@ export const lists_Codetranslations = [
             "elw_airport": {
                 "one": "AFO/OSC",
                 "more": "AFO's/OSC's"
+            },
+            "traffic_unit": {
+                "one": "Signalisatievoertuig",
+                "more": "Signalisatievoertuigen"
             }
         },
         "additional": {
@@ -221,54 +225,148 @@ export const lists_Codetranslations = [
 export const lists_EventMissions = [
     {
         "name": "Halloween",
-        "mission_ids": [146, 147, 148, 149, 150, 151, 152, 153, 154]
+        "mission_ids": [146, 147, 148, 149, 150, 151, 152, 153, 154],
+        "keys": ["all", "halloween"]
     },
     {
         "name": "Sinterklaas",
-        "mission_ids": [160, 161, 162, 163, 164, 165, 166, 167, 168, 253]
+        "mission_ids": [160, 161, 162, 163, 164, 165, 166, 167, 168, 253],
+        "keys": ["all", "sint"]
     },
     {
         "name": "Kerst",
-        "mission_ids": [169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 371, 372, 373, 374, 375, 542, 543, 544, 545, 545, 546, 547, 997, 998, 999, 1000]
+        "mission_ids": [169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 371, 372, 373, 374, 375, 542, 543, 544, 545, 545, 546, 547, 997, 998, 999, 1000],
+        "keys": ["all", "christmas"]
     },
     {
-        "name": "Vuurwerk",
-        "mission_ids": [525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702]
+        "name": "Oud en nieuw",
+        "mission_ids": [525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 886],
+        "keys": ["all", "newyear"]
     },
     {
         "name": "Valentijn",
-        "mission_ids": [562, 563, 727, 728, 729, 730, 731, 732, 733, 734, 735]
+        "mission_ids": [562, 563, 727, 728, 729, 730, 731, 732, 733, 734, 735],
+        "keys": ["all", "valentine"]
     },
     {
         "name": "Pasen",
-        "mission_ids": [578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588]
+        "mission_ids": [578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 935, 936, 937, 938],
+        "keys": ["all", "easter"]
     },
     {
         "name": "Zomer",
-        "mission_ids": [617, 618, 619, 620, 621]
+        "mission_ids": [617, 618, 619, 620, 621, 830, 831, 832],
+        "keys": ["all", "seasonal", "summer"]
     },
     {
         "name": "Verjaardag",
-        "mission_ids": [736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752]
+        "mission_ids": [736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752],
+        "keys": ["all", "anniversary"]
     },
     {
         "name": "Voetbal",
-        "mission_ids": [820, 821, 822, 823, 824, 825, 826, 827, 828, 829]
+        "mission_ids": [820, 821, 822, 823, 824, 825, 826, 827, 828, 829],
+        "keys": ["all", "soccer"]
     },
     {
         "name": "Herfst",
-        "mission_ids": [856, 857, 858, 859, 860, 861, 862, 863, 864, 865]
+        "mission_ids": [856, 857, 858, 859, 860, 861, 862, 863, 864, 865],
+        "keys": ["all", "seasonal", "authum"]
     },
     {
         "name": "112-dag",
-        "mission_ids": [902, 903, 904, 905, 906]
+        "mission_ids": [902, 903, 904, 905, 906],
+        "keys": ["all", "alarmnumber"]
     },
     {
         "name": "Carnaval",
-        "mission_ids": [907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917]
+        "mission_ids": [907, 908, 909, 910, 911, 912, 913, 914, 915, 916],
+        "keys": ["all", "carnival"]
     },
     {
         "name": "Lente",
-        "mission_ids": [920, 921, 922, 923, 924, 925, 926, 927, 928]
+        "mission_ids": [920, 921, 922, 923, 924, 925, 926, 927, 928],
+        "keys": ["all", "seasonal", "spring"]
+    },
+    {
+        "name": "Winter",
+        "mission_ids": [1003, 1004, 1005, 1006],
+        "keys": ["all", "seasonal", "winter"]
+    },
+    {
+        "name": "Formule 1",
+        "mission_ids": [963, 964, 965, 966, 967, 968, 969, 970, 971, 972],
+        "keys": ["all", "racing"]
+    }
+]
+
+export const lists_EventMissions_filterkeys = [
+    {
+        "name": "-- Alles",
+        "key": "all"
+    },
+    {
+        "name": "Seizoenen",
+        "key": "seasonal"
+    },
+    {
+        "name": "Voetbal",
+        "key": "soccer"
+    },
+    {
+        "name": "Halloween",
+        "key": "halloween"
+    },
+    {
+        "name": "Sinterklaas",
+        "key": "sint"
+    },
+    {
+        "name": "Kerst",
+        "key": "christmas"
+    },
+    {
+        "name": "Oud en nieuw",
+        "key": "newyear"
+    },
+    {
+        "name": "Valentijn",
+        "key": "valentine"
+    },
+    {
+        "name": "112-dag",
+        "key": "alarmnumber"
+    },
+    {
+        "name": "Carnaval",
+        "key": "carnival"
+    },
+    {
+        "name": "Winter",
+        "key": "winter"
+    },
+    {
+        "name": "Lente",
+        "key": "spring"
+    },
+    {
+        "name": "Herfst",
+        "key": "authum"
+    },
+    {
+        "name": "Verjaardag",
+        "key": "anniversary"
+    },
+    {
+        "name": "Zomer",
+        "key": "summer"
+    },
+    {
+        "name": "Pasen",
+        "key": "easter"
+    },
+    {
+        "name": "Formule 1",
+        "key": "racing"
     }
 ]

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { lists_Codetranslations, lists_EventMissions, lists_ExcludedMissionKeysMissions } from '../../Lists/missions';
+import { lists_Codetranslations, lists_EventMissions, lists_EventMissions_filterkeys, lists_ExcludedMissionKeysMissions } from '../../Lists/missions';
 import Loading from '../Default/Loading';
 
 function Events(props) {
     const [events, setEvents] = useState([])
+    const [selectedKey, setSelectedKey] = useState("all")
+    const [filteredEvents, setFilteredEvents] = useState([])
 
     useEffect(() => {
 
@@ -14,19 +16,34 @@ function Events(props) {
             }
         }
         setEvents(lists_EventMissions)
+        setFilteredEvents(lists_EventMissions.filter(e => e.keys.includes(selectedKey)))
 
-    }, [props.missions]);
+    }, [props.missions, selectedKey]);
+
+    const handleFilterChange = event => {
+        setSelectedKey(event.target.value)
+        setFilteredEvents(events.filter(e => e.keys.includes(selectedKey)))
+    };
 
     return (
         <div id="Container">
-            Het spel bevat momenteel de volgende events<br />
+            Filter welke events u wilt zien.<br />
 
+            <div className='keyfilter'>
+                <select id="keyfilter" name="filter" onChange={handleFilterChange}>
+                    {lists_EventMissions_filterkeys.sort((a, b) => (a.name > b.name) ? 1 : -1).map((key) => {
+                        return (
+                            <option value={key.key}>{key.name}</option>
+                        )
+                    })}
+                </select>
+            </div>
 
             {(() => {
-                if (events.length > 0 && lists_Codetranslations.length > 0) {
-                    events.sort((a, b) => (a.name > b.name) ? 1 : -1)
+                if (filteredEvents.length > 0 && lists_Codetranslations.length > 0) {
+                    filteredEvents.sort((a, b) => (a.name > b.name) ? 1 : -1)
                     return (
-                        events.map((event) => {
+                        filteredEvents.map((event) => {
                             return (
                                 <>
                                     <h2>{event.name}</h2>
