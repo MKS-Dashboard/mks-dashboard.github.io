@@ -10,8 +10,8 @@ export const lists_translations_credits = [
             "plannedavg": "Gemiddelde geplande inzetten",
             "alliance": "Teaminzetten",
             "allianceavg": "Gemiddelde teaminzetten",
-            "language": "Taal"
-
+            "language": "Taal",
+            "loading": "Momenteel verzamelen we de data, een moment geduld A.U.B."
         },
         "en_EN": {
             "lastupdate": "Last update",
@@ -23,7 +23,8 @@ export const lists_translations_credits = [
             "plannedavg": "Average planned missions",
             "alliance": "Alliance missions",
             "allianceavg": "Average alliance missions",
-            "language": "Language"
+            "language": "Language",
+            "loading": "We are currently collecting data, please wait."
         }
     }
 ]
