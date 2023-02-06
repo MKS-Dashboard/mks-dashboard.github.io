@@ -222,5 +222,19 @@ export const lists_awards = [
         "zilver": 400,
         "goud": 1000,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Valentijnsdag 2023",
+        "brons": 1,
+        "zilver": 30,
+        "goud": 100,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Romanticus",
+        "brons": 50,
+        "zilver": 300,
+        "goud": 2000,
+        "type": "Doorlopend"
     }
 ]
