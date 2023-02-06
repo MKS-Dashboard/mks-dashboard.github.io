@@ -245,7 +245,7 @@ export const lists_EventMissions = [
     },
     {
         "name": "Valentijn",
-        "mission_ids": [562, 563, 727, 728, 729, 730, 731, 732, 733, 734, 735],
+        "mission_ids": [562, 563, 727, 728, 729, 730, 731, 732, 733, 734, 735, 1013, 1014, 1015],
         "keys": ["all", "valentine"]
     },
     {
