@@ -236,5 +236,12 @@ export const lists_awards = [
         "zilver": 300,
         "goud": 2000,
         "type": "Doorlopend"
+    },
+    {
+        "naam": "7 Jarig Jubileum!",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
     }
 ]
