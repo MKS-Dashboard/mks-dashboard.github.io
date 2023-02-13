@@ -243,5 +243,12 @@ export const lists_awards = [
         "zilver": 15,
         "goud": 50,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Europese 112-dag 2023",
+        "brons": 5,
+        "zilver": 30,
+        "goud": 100,
+        "type": "Eenmalig"
     }
 ]
