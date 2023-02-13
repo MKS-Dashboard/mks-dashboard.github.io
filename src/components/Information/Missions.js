@@ -12,6 +12,7 @@ function Missions(props) {
     const [expansion, setExpansion] = useState('null')
     const [guard, setGuard] = useState('null')
     const [alliance, setAlliance] = useState('null')
+    const [disableEvent, setDisableEvent] = useState('null')
 
     useEffect(() => {
         var missionlist = missions
@@ -46,8 +47,13 @@ function Missions(props) {
         if (alliance === 'false')
             missionlist = missionlist.filter(m => !m.additional.only_alliance_mission)
 
+        if (disableEvent === 'true')
+            missionlist = missionlist.filter(m => m.additional.optional_event_mission)
+        if (disableEvent === 'false')
+            missionlist = missionlist.filter(m => !m.additional.optional_event_mission)
+
         setFilteredMissions(missionlist)
-    }, [missions, creditsmin, creditsmax, followup, subsequent, expansion, guard, alliance]);
+    }, [missions, creditsmin, creditsmax, followup, subsequent, expansion, guard, alliance, disableEvent]);
 
     return (
         <div id="Container">
@@ -94,6 +100,14 @@ function Missions(props) {
             <select
                 value={alliance}
                 onChange={e => setAlliance(e.target.value)}>
+                <option value='null' >Alle</option>
+                <option value='true' >Ja</option>
+                <option value='false' >Nee</option>
+            </select><br />
+            Uitschakelbare event melding:&nbsp;
+            <select
+                value={disableEvent}
+                onChange={e => setDisableEvent(e.target.value)}>
                 <option value='null' >Alle</option>
                 <option value='true' >Ja</option>
                 <option value='false' >Nee</option>
