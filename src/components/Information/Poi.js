@@ -8,6 +8,7 @@ function Poi() {
     const [poi, setPoi] = useState([])
     const [orderby, setOrderBy] = useState("name")
     const [orderDesc, setOrderDesc] = useState(false)
+    const [poiOrderd, setPoiOrderd] = useState([])
 
     useEffect(() => {
         fetchMissions()
@@ -27,8 +28,15 @@ function Poi() {
                 poi_check[i].used = missions.filter(mission => mission.place_array.includes(poi_check[i].name)).length
             }
             setPoi(poi_check);
+
+            if (!orderDesc) {
+                setPoiOrderd(poi_check.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1))
+            }
+            else {
+                setPoiOrderd(poi_check.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1))
+            }
         }
-    }, []);
+    }, [orderDesc, orderby]);
 
 
     function UpdateOrder(column) {
@@ -38,6 +46,13 @@ function Poi() {
         }
         else if (orderby === column) {
             setOrderDesc(!orderDesc)
+        }
+
+        if (!orderDesc) {
+            setPoiOrderd(poi.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1))
+        }
+        else {
+            setPoiOrderd(poi.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1))
         }
     }
 
@@ -59,16 +74,8 @@ function Poi() {
                             <tbody>
 
                                 {(() => {
-
-                                    if (!orderDesc) {
-                                        poi.sort((a, b) => (a[orderby] > b[orderby]) ? 1 : -1)
-                                    }
-                                    else {
-                                        poi.sort((a, b) => (a[orderby] < b[orderby]) ? 1 : -1)
-                                    }
-
                                     return (
-                                        poi.map((poi) => {
+                                        poiOrderd.map((poi) => {
                                             return (
                                                 <tr key={poi.name}>
                                                     <td>{poi.name.toLocaleString()}</td>
