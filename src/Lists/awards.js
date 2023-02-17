@@ -250,5 +250,12 @@ export const lists_awards = [
         "zilver": 30,
         "goud": 100,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Carnaval 2023",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
     }
 ]
