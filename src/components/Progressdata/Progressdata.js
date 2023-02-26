@@ -128,12 +128,12 @@ function Progressdata(props) {
                                                         return (
                                                             <>
                                                                 <h4>{school.name}</h4>
-                                                                Eigen: <br />
+                                                                Eigen ({(school.classes_used / school.classes * 100).toFixed(2)}% in gebruik): <br />
                                                                 <ProgressBar>
                                                                     <ProgressBar animated striped variant="danger" now={school.classes_used} key={1} min={0} max={school.classes} label={school.classes_used?.toLocaleString()} />
                                                                     <ProgressBar animated striped variant="success" now={school.classes - school.classes_used} key={2} min={0} max={school.classes} label={(school.classes - school.classes_used)?.toLocaleString()} />
                                                                 </ProgressBar>
-                                                                Team:
+                                                                Team ({(school.allianceClasses_used / school.allianceClasses * 100).toFixed(2)}% in gebruik):
                                                                 <ProgressBar>
                                                                     <ProgressBar animated striped variant="danger" now={school.allianceClasses_used} key={1} min={0} max={school.allianceClasses} label={school.allianceClasses_used?.toLocaleString()} />
                                                                     <ProgressBar animated striped variant="success" now={school.allianceClasses - school.allianceClasses_used} key={2} min={0} max={school.allianceClasses} label={(school.allianceClasses - school.allianceClasses_used)?.toLocaleString()} />
