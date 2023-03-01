@@ -85,11 +85,11 @@ function Vehicles(props) {
                                         return (
                                             <>
                                                 {(() => {
-                                                    var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie === load.vehicle_category)
+                                                    var vehicleinbezit = vehicleTypes.filter(vehicle => vehicle.inbezit > 0 && vehicle.categorie.includes(load.vehicle_category))
                                                     if (vehicleinbezit.length > 0) {
                                                         return (
                                                             <>
-                                                                <h2> {load.name} ({vehicleTypes.filter(vehicle => vehicle.categorie === load.vehicle_category).reduce(function (prev, cur) {
+                                                                <h2> {load.name} ({vehicleTypes.filter(vehicle => vehicle.categorie.includes(load.vehicle_category)).reduce(function (prev, cur) {
                                                                     return prev + cur.inbezit;
                                                                 }, 0).toLocaleString()}) </h2>
                                                                 <table className="table" id={load.table}>
@@ -123,7 +123,7 @@ function Vehicles(props) {
                                                 })()}
 
                                                 {(() => {
-                                                    var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type === load.vehicle_category)
+                                                    var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type.includes(load.vehicle_category))
                                                     if (groepen.length > 0) {
                                                         return (
                                                             <>
@@ -160,7 +160,7 @@ function Vehicles(props) {
                                                 })()}
 
                                                 {(() => {
-                                                    var values = additionalValues.filter(value => value.total > 0 && value.type === load.vehicle_category)
+                                                    var values = additionalValues.filter(value => value.total > 0 && value.type.includes(load.vehicle_category))
                                                     if (values.length > 0) {
                                                         return (
                                                             <>

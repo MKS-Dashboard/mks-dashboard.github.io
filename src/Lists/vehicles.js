@@ -3,499 +3,499 @@ export const lists_Vehicles = [
         "ID": 0,
         "name": "SI‐2",
         "namelong": "Snel Inzetbare Eenheid (2 pers.)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 1,
         "name": "TS 8/9",
         "namelong": "Tankautospuit (8/9 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 2,
         "name": "AL",
         "namelong": "Autoladder",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 3,
         "name": "DA-OVD",
         "namelong": "Officier van Dienst - Brandweer",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 4,
         "name": "HV",
         "namelong": "Hulpverleningsvoertuig",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 5,
         "name": "AB",
         "namelong": "Adembeschermingsvoertuig",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 6,
         "name": "TST 8/9",
         "namelong": "Tankautospuit Terreinvaardig (8/9 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 7,
         "name": "TST 6/7",
         "namelong": "Tankautospuit Terreinvaardig (6/7 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 8,
         "name": "TST 4/5",
         "namelong": "Tankautospuit Terreinvaardig (4/5 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 9,
         "name": "TS 4/5",
         "namelong": "Tankautospuit (4/5 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 10,
         "name": "SL",
         "namelong": "Slangenwagen",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 11,
         "name": "DB-VEB",
         "namelong": "Dienstbus Verkenningseenheid Brandweer",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 12,
         "name": "TST-NB 8/9",
         "namelong": "Tankautospuit Natuurbrandbestrijding (8/9 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 14,
         "name": "TST-NB 6/7",
         "namelong": "Tankautospuit Natuurbrandbestrijding (6/7 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 15,
         "name": "TST-NB 4/5",
         "namelong": "Tankautospuit Natuurbrandbestrijding (4/5 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 16,
         "name": "Ambulance",
         "namelong": "Ambulance",
-        "categorie": "Ambulance"
+        "categorie": ["Ambulance"]
     },
     {
         "ID": 17,
         "name": "TS 6/7",
         "namelong": "Tankautospuit (6/7 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 18,
         "name": "HW",
         "namelong": "Hoogwerker",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 19,
         "name": "DA-HOD",
         "namelong": "Hoofd Officier van Dienst - Brandweer",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 20,
         "name": "DA",
         "namelong": "Dienstauto (4 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 21,
         "name": "DB-K",
         "namelong": "Dienstbus klein (9 personen)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 22,
         "name": "DA Noodhulp",
         "namelong": "Dienstauto Noodhulp",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 23,
         "name": "Lifeliner",
         "namelong": "Lifeliner",
-        "categorie": "Ambulance"
+        "categorie": ["Ambulance"]
     },
     {
         "ID": 24,
         "name": "DA-AGS",
         "namelong": "Adviseur Gevaarlijke Stoffen - Brandweer",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 25,
         "name": "DB Noodhulp",
         "namelong": "Dienstbus Noodhulp",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 26,
         "name": "HA",
         "namelong": "Haakarmvoertuig",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 27,
         "name": "ABH",
         "namelong": "Adembeschermingshaakarmbak",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 28,
         "name": "Politiehelikopter",
         "namelong": "Politiehelikopter",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 29,
         "name": "WTH",
         "namelong": "Watertankhaakarmbak",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 30,
         "name": "Zorgambulance",
         "namelong": "B-ambulance",
-        "categorie": "Ambulance"
+        "categorie": ["Ambulance"]
     },
     {
         "ID": 31,
         "name": "CO",
         "namelong": "Commandovoertuig",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 32,
         "name": "COH",
         "namelong": "Commandohaakarmbak",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 33,
         "name": "WO",
         "namelong": "Waterongevallenvoertuig",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 34,
         "name": "WT",
         "namelong": "Watertankwagen",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 35,
         "name": "OVD-P",
         "namelong": "Officier van Dienst - Politie",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 36,
         "name": "WOA",
         "namelong": "Waterongevallenaanhanger",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 37,
         "name": "MMT-Auto",
         "namelong": "MMT-Auto",
-        "categorie": "Ambulance"
+        "categorie": ["Ambulance"]
     },
     {
         "ID": 38,
         "name": "OvD-G",
         "namelong": "Officier van Dienst Geneeskunde",
-        "categorie": "Ambulance"
+        "categorie": ["Ambulance"]
     },
     {
         "ID": 39,
         "name": "ME Commandovoertuig",
         "namelong": "ME Commandovoertuig",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 40,
         "name": "ME Flex",
         "namelong": "ME Flexbus",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 41,
         "name": "CT (8x8)",
         "namelong": "Crashtender (8x8)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 42,
         "name": "CT (6x6)",
         "namelong": "Crashtender (6x6)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 43,
         "name": "CT (4x4)",
         "namelong": "Crashtender (4x4)",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 44,
         "name": "AFO/OSC",
         "namelong": "Airport fire Officer / On Scene Commander",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 45,
         "name": "DPH",
         "namelong": "Dompelpomphaakarmbak",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 46,
         "name": "DM Noodhulp",
         "namelong": "Dienstmotor Noodhulp",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 47,
         "name": "DA Hondengeleider",
         "namelong": "Dienstauto Hondengeleider",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 48,
         "name": "DB Hondengeleider",
         "namelong": "Dienstbus Hondengeleider",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 49,
         "name": "PM-OR",
         "namelong": "Materieelvoertuig - Oppervlakteredding",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 50,
         "name": "TS-OR",
         "namelong": "Tankautospuit - Oppervlakteredding",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 51,
         "name": "HVH",
         "namelong": "Hulpverleningshaakarmbak",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 52,
         "name": "RR",
         "namelong": "Rapid Responder",
-        "categorie": "Ambulance"
+        "categorie": ["Ambulance"]
     },
     {
         "ID": 53,
         "name": "AT-C",
         "namelong": "AT-Commandant",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 54,
         "name": "AT-O",
         "namelong": "AT-Operator",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 55,
         "name": "AT-M",
         "namelong": "AT-Materiaalwagen",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 56,
         "name": "DA-VL",
         "namelong": "Dienstauto Voorlichter",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 57,
         "name": "DA OVDG-RR",
         "namelong": "Dienstvoertuig Officier van Dienst-Geneeskundig/Rapid Responder",
-        "categorie": "Ambulance"
+        "categorie": ["Ambulance"]
     },
     {
         "ID": 58,
         "name": "DB-AV",
         "namelong": "Dienstbus - Arrestantenvervoer",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 59,
         "name": "NH-O",
         "namelong": "Noodhulp - Onopvallend",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 60,
         "name": "DB-Bike",
         "namelong": "Dienstbus Biketeam",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 61,
         "name": "SLH",
         "namelong": "Slangenhaakarmbak",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 62,
         "name": "TS-HV",
         "namelong": "Tankautospuit-Hulpverlening",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 63,
         "name": "DM-RR",
         "namelong": "Rapid Responder - Motor",
-        "categorie": "Ambulance"
+        "categorie": ["Ambulance"]
     },
     {
         "ID": 64,
         "name": "ME-AE",
         "namelong": "ME - Aanhoudingseenheid",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 65,
         "name": "DAT-RB",
         "namelong": "Dienstauto Terreinwaardig - Reddingsbrigade",
-        "categorie": "Kustwacht"
+        "categorie": ["Kustwacht"]
     },
     {
         "ID": 66,
         "name": "KHV",
         "namelong": "Kusthulpverleningsvoertuig",
-        "categorie": "Kustwacht"
+        "categorie": ["Kustwacht"]
     },
     {
         "ID": 67,
         "name": "BA-RB",
         "namelong": "Bootaanhanger Reddingsbrigade",
-        "categorie": "Kustwacht"
+        "categorie": ["Kustwacht"]
     },
     {
         "ID": 68,
         "name": "SB",
         "namelong": "Schuimblusvoertuig",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 69,
         "name": "SBH",
         "namelong": "Schuimblushaakarmbak",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 70,
         "name": "SBA",
         "namelong": "Schuimblusaanhanger",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 71,
         "name": "MSA",
         "namelong": "Motorspuitaanhanger",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 72,
         "name": "DPA",
         "namelong": "Dompelpompaanhangwagen",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     },
     {
         "ID": 73,
         "name": "VW-BB",
         "namelong": "Vrachtwagen – Bereden Brigade",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 74,
         "name": "BB-A",
         "namelong": "Bereden Brigade Aanhanger",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 75,
         "name": "DAT-NH",
         "namelong": "Dienstauto terreinvaardig - Noodhulp",
-        "categorie": "Politie"
+        "categorie": ["Politie"]
     },
     {
         "ID": 76,
         "name": "Quad",
         "namelong": "Quad Reddingsbrigade",
-        "categorie": "Kustwacht"
+        "categorie": ["Kustwacht"]
     },
     {
         "ID": 77,
         "name": "KW-Boot",
         "namelong": "Kustwacht boot",
-        "categorie": "Kustwacht"
+        "categorie": ["Kustwacht"]
     },
     {
         "ID": 78,
         "name": "RB-K",
         "namelong": "Reddingsboot klein",
-        "categorie": "Kustwacht"
+        "categorie": ["Kustwacht"]
     },
     {
         "ID": 79,
         "name": "RB-G",
         "namelong": "Reddingsboot groot",
-        "categorie": "Kustwacht"
+        "categorie": ["Kustwacht"]
     },
     {
         "ID": 80,
         "name": "SAR-Heli",
         "namelong": "SAR helikopter",
-        "categorie": "Kustwacht"
+        "categorie": ["Kustwacht"]
     },
     {
         "ID": 81,
         "name": "DA-RWS",
         "namelong": "Dienstvoertuig weginspecteur Rijkswaterstaat",
-        "categorie": "RWS"
+        "categorie": ["RWS"]
     },
     {
         "ID": 82,
         "name": "DM-RWS",
         "namelong": "Dienstmotor weginspecteur Rijkswaterstaat",
-        "categorie": "RWS"
+        "categorie": ["RWS"]
     },
     {
         "ID": 83,
         "name": "DA-SIG",
         "namelong": "Signalisatievoertuig",
-        "categorie": "Brandweer"
+        "categorie": ["Brandweer"]
     }
 ]
 
@@ -507,7 +507,7 @@ export const lists_vehicleGroups = [
             37,
             80
         ],
-        "type": "Ambulance"
+        "type": ["Ambulance"]
     },
     {
         "name": "Rapid Responder",
@@ -516,7 +516,7 @@ export const lists_vehicleGroups = [
             57,
             63
         ],
-        "type": "Ambulance"
+        "type": ["Ambulance"]
     },
     {
         "name": "Officier van Dienst - Geneeskunde",
@@ -524,7 +524,7 @@ export const lists_vehicleGroups = [
             38,
             57
         ],
-        "type": "Ambulance"
+        "type": ["Ambulance"]
     },
     {
         "name": "Tankautospuiten",
@@ -541,7 +541,7 @@ export const lists_vehicleGroups = [
             17,
             50
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Redvoertuigen",
@@ -549,7 +549,7 @@ export const lists_vehicleGroups = [
             2,
             18
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Dienstvoertuigen",
@@ -557,7 +557,7 @@ export const lists_vehicleGroups = [
             20,
             21
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Waterongevallen/Oppervlakteredding",
@@ -566,7 +566,7 @@ export const lists_vehicleGroups = [
             49,
             50
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Crashtenders",
@@ -575,7 +575,7 @@ export const lists_vehicleGroups = [
             42,
             43
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Hulpverleningsvoertuigen",
@@ -583,7 +583,7 @@ export const lists_vehicleGroups = [
             4,
             51
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Adembeschermingsvoertuigen",
@@ -591,7 +591,7 @@ export const lists_vehicleGroups = [
             5,
             27
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Commandowagens",
@@ -599,7 +599,7 @@ export const lists_vehicleGroups = [
             31,
             32
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Schuimblusvoertuigen",
@@ -608,7 +608,7 @@ export const lists_vehicleGroups = [
             69,
             70
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Pompvoertuigen",
@@ -617,7 +617,7 @@ export const lists_vehicleGroups = [
             71,
             72
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Officeren van Dienst - Brandweer",
@@ -625,7 +625,7 @@ export const lists_vehicleGroups = [
             3,
             19
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Slangenwagen/Watertransport",
@@ -636,7 +636,7 @@ export const lists_vehicleGroups = [
             45,
             61
         ],
-        "type": "Brandweer"
+        "type": ["Brandweer"]
     },
     {
         "name": "Noodhulpeenheden",
@@ -650,7 +650,7 @@ export const lists_vehicleGroups = [
             60,
             75
         ],
-        "type": "Politie"
+        "type": ["Politie"]
     },
     {
         "name": "Bereden Brigade voertuigen",
@@ -658,7 +658,7 @@ export const lists_vehicleGroups = [
             73,
             74
         ],
-        "type": "Politie"
+        "type": ["Politie"]
     },
     {
         "name": "Hondengeleiders",
@@ -666,7 +666,7 @@ export const lists_vehicleGroups = [
             47,
             48
         ],
-        "type": "Politie"
+        "type": ["Politie"]
     },
     {
         "name": "Strandvoertuigen",
@@ -675,7 +675,7 @@ export const lists_vehicleGroups = [
             66,
             76
         ],
-        "type": "Kustwacht"
+        "type": ["Kustwacht"]
     },
     {
         "name": "Bootaanhangers",
@@ -683,15 +683,7 @@ export const lists_vehicleGroups = [
             36,
             67
         ],
-        "type": "Kustwacht"
-    },
-    {
-        "name": "Bootaanhangers",
-        "vehicles": [
-            36,
-            67
-        ],
-        "type": "Brandweer"
+        "type": ["Kustwacht", "Brandweer"]
     },
     {
         "name": "Reddingsboten",
@@ -699,7 +691,7 @@ export const lists_vehicleGroups = [
             78,
             79
         ],
-        "type": "Kustwacht"
+        "type": ["Kustwacht"]
     },
     {
         "name": "Signalisatievoertuigen",
@@ -708,23 +700,14 @@ export const lists_vehicleGroups = [
             82,
             83
         ],
-        "type": "RWS"
-    },
-    {
-        "name": "Signalisatievoertuigen",
-        "vehicles": [
-            81,
-            82,
-            83
-        ],
-        "type": "Brandweer"
+        "type": ["RWS", "Brandweer"]
     }
 ]
 
 export const lists_additionalVehicleValues = [
     {
         "name": "Liters Water (geen Boost)",
-        "type": "Brandweer",
+        "type": ["Brandweer"],
         "Voertuigen": [
             {
                 "id": 0,
@@ -806,7 +789,7 @@ export const lists_additionalVehicleValues = [
     },
     {
         "name": "Liters SVM",
-        "type": "Brandweer",
+        "type": ["Brandweer"],
         "Voertuigen": [
             {
                 "id": 41,
@@ -836,7 +819,7 @@ export const lists_additionalVehicleValues = [
     },
     {
         "name": "Paarden (volle voertuigen)",
-        "type": "Politie",
+        "type": ["Politie"],
         "Voertuigen": [
             {
                 "id": 73,
@@ -850,7 +833,7 @@ export const lists_additionalVehicleValues = [
     },
     {
         "name": "Patiënten behandeling",
-        "type": "Ambulance",
+        "type": ["Ambulance"],
         "Voertuigen": [
             {
                 "id": 16,
@@ -872,7 +855,7 @@ export const lists_additionalVehicleValues = [
     },
     {
         "name": "Max arrestanten transport tegelijk",
-        "type": "Politie",
+        "type": ["Politie"],
         "Voertuigen": [
             {
                 "id": 22,

@@ -137,7 +137,7 @@ function Credits() {
                 }
                 else {
                     return (
-                        < Loading />
+                        < Loading loadingtext={lists_translations_credits[0][language].loading} />
                     )
                 }
             })()}

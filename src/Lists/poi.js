@@ -282,5 +282,9 @@ export const lists_poi = [
     {
         "ID": 70,
         "name": "Circuit"
+    },
+    {
+        "ID": 71,
+        "name": "Pontsteiger"
     }
 ]
