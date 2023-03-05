@@ -502,204 +502,112 @@ export const lists_Vehicles = [
 export const lists_vehicleGroups = [
     {
         "name": "Mobiel Medisch Team",
-        "vehicles": [
-            23,
-            37,
-            80
-        ],
+        "vehicles": [23, 37, 80],
         "type": ["Ambulance"]
     },
     {
         "name": "Rapid Responder",
-        "vehicles": [
-            52,
-            57,
-            63
-        ],
+        "vehicles": [52, 57, 63],
         "type": ["Ambulance"]
     },
     {
         "name": "Officier van Dienst - Geneeskunde",
-        "vehicles": [
-            38,
-            57
-        ],
+        "vehicles": [38, 57],
         "type": ["Ambulance"]
     },
     {
         "name": "Tankautospuiten",
-        "vehicles": [
-            0,
-            1,
-            6,
-            7,
-            8,
-            9,
-            12,
-            14,
-            15,
-            17,
-            50
-        ],
+        "vehicles": [0, 1, 6, 7, 8, 9, 12, 14, 15, 17, 50],
         "type": ["Brandweer"]
     },
     {
         "name": "Redvoertuigen",
-        "vehicles": [
-            2,
-            18
-        ],
+        "vehicles": [2, 18],
         "type": ["Brandweer"]
     },
     {
         "name": "Dienstvoertuigen",
-        "vehicles": [
-            20,
-            21
-        ],
+        "vehicles": [20, 21],
         "type": ["Brandweer"]
     },
     {
         "name": "Waterongevallen/Oppervlakteredding",
-        "vehicles": [
-            33,
-            49,
-            50
-        ],
+        "vehicles": [33, 49, 50],
         "type": ["Brandweer"]
     },
     {
         "name": "Crashtenders",
-        "vehicles": [
-            41,
-            42,
-            43
-        ],
+        "vehicles": [41, 42, 43],
         "type": ["Brandweer"]
     },
     {
         "name": "Hulpverleningsvoertuigen",
-        "vehicles": [
-            4,
-            51
-        ],
+        "vehicles": [4, 51],
         "type": ["Brandweer"]
     },
     {
         "name": "Adembeschermingsvoertuigen",
-        "vehicles": [
-            5,
-            27
-        ],
+        "vehicles": [5, 27],
         "type": ["Brandweer"]
     },
     {
         "name": "Commandowagens",
-        "vehicles": [
-            31,
-            32
-        ],
+        "vehicles": [31, 32],
         "type": ["Brandweer"]
     },
     {
         "name": "Schuimblusvoertuigen",
-        "vehicles": [
-            68,
-            69,
-            70
-        ],
+        "vehicles": [68, 69, 70],
         "type": ["Brandweer"]
     },
     {
         "name": "Pompvoertuigen",
-        "vehicles": [
-            45,
-            71,
-            72
-        ],
+        "vehicles": [45, 71, 72],
         "type": ["Brandweer"]
     },
     {
         "name": "Officeren van Dienst - Brandweer",
-        "vehicles": [
-            3,
-            19
-        ],
+        "vehicles": [3, 19],
         "type": ["Brandweer"]
     },
     {
         "name": "Slangenwagen/Watertransport",
-        "vehicles": [
-            10,
-            34,
-            29,
-            45,
-            61
-        ],
+        "vehicles": [10, 34, 29, 45, 61, 68],
         "type": ["Brandweer"]
     },
     {
         "name": "Noodhulpeenheden",
-        "vehicles": [
-            22,
-            25,
-            46,
-            47,
-            48,
-            59,
-            60,
-            75
-        ],
+        "vehicles": [22, 25, 46, 47, 48, 59, 60, 75],
         "type": ["Politie"]
     },
     {
         "name": "Bereden Brigade voertuigen",
-        "vehicles": [
-            73,
-            74
-        ],
+        "vehicles": [73, 74],
         "type": ["Politie"]
     },
     {
         "name": "Hondengeleiders",
-        "vehicles": [
-            47,
-            48
-        ],
+        "vehicles": [47, 48],
         "type": ["Politie"]
     },
     {
         "name": "Strandvoertuigen",
-        "vehicles": [
-            65,
-            66,
-            76
-        ],
+        "vehicles": [65, 66, 76],
         "type": ["Kustwacht"]
     },
     {
         "name": "Bootaanhangers",
-        "vehicles": [
-            36,
-            67
-        ],
+        "vehicles": [36, 67],
         "type": ["Kustwacht", "Brandweer"]
     },
     {
         "name": "Reddingsboten",
-        "vehicles": [
-            78,
-            79
-        ],
+        "vehicles": [78, 79],
         "type": ["Kustwacht"]
     },
     {
         "name": "Signalisatievoertuigen",
-        "vehicles": [
-            81,
-            82,
-            83
-        ],
+        "vehicles": [81, 82, 83],
         "type": ["RWS", "Brandweer"]
     }
 ]
