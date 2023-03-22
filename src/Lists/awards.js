@@ -260,9 +260,9 @@ export const lists_awards = [
     },
     {
         "naam": "Lente-evenement 2023",
-        "brons": 5,
-        "zilver": 30,
-        "goud": 100,
+        "brons": 10,
+        "zilver": 400,
+        "goud": 1000,
         "type": "Eenmalig"
     }
 ]
