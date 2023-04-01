@@ -502,205 +502,257 @@ export const lists_Vehicles = [
 export const lists_vehicleGroups = [
     {
         "name": "Mobiel Medisch Team",
-        "vehicles": [
-            23,
-            37,
-            80
-        ],
+        "texts": ["MMT-Arts"],
+        "vehicles": [23, 37, 80],
         "type": ["Ambulance"]
     },
     {
-        "name": "Rapid Responder",
-        "vehicles": [
-            52,
-            57,
-            63
-        ],
+        "name": "Rapid Responders",
+        "texts": [],
+        "vehicles": [52, 57, 63],
+        "type": ["Ambulance"],
+        "ignoreByAlarmoverview": true
+    },
+    {
+        "name": "Ambulances",
+        "texts": ["Ambulance", "Ambulances"],
+        "vehicles": [16, 52, 57, 63],
         "type": ["Ambulance"]
     },
     {
         "name": "Officier van Dienst - Geneeskunde",
-        "vehicles": [
-            38,
-            57
-        ],
+        "texts": ["OVD-G"],
+        "vehicles": [38, 57],
         "type": ["Ambulance"]
     },
     {
         "name": "Tankautospuiten",
-        "vehicles": [
-            0,
-            1,
-            6,
-            7,
-            8,
-            9,
-            12,
-            14,
-            15,
-            17,
-            50
-        ],
+        "texts": ["Tankautospuit", "Tankautospuiten"],
+        "vehicles": [0, 1, 6, 7, 8, 9, 12, 14, 15, 17, 50],
         "type": ["Brandweer"]
     },
     {
         "name": "Redvoertuigen",
-        "vehicles": [
-            2,
-            18
-        ],
+        "texts": ["Redvoertuig", "Redvoertuigen"],
+        "vehicles": [2, 18],
         "type": ["Brandweer"]
     },
     {
         "name": "Dienstvoertuigen",
-        "vehicles": [
-            20,
-            21
-        ],
-        "type": ["Brandweer"]
+        "texts": [],
+        "vehicles": [20, 21],
+        "type": ["Brandweer"],
+        "ignoreByAlarmoverview": true
     },
     {
         "name": "Waterongevallen/Oppervlakteredding",
-        "vehicles": [
-            33,
-            49,
-            50
-        ],
+        "texts": ["Waterongevallenvoertuig / Oppervlaktereddingsteam", "Waterongevallenvoertuigen / Oppervlaktereddingsteams"],
+        "vehicles": [33, 49, 50],
         "type": ["Brandweer"]
     },
     {
         "name": "Crashtenders",
-        "vehicles": [
-            41,
-            42,
-            43
-        ],
+        "texts": ["Crashtender", "Crashtenders"],
+        "vehicles": [41, 42, 43],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "Airport Officieren",
+        "texts": ["AFO/OSC", "AFO/OSC's"],
+        "vehicles": [44],
         "type": ["Brandweer"]
     },
     {
         "name": "Hulpverleningsvoertuigen",
-        "vehicles": [
-            4,
-            51
-        ],
+        "texts": ["Hulpverleningsvoertuig", "Hulpverleningsvoertuigen"],
+        "vehicles": [4, 51],
         "type": ["Brandweer"]
     },
     {
         "name": "Adembeschermingsvoertuigen",
-        "vehicles": [
-            5,
-            27
-        ],
+        "texts": ["AB"],
+        "vehicles": [5, 27],
         "type": ["Brandweer"]
     },
     {
         "name": "Commandowagens",
-        "vehicles": [
-            31,
-            32
-        ],
+        "texts": ["Commandowagen", "Commandowagens"],
+        "vehicles": [31, 32],
         "type": ["Brandweer"]
     },
     {
         "name": "Schuimblusvoertuigen",
-        "vehicles": [
-            68,
-            69,
-            70
-        ],
+        "texts": ["Schuimblusvoertuig", "Schuimblusvoertuigen"],
+        "vehicles": [68, 69, 70],
         "type": ["Brandweer"]
     },
     {
         "name": "Pompvoertuigen",
-        "vehicles": [
-            45,
-            71,
-            72
-        ],
+        "texts": ["Pompvoertuig", "Pompvoertuigen"],
+        "vehicles": [45, 71, 72],
         "type": ["Brandweer"]
     },
     {
         "name": "Officeren van Dienst - Brandweer",
-        "vehicles": [
-            3,
-            19
-        ],
+        "texts": ["Officier van Dienst - Brandweer", "Officieren van Dienst - Brandweer"],
+        "vehicles": [3, 19],
         "type": ["Brandweer"]
     },
     {
         "name": "Slangenwagen/Watertransport",
-        "vehicles": [
-            10,
-            34,
-            29,
-            45,
-            61
-        ],
+        "texts": ["Slangenwagen, watertankwagen of gelijkwaardige haakarmbak"],
+        "vehicles": [10, 34, 29, 45, 61, 68],
         "type": ["Brandweer"]
     },
     {
         "name": "Noodhulpeenheden",
-        "vehicles": [
-            22,
-            25,
-            46,
-            47,
-            48,
-            59,
-            60,
-            75
-        ],
+        "texts": ["Noodhulpeenheden", "Noodhulpeenheid"],
+        "vehicles": [22, 25, 46, 47, 48, 59, 60, 75],
         "type": ["Politie"]
     },
     {
         "name": "Bereden Brigade voertuigen",
-        "vehicles": [
-            73,
-            74
-        ],
+        "texts": ["Bereden Brigade eenheid (paard)", "Bereden Brigade eenheden (paarden)"],
+        "vehicles": [73, 74],
         "type": ["Politie"]
     },
     {
         "name": "Hondengeleiders",
-        "vehicles": [
-            47,
-            48
-        ],
+        "texts": ["Hondengeleider", "Hondengeleiders"],
+        "vehicles": [47, 48],
         "type": ["Politie"]
     },
     {
         "name": "Strandvoertuigen",
-        "vehicles": [
-            65,
-            66,
-            76
-        ],
+        "texts": ["Strandvoertuig", "Strandvoertuigen",],
+        "vehicles": [65, 66, 76],
         "type": ["Kustwacht"]
     },
     {
         "name": "Bootaanhangers",
-        "vehicles": [
-            36,
-            67
-        ],
+        "texts": ["WOA of BA-RB"],
+        "vehicles": [36, 67],
         "type": ["Kustwacht", "Brandweer"]
     },
     {
         "name": "Reddingsboten",
-        "vehicles": [
-            78,
-            79
-        ],
+        "texts": ["Kleine of Grote Reddingsboot", "Kleine of Grote Reddingsboten"],
+        "vehicles": [78, 79],
         "type": ["Kustwacht"]
     },
     {
         "name": "Signalisatievoertuigen",
-        "vehicles": [
-            81,
-            82,
-            83
-        ],
+        "texts": ["Signalisatie Voertuig", "Signalisatie Voertuigen"],
+        "vehicles": [81, 82, 83],
         "type": ["RWS", "Brandweer"]
+    },
+    {
+        "name": "Voorlichters",
+        "texts": ["Voorlichter", "Voorlichters"],
+        "vehicles": [56],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "Hoofd officier van Dienst",
+        "texts": ["Hoofd Officier van Dienst", "Hoofd Officieren van Dienst"],
+        "vehicles": [16],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "Verkenningseenheden",
+        "texts": ["Verkenningseenheden", "Verkenningseenheid"],
+        "vehicles": [11],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "Adviseurs Gevaarlijke Stoffen",
+        "texts": ["Adviseur Gevaarlijke Stoffen", "Adviseurs Gevaarlijke Stoffen"],
+        "vehicles": [24],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "Officieren van Dienst - Politie",
+        "texts": ["Officier van Dienst - Politie", "Officieren van Dienst - Politie"],
+        "vehicles": [35],
+        "type": ["Politie"]
+    },
+    {
+        "name": "Politiehelikopters",
+        "texts": ["Politiehelikopter"],
+        "vehicles": [28],
+        "type": ["Politie"]
+    },
+    {
+        "name": "ME Commandovoertuigen",
+        "texts": ["ME Commandovoertuig", "ME Commandovoertuigen"],
+        "vehicles": [39],
+        "type": ["Politie"]
+    },
+    {
+        "name": "ME Flexvoertuigen",
+        "texts": ["ME Flexbus", "ME Flexbussen"],
+        "vehicles": [40],
+        "type": ["Politie"]
+    },
+    {
+        "name": "AT Commandovoertuigen",
+        "texts": ["AT Commandant", "AT Commandanten"],
+        "vehicles": [53],
+        "type": ["Politie"]
+    },
+    {
+        "name": "AT Materiaalwagens",
+        "texts": ["AT Materiaalwagen", "AT Materiaalwagens"],
+        "vehicles": [55],
+        "type": ["Politie"]
+    },
+    {
+        "name": "AT Operators",
+        "texts": ["AT Operator", "AT Operators"],
+        "vehicles": [54],
+        "type": ["Politie"]
+    },
+    {
+        "name": "Biketeams",
+        "texts": ["Biketeam", "Biketeams"],
+        "vehicles": [60],
+        "type": ["Politie"]
+    },
+    {
+        "name": "ME Aanhoudingseenheid",
+        "texts": ["Aanhoudingseenheden", "Aanhoudingseenheid"],
+        "vehicles": [64],
+        "type": ["Politie"]
+    },
+    {
+        "name": "Dienstbussen Arrestantenvervoer",
+        "texts": ["Dienstbus Arrestantenvervoer", "Dienstbussen Arrestantenvervoer"],
+        "vehicles": [58],
+        "type": ["Politie"]
+    },
+    {
+        "name": "DM-RWS",
+        "texts": ["DM-RWS"],
+        "vehicles": [82],
+        "type": ["RWS"]
+    },
+    {
+        "name": "KW-boten",
+        "texts": ["KW-boot", "KW-boten"],
+        "vehicles": [77],
+        "type": ["Kustwacht"]
+    },
+    {
+        "name": "Quads",
+        "texts": ["Quad", "Quads"],
+        "vehicles": [76],
+        "type": ["Kustwacht"]
+    },
+    {
+        "name": "SAR-helicopters",
+        "texts": ["SAR-helicopter", "SAR-helicopters"],
+        "vehicles": [80],
+        "type": ["Kustwacht"]
     }
 ]
 

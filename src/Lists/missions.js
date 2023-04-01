@@ -217,7 +217,8 @@ export const lists_Codetranslations = [
             "coastal_helicopter": "Kans dat de SAR Helikopters benodigd zijn",
             "police_horse": "Kans dat de politie paarden benodigd zijn",
             "boats": "Kans dat de bootaanhangers benodigd zijn",
-            "arff": "Kans dat de Crashtenders benodigd zijn"
+            "arff": "Kans dat de Crashtenders benodigd zijn",
+            "elw_airport": "Kans dat de AFO/OSC's benodigd zijn"
         }
     }
 ]

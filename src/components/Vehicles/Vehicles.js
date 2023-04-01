@@ -123,7 +123,7 @@ function Vehicles(props) {
                                                 })()}
 
                                                 {(() => {
-                                                    var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type.includes(load.vehicle_category))
+                                                    var groepen = vehicleGroups.filter(groep => groep.count > 0 && groep.type.includes(load.vehicle_category) && groep.vehicles.length > 1)
                                                     if (groepen.length > 0) {
                                                         return (
                                                             <>

@@ -257,5 +257,26 @@ export const lists_awards = [
         "zilver": 15,
         "goud": 50,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Lente-evenement 2023",
+        "brons": 10,
+        "zilver": 400,
+        "goud": 1000,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Paasei-vinder 2023",
+        "brons": 10,
+        "zilver": 250,
+        "goud": 750,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Paashaas missies 2023",
+        "brons": 10,
+        "zilver": 200,
+        "goud": 500,
+        "type": "Eenmalig"
     }
 ]

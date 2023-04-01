@@ -83,7 +83,7 @@ function AllianceInfo(props) {
                                                                 <tr key={user.id}>
                                                                     <td>{user.name}</td>
                                                                     <td>{user.caption}</td>
-                                                                    <td>{user.roles}</td>
+                                                                    <td>{user.roles.join(', ')}</td>
                                                                 </tr>
                                                             )
                                                         }
