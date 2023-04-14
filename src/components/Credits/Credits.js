@@ -85,6 +85,7 @@ function Credits() {
                 {lists_translations_credits[0][language].language}: <select id="language" name="taal" onChange={handleLanguageChange}>
                     <option value="nl_NL">Nederlands</option>
                     <option value="en_EN">English</option>
+                    <option value="de_DE">Deutsch</option>
                 </select>
             </div>
             {lists_translations_credits[0][language].pagedescription}<br />

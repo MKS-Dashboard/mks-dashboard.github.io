@@ -25,6 +25,19 @@ export const lists_translations_credits = [
             "allianceavg": "Average alliance missions",
             "language": "Language",
             "loading": "We are currently collecting data, please wait."
+        },
+        "de_DE": {
+            "lastupdate": "Letztes Update",
+            "pagedescription": "Auf dieser Seite finden Sie die durchschnittliche Anzahl an Credits, die eine Mission in einer Version auszahlt.",
+            "place": "Rangplatz",
+            "amountmissions": "Anzahl einsaetze",
+            "averagemissions": "Durchschnitt",
+            "planned": "Geplante einsaetze",
+            "plannedavg": "Durchschnitt Geplante einsaetze",
+            "alliance": "Verband einsaetze",
+            "allianceavg": "Durchschnitt verband einsaetze",
+            "language": "Sprache",
+            "loading": "Wir sammeln gerade Daten, bitte warten."
         }
     }
 ]
