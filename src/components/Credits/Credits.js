@@ -100,7 +100,7 @@ function Credits() {
                             <thead>
                                 <tr>
                                     <th>{lists_translations_credits[0][language].place}</th>
-                                    <th onClick={() => UpdateOrder("code")}>Locale</th>
+                                    <th onClick={() => UpdateOrder("code")}>{lists_translations_credits[0][language].locale}</th>
                                     <th onClick={() => UpdateOrder("missions")}>{lists_translations_credits[0][language].amountmissions}</th>
                                     <th onClick={() => UpdateOrder("avg")}>{lists_translations_credits[0][language].averagemissions}</th>
                                     <th onClick={() => UpdateOrder("plannedMissions")}>{lists_translations_credits[0][language].planned}</th>
