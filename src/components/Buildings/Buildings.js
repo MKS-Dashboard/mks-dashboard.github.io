@@ -51,8 +51,12 @@ function Buildings(props) {
 
             for (let k = 0; k < data.length; k++) {
                 data[k].amount = 0
+                data[k].ingeschakeld = 0
+                data[k].uitgeschakeld = 0
                 for (let l = 0; l < buildingData.length; l++) {
                     data[k].amount += buildingData[l].extensions.filter(extension => extension.caption === data[k].name).length
+                    data[k].ingeschakeld += buildingData[l].extensions.filter(extension => extension.caption === data[k].name && extension.enabled === true).length
+                    data[k].uitgeschakeld += buildingData[l].extensions.filter(extension => extension.caption === data[k].name && extension.enabled === false).length
                 }
             }
             setExtensions(data)
@@ -123,6 +127,7 @@ function Buildings(props) {
                                     <tr>
                                         <th>Type</th>
                                         <th>Aantal</th>
+                                        <th>Actief / Inactief</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -137,6 +142,7 @@ function Buildings(props) {
                                                     <tr key={ex.name}>
                                                         <td>{ex.name}</td>
                                                         <td>{ex.amount.toLocaleString()}</td>
+                                                        <td>{ex.ingeschakeld.toLocaleString()} / {ex.uitgeschakeld.toLocaleString()}</td>
                                                     </tr>
                                                 )
                                             }
