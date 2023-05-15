@@ -278,5 +278,12 @@ export const lists_awards = [
         "zilver": 200,
         "goud": 500,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Moederdag Inzetten 2023",
+        "brons": 5,
+        "zilver": 50,
+        "goud": 100,
+        "type": "Eenmalig"
     }
 ]
