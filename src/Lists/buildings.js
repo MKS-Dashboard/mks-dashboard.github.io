@@ -111,7 +111,8 @@ export const lists_BuildingInformation = [
             "Mobiele Eenheid, Aanhoudingseenheid",
             "Hondenbrigade",
             "Bereden Brigade",
-            "Arrestatieteam"
+            "Arrestatieteam",
+            "Waterwerper Uitbreiding"
         ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
@@ -296,6 +297,9 @@ export const lists_BuildingExtensionsOverview = [
     },
     {
         "name": "Signalisatie"
+    },
+    {
+        "name": "Waterwerper Uitbreiding"
     }
 ]
 
