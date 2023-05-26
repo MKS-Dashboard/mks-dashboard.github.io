@@ -952,7 +952,7 @@ export const lists_additionalVehicleValues = [
         ]
     },
     {
-        "name": "Pompcapaciteit",
+        "name": "Pompcapaciteit (L/min.)",
         "type": ["Brandweer"],
         "Voertuigen": [
             {
