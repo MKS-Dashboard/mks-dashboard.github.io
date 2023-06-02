@@ -496,6 +496,12 @@ export const lists_Vehicles = [
         "name": "DA-SIG",
         "namelong": "Signalisatievoertuig",
         "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 84,
+        "name": "Waterwerper",
+        "namelong": "Waterwerper",
+        "categorie": ["Politie"]
     }
 ]
 
@@ -753,6 +759,12 @@ export const lists_vehicleGroups = [
         "texts": ["SAR-helicopter", "SAR-helicopters"],
         "vehicles": [80],
         "type": ["Kustwacht"]
+    },
+    {
+        "name": "Waterwerpers",
+        "texts": ["Waterwerper", "Waterwerpers"],
+        "vehicles": [84],
+        "type": ["Politie"]
     }
 ]
 
@@ -936,6 +948,88 @@ export const lists_additionalVehicleValues = [
             {
                 "id": 64,
                 "amount": 1
+            }
+        ]
+    },
+    {
+        "name": "Pompcapaciteit (L/min.)",
+        "type": ["Brandweer"],
+        "Voertuigen": [
+            {
+                "id": 0,
+                "amount": 250
+            },
+            {
+                "id": 1,
+                "amount": 2000
+            },
+            {
+                "id": 6,
+                "amount": 2500
+            },
+            {
+                "id": 7,
+                "amount": 1800
+            },
+            {
+                "id": 8,
+                "amount": 1000
+            },
+            {
+                "id": 9,
+                "amount": 800
+            },
+            {
+                "id": 10,
+                "amount": 1000
+            },
+            {
+                "id": 12,
+                "amount": 3500
+            },
+            {
+                "id": 14,
+                "amount": 2000
+            },
+            {
+                "id": 41,
+                "amount": 8000
+            },
+            {
+                "id": 42,
+                "amount": 6000
+            },
+            {
+                "id": 43,
+                "amount": 3000
+            },
+            {
+                "id": 45,
+                "amount": 6000
+            },
+            {
+                "id": 50,
+                "amount": 1500
+            },
+            {
+                "id": 62,
+                "amount": 1500
+            },
+            {
+                "id": 68,
+                "amount": 1000
+            },
+            {
+                "id": 69,
+                "amount": 1000
+            },
+            {
+                "id": 71,
+                "amount": 1000
+            },
+            {
+                "id": 75,
+                "amount": 2500
             }
         ]
     }

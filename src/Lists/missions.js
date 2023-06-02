@@ -169,7 +169,15 @@ export const lists_Codetranslations = [
             "traffic_unit": {
                 "one": "Signalisatievoertuig",
                 "more": "Signalisatievoertuigen"
-            }
+            },
+            "min_pump_speed": {
+                "one": "Minimale pompcapaciteit",
+                "more": "Minimale pompcapaciteit"
+            },
+            "wasserwerfer": {
+                "one": "Waterwerper",
+                "more": "Waterwerpers"
+            },
         },
         "additional": {
             "max_possible_prisoners": "Maximaal aantal gevangenen",
@@ -197,7 +205,8 @@ export const lists_Codetranslations = [
             "handoff_possible_via_building_types": "Patiënt of gevangenen overdracht via gebouwtype",
             "subsequent_mission_only": "Alleen als vervolginzet",
             "allow_arff_instead_of_lf": "Crashtender i.p.v. Tankautospuit",
-            "optional_event_mission": "Uitschakelbare event melding"
+            "optional_event_mission": "Uitschakelbare event melding",
+            "pump_water_amount": "Aantal liter water weg te pompen"
         },
         "chances": {
             "patient_transport": "Vervoer kans voor patiënt",
