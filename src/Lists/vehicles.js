@@ -764,7 +764,7 @@ export const lists_vehicleGroups = [
         "name": "Waterwerpers",
         "texts": ["Waterwerper", "Waterwerpers"],
         "vehicles": [84],
-        "type": ["Kustwacht"]
+        "type": ["Politie"]
     }
 ]
 
