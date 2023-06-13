@@ -307,6 +307,11 @@ export const lists_EventMissions = [
         "name": "Formule 1",
         "mission_ids": [963, 964, 965, 966, 967, 968, 969, 970, 971, 972],
         "keys": ["all", "racing"]
+    },
+    {
+        "name": "Moederdag",
+        "mission_ids": [788, 789, 790, 791, 792, 793],
+        "keys": ["all", "mothersday"]
     }
 ]
 
@@ -378,5 +383,9 @@ export const lists_EventMissions_filterkeys = [
     {
         "name": "Formule 1",
         "key": "racing"
+    },
+    {
+        "name": "Moederdag",
+        "key": "mothersday"
     }
 ]
