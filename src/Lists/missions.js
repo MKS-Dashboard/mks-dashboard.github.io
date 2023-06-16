@@ -314,7 +314,7 @@ export const lists_EventMissions = [
         "keys": ["all", "mothersday"]
     },
     {
-        "name": "Moederdag",
+        "name": "Vaderdag",
         "mission_ids": [1037, 1038, 1039, 1040, 1041],
         "keys": ["all", "fathersday"]
     }
