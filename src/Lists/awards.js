@@ -299,5 +299,12 @@ export const lists_awards = [
         "zilver": 300,
         "goud": 1000,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Voetbal Event 2023",
+        "brons": 100,
+        "zilver": 200,
+        "goud": 400,
+        "type": "Eenmalig"
     }
 ]
