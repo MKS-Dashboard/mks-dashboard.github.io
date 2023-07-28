@@ -304,7 +304,7 @@ export const lists_EventMissions = [
         "keys": ["all", "seasonal", "winter"]
     },
     {
-        "name": "Formule 1",
+        "name": "Race event",
         "mission_ids": [963, 964, 965, 966, 967, 968, 969, 970, 971, 972],
         "keys": ["all", "racing"]
     },
@@ -386,7 +386,7 @@ export const lists_EventMissions_filterkeys = [
         "key": "easter"
     },
     {
-        "name": "Formule 1",
+        "name": "Race event",
         "key": "racing"
     },
     {

@@ -306,5 +306,12 @@ export const lists_awards = [
         "zilver": 200,
         "goud": 400,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Race Event 2023",
+        "brons": 25,
+        "zilver": 50,
+        "goud": 100,
+        "type": "Eenmalig"
     }
 ]
