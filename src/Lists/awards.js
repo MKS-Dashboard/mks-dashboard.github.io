@@ -285,5 +285,33 @@ export const lists_awards = [
         "zilver": 50,
         "goud": 100,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Vaderdag 2023",
+        "brons": 5,
+        "zilver": 50,
+        "goud": 100,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Zomer Event 2023",
+        "brons": 25,
+        "zilver": 300,
+        "goud": 1000,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Voetbal Event 2023",
+        "brons": 100,
+        "zilver": 200,
+        "goud": 400,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Race Event 2023",
+        "brons": 25,
+        "zilver": 50,
+        "goud": 100,
+        "type": "Eenmalig"
     }
 ]

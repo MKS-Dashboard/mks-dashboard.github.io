@@ -304,9 +304,19 @@ export const lists_EventMissions = [
         "keys": ["all", "seasonal", "winter"]
     },
     {
-        "name": "Formule 1",
+        "name": "Race event",
         "mission_ids": [963, 964, 965, 966, 967, 968, 969, 970, 971, 972],
         "keys": ["all", "racing"]
+    },
+    {
+        "name": "Moederdag",
+        "mission_ids": [788, 789, 790, 791, 792, 793],
+        "keys": ["all", "mothersday"]
+    },
+    {
+        "name": "Vaderdag",
+        "mission_ids": [1037, 1038, 1039, 1040, 1041],
+        "keys": ["all", "fathersday"]
     }
 ]
 
@@ -376,7 +386,15 @@ export const lists_EventMissions_filterkeys = [
         "key": "easter"
     },
     {
-        "name": "Formule 1",
+        "name": "Race event",
         "key": "racing"
+    },
+    {
+        "name": "Moederdag",
+        "key": "mothersday"
+    },
+    {
+        "name": "Vaderdag",
+        "key": "fathersday"
     }
 ]
