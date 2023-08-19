@@ -313,5 +313,12 @@ export const lists_awards = [
         "zilver": 50,
         "goud": 100,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Zonnebloem enthousiast 2023",
+        "brons": 10,
+        "zilver": 250,
+        "goud": 500,
+        "type": "Eenmalig"
     }
 ]

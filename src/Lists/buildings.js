@@ -326,8 +326,7 @@ export const lists_Schools = [
     {
         "name": "Politie, Academie",
         "building_id": 8
-    }
-    ,
+    },
     {
         "name": "Universiteit Faculteit Geneeskunde",
         "building_id": 7
