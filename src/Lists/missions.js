@@ -305,7 +305,7 @@ export const lists_EventMissions = [
     },
     {
         "name": "Race event",
-        "mission_ids": [963, 964, 965, 966, 967, 968, 969, 970, 971, 972],
+        "mission_ids": [963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 1048, 1049, 1050, 1051],
         "keys": ["all", "racing"]
     },
     {
