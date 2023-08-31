@@ -846,6 +846,12 @@ export const lists_vehicleGroups = [
         "type": ["Politie"]
     },
     {
+        "name": "Terreinvaardige Tankautospuiten",
+        "texts": ["Terreinvaardige Tankautospuit", "Terreinvaardige Tankautospuiten"],
+        "vehicles": [6, 7, 8, 12, 14, 15],
+        "type": ["Brandweer"]
+    },
+    {
         "name": "FBO-Heli",
         "texts": ["FBO Hel", "FBO Helis"],
         "vehicles": [85],
