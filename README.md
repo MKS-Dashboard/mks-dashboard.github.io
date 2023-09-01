@@ -1,4 +1,4 @@
-## MKS Dashboard
+# MKS Dashboard
 
 ![](https://tokei.rs/b1/github/MKS-Dashboard/mks-dashboard.github.io)
 
