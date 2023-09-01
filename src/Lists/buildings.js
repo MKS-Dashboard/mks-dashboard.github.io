@@ -9,7 +9,10 @@ export const lists_BuildingInformation = [
             "Vliegtuigbrandbestrijding",
             "Haakarmbak parkeerplaats",
             "Schuimblussing",
-            "Signalisatie"
+            "Signalisatie",
+            "Natuurbrandbestrijding",
+            "Urban Search and Rescue",
+            "Specialisme Technische Hulpverlening"
         ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
@@ -163,7 +166,10 @@ export const lists_BuildingInformation = [
             "Vliegtuigbrandbestrijding",
             "Haakarmbak parkeerplaats",
             "Schuimblussing",
-            "Signalisatie"
+            "Signalisatie",
+            "Natuurbrandbestrijding",
+            "Urban Search and Rescue",
+            "Specialisme Technische Hulpverlening"
         ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
@@ -208,6 +214,12 @@ export const lists_BuildingInformation = [
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
     },
+    {
+        "ID": 23,
+        "name": "Militaire hangar",
+        "LevelCountAsBuilding": false,
+        "BuildingCounter": true,
+    }
 ]
 
 export const lists_BuildingExtensionsOverview = [
@@ -300,6 +312,15 @@ export const lists_BuildingExtensionsOverview = [
     },
     {
         "name": "Waterwerper Uitbreiding"
+    },
+    {
+        "name": "Natuurbrandbestrijding"
+    },
+    {
+        "name": "Urban Search and Rescue"
+    },
+    {
+        "name": "Specialisme Technische Hulpverlening"
     }
 ]
 
@@ -315,6 +336,18 @@ export const lists_BuildingSpecialisations = [
     {
         "name": "Waterongevallen Specialisatie",
         "type": "water_rescue"
+    },
+    {
+        "name": "Natuurbrandbestrijding Specialisatie",
+        "type": "forestry"
+    },
+    {
+        "name": "USAR Specialisatie",
+        "type": "search_and_rescue"
+    },
+    {
+        "name": "STH Specialisatie",
+        "type": "disaster_response"
     }
 ]
 
@@ -326,8 +359,7 @@ export const lists_Schools = [
     {
         "name": "Politie, Academie",
         "building_id": 8
-    }
-    ,
+    },
     {
         "name": "Universiteit Faculteit Geneeskunde",
         "building_id": 7

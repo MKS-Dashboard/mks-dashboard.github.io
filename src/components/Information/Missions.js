@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { lists_Codetranslations, lists_ExcludedMissionKeysMissions } from '../../Lists/missions';
 import Loading from '../Default/Loading';
+import { MissionTranslationService_Requirments_personnel_educations } from '../../Services/MissionTranslationService';
 
 function Missions(props) {
     const missions = props.missions;
@@ -198,6 +199,11 @@ function GetMissionRequirements(mission) {
                 {(() => {
                     return (
                         requirements.filter(item => !lists_ExcludedMissionKeysMissions.includes(item.a)).map((req) => {
+                            if (req.a === "personnel_educations") {
+                                return (
+                                    MissionTranslationService_Requirments_personnel_educations(req.b)
+                                )
+                            }
                             return (
                                 <li>{`${req.b.toLocaleString()} ${req.b === 1 ? (lists_Codetranslations[0].requirements[req.a] !== undefined ? lists_Codetranslations[0].requirements[req.a].one : req.a) : (lists_Codetranslations[0].requirements[req.a] !== undefined ? lists_Codetranslations[0].requirements[req.a].more : req.a)}`}</li>
                             )
@@ -214,6 +220,11 @@ function GetMissionRequirements(mission) {
                 {(() => {
                     return (
                         additional.filter(item => !lists_ExcludedMissionKeysMissions.includes(item.a)).map((add) => {
+                            if (add.a === "personnel_educations") {
+                                return (
+                                    MissionTranslationService_Requirments_personnel_educations(add.b)
+                                )
+                            }
                             return (
                                 <li>{`${lists_Codetranslations[0].additional[add.a] !== undefined ? lists_Codetranslations[0].additional[add.a] : add.a}: ${add.b}`}</li>
                             )

@@ -502,7 +502,86 @@ export const lists_Vehicles = [
         "name": "Waterwerper",
         "namelong": "Waterwerper",
         "categorie": ["Politie"]
-    }
+    },
+    {
+        "ID": 85,
+        "name": "FBO-Heli",
+        "namelong": "Fire Bucket Operations - Helikopter",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 86,
+        "name": "DB-Handcrew",
+        "namelong": "Dienstbus – Handcrew",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 87,
+        "name": "DA-LA-NB",
+        "namelong": "Dienstauto – Landelijk adviseur Natuurbranden",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 88,
+        "name": "VW-NB",
+        "namelong": "Vrachtwagen – Natuurbrandbestrijding",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 89,
+        "name": "NBH",
+        "namelong": "Natuurbrandbestrijdingshaakarmbak",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 90,
+        "name": "TS-STH",
+        "namelong": "Tankautospuit – Specialisme Technische Hulpverlening",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 91,
+        "name": "HVH-STH",
+        "namelong": "Hulpverleningshaakarmbak-Specialisme Technische Hulpverlening",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 92,
+        "name": "DB-USAR",
+        "namelong": "Dienstbus – Urban Search and Rescue",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 93,
+        "name": "TS-USAR",
+        "namelong": "Tankautospuit – Urban Search and Rescue",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 94,
+        "name": "VW-USAR",
+        "namelong": "Vrachtwagen – Urban Search and Rescue",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 95,
+        "name": "DM-USAR",
+        "namelong": "Dienstmotor – Urban Search and Rescue",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 96,
+        "name": "Quad-USAR",
+        "namelong": "Quat – Urban Search and Rescue",
+        "categorie": ["Brandweer"]
+    },
+    {
+        "ID": 97,
+        "name": "DB–Speurhonden",
+        "namelong": "Dienstbus – Speurhonden",
+        "categorie": ["Brandweer"]
+    },
+
 ]
 
 export const lists_vehicleGroups = [
@@ -534,7 +613,7 @@ export const lists_vehicleGroups = [
     {
         "name": "Tankautospuiten",
         "texts": ["Tankautospuit", "Tankautospuiten"],
-        "vehicles": [0, 1, 6, 7, 8, 9, 12, 14, 15, 17, 50],
+        "vehicles": [0, 1, 6, 7, 8, 9, 12, 14, 15, 17, 50, 90, 93],
         "type": ["Brandweer"]
     },
     {
@@ -765,6 +844,72 @@ export const lists_vehicleGroups = [
         "texts": ["Waterwerper", "Waterwerpers"],
         "vehicles": [84],
         "type": ["Politie"]
+    },
+    {
+        "name": "Terreinvaardige Tankautospuiten",
+        "texts": ["Terreinvaardige Tankautospuit", "Terreinvaardige Tankautospuiten"],
+        "vehicles": [6, 7, 8, 12, 14, 15],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "FBO-Heli",
+        "texts": ["FBO Hel", "FBO Helis"],
+        "vehicles": [85],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "DB-Handcrew",
+        "texts": ["Dienstbus Handcrew", "Dienstbussen Handcrew"],
+        "vehicles": [86],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "DA-LA-NB",
+        "texts": ["Landelijk Advieseur Natuurbranden", "Landelijk Advieseurs Natuurbranden"],
+        "vehicles": [87],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "NatuurbrandBestrijdingsmaterieel",
+        "texts": ["NatuurbrandBestrijdingsmaterieel"],
+        "vehicles": [88, 89],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "TS-TSH",
+        "texts": ["TS-STH"],
+        "vehicles": [90],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "HVH-TSH",
+        "texts": ["HVH-STH"],
+        "vehicles": [91],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "Dienstvoertuigen USAR",
+        "texts": ["Dienstvoertuig USAR", "Dienstvoertuigen USAR"],
+        "vehicles": [92, 95, 96],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "TS-USAR",
+        "texts": ["TS-USAR"],
+        "vehicles": [93],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "VW-USAR",
+        "texts": ["VW-USAR"],
+        "vehicles": [94],
+        "type": ["Brandweer"]
+    },
+    {
+        "name": "Dienstbussen - Speurhonden",
+        "texts": ["Dienstbus-Speurhonden", "Dienstbussen-Speurhonden"],
+        "vehicles": [97],
+        "type": ["Brandweer"]
     }
 ]
 
@@ -848,6 +993,14 @@ export const lists_additionalVehicleValues = [
             {
                 "id": 69,
                 "amount": 8000
+            },
+            {
+                "id": 90,
+                "amount": 2000
+            },
+            {
+                "id": 93,
+                "amount": 2000
             }
         ]
     },
@@ -1030,6 +1183,14 @@ export const lists_additionalVehicleValues = [
             {
                 "id": 75,
                 "amount": 2500
+            },
+            {
+                "id": 90,
+                "amount": 2000
+            },
+            {
+                "id": 93,
+                "amount": 2000
             }
         ]
     }

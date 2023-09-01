@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from "axios"
 import { lists_Codetranslations, lists_ExcludedMissionKeysAllianceMissions } from '../../Lists/missions';
 import Loading from '../Default/Loading';
+import { MissionTranslationService_Requirments_personnel_educations } from '../../Services/MissionTranslationService';
 
 function AllianceMissions() {
     const [allianceMissions, setAllianceMissions] = useState([])
@@ -63,6 +64,11 @@ function AllianceMissions() {
                                         {(() => {
                                             return (
                                                 requirements.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).map((req) => {
+                                                    if (req.a === "personnel_educations") {
+                                                        return (
+                                                            MissionTranslationService_Requirments_personnel_educations(req.b)
+                                                        )
+                                                    }
                                                     return (
                                                         <li>{`${req.b.toLocaleString()} ${req.b === 1 ? (lists_Codetranslations[0].requirements[req.a] !== undefined ? lists_Codetranslations[0].requirements[req.a].one : req.a) : (lists_Codetranslations[0].requirements[req.a] !== undefined ? lists_Codetranslations[0].requirements[req.a].more : req.a)}`}</li>
                                                     )
@@ -79,6 +85,11 @@ function AllianceMissions() {
                                         {(() => {
                                             return (
                                                 additional.filter(item => !lists_ExcludedMissionKeysAllianceMissions.includes(item.a)).map((add) => {
+                                                    if (add.a === "personnel_educations") {
+                                                        return (
+                                                            MissionTranslationService_Requirments_personnel_educations(add.b)
+                                                        )
+                                                    }
                                                     return (
                                                         <li>{`${lists_Codetranslations[0].additional[add.a] !== undefined ? lists_Codetranslations[0].additional[add.a] : add.a}: ${add.b}`}</li>
                                                     )

@@ -178,6 +178,46 @@ export const lists_Codetranslations = [
                 "one": "Waterwerper",
                 "more": "Waterwerpers"
             },
+            "brush_truck": {
+                "one": "Terreinvaardige Tankautospuit",
+                "more": "Terreinvaardige Tankautospuiten"
+            },
+            "fire_aviation": {
+                "one": "FBO-Heli",
+                "more": "FBO-Helikopters"
+            },
+            "wildfire_equipment": {
+                "one": "Natuurbrandbestrijdingsmaterieel",
+                "more": "Natuurbrandbestrijdingsmaterieel"
+            },
+            "wildfire_command": {
+                "one": "Landelijk Advieseur Natuurbranden",
+                "more": "Landelijk Advieseurs Natuurbranden"
+            },
+            "search_and_rescue": {
+                "one": "Dienstvoertuig USAR",
+                "more": "Dienstvoertuigen USAR"
+            },
+            "disaster_response_equipment": {
+                "one": "Hulpverleningsbak - Specialisme Technische Hulpverlening",
+                "more": "Hulpverleningsbakken - Specialisme Technische Hulpverlening"
+            },
+            "disaster_response": {
+                "one": "Tankautospuit - Specialisme Technische Hulpverlening",
+                "more": "Tankautpspuiten - Specialisme Technische Hulpverlening"
+            },
+            "rescue_dog_units": {
+                "one": "Dienstbus - Speurhonden",
+                "more": "Dienstbussen - Speurhonden"
+            },
+            "search_and_rescue_equipment": {
+                "one": "Vrachtwagen USAR",
+                "more": "Vrachtwagens USAR"
+            },
+            "search_and_rescue_engine": {
+                "one": "Tankautospuit USAR",
+                "more": "Tankautospuiten USAR"
+            },
         },
         "additional": {
             "max_possible_prisoners": "Maximaal aantal gevangenen",
@@ -206,7 +246,8 @@ export const lists_Codetranslations = [
             "subsequent_mission_only": "Alleen als vervolginzet",
             "allow_arff_instead_of_lf": "Crashtender i.p.v. Tankautospuit",
             "optional_event_mission": "Uitschakelbare event melding",
-            "pump_water_amount": "Aantal liter water weg te pompen"
+            "pump_water_amount": "Aantal liter water weg te pompen",
+            "personnel_educations": "Benodigde opgeleide personeelsleden"
         },
         "chances": {
             "patient_transport": "Vervoer kans voor patiënt",
@@ -228,6 +269,9 @@ export const lists_Codetranslations = [
             "boats": "Kans dat de bootaanhangers benodigd zijn",
             "arff": "Kans dat de Crashtenders benodigd zijn",
             "elw_airport": "Kans dat de AFO/OSC's benodigd zijn"
+        },
+        "personnel_educations": {
+            "wildfire": "Handcrew"
         }
     }
 ]
@@ -305,7 +349,7 @@ export const lists_EventMissions = [
     },
     {
         "name": "Race event",
-        "mission_ids": [963, 964, 965, 966, 967, 968, 969, 970, 971, 972],
+        "mission_ids": [963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 1048, 1049, 1050, 1051],
         "keys": ["all", "racing"]
     },
     {
