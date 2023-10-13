@@ -334,5 +334,89 @@ export const lists_awards = [
         "zilver": 100,
         "goud": 1000,
         "type": "Eenmalig"
-    }
+    },
+    {
+        "naam": "Trouwe Supporter",
+        "brons": "",
+        "zilver": "",
+        "goud": "Een speciale award voor onze oudste supporters. Toegekend aan spelers die voor 2 oktober 2023 een Premium Account hebben gekocht.",
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "1-Maand VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 1 maand.",
+        "type": "Doorlopend"
+    },
+    {
+        "naam": "3-Maanden VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 3 maanden.",
+        "type": "Doorlopend"
+    },
+    {
+        "naam": "6-Maanden VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 6 maanden.",
+        "type": "Doorlopend"
+    },
+    {
+        "naam": "1-Jaar VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 1 jaar",
+        "type": "Doorlopend"
+    },
+    {
+        "naam": "2-Jaren VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 2 jaar",
+        "type": "Doorlopend"
+    },
+    {
+        "naam": "3-Jaren VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 3 jaar",
+        "type": "Doorlopend"
+    },
+    {
+        "naam": "4-Jaren VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 4 jaar",
+        "type": "Doorlopend"
+    },
+    {
+        "naam": "5-Jaren VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 5 jaar",
+        "type": "Doorlopend"
+    },
+    {
+        "naam": "6-Jaren VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 6 jaar",
+        "type": "Doorlopend"
+    },
+    {
+        "naam": "7-Jaren VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 7 jaar",
+        "type": "Doorlopend"
+    },
+    {
+        "naam": "8-Jaren VIP",
+        "brons": "",
+        "zilver": "",
+        "goud": "Premium account lid voor 8 jaar",
+        "type": "Doorlopend"
+    },
 ]
