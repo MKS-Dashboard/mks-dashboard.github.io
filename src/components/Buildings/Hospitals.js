@@ -33,7 +33,9 @@ function Hospitals(props) {
         function selectHospitals() {
             var hospitalList = props.buildingsData.filter(b => b.building_type === 2)
             for (let i = 0; i < hospitalList.length; i++) {
-                hospitalList[i].beds = 10 + (hospitalList[i].level ?? 0)
+                hospitalList[i].beds = 10 +
+                    (hospitalList[i].level ?? 0) +
+                    (hospitalList[i].extensions.filter(ex => (ex.caption === "Groot ziekenhuis") && ex.available === true).length * 10)
             }
             setHospitals(hospitalList)
             if (hospitalList.length > 0) {

@@ -33,7 +33,9 @@ function Cells(props) {
         function selectCells() {
             var CellList = props.buildingsData.filter(b => b.building_type === 5)
             for (let i = 0; i < CellList.length; i++) {
-                CellList[i].cells = CellList[i].extensions.filter(ex => (ex.caption === "Gevangeniscel" || ex.caption === "Extra cel") && ex.available === true).length
+                CellList[i].cells = CellList[i].extensions.filter(ex => (ex.caption === "Gevangeniscel" || ex.caption === "Extra cel") && ex.available === true).length +
+                    (CellList[i].extensions.filter(ex => (ex.caption === "Grote gevangenis") && ex.available === true).length * 10)
+
             }
 
             setCells(CellList)
