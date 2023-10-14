@@ -419,4 +419,18 @@ export const lists_awards = [
         "goud": "Premium account lid voor 8 jaar",
         "type": "Doorlopend"
     },
+    {
+        "naam": "Halloween 2023",
+        "brons": 15,
+        "zilver": 150,
+        "goud": 300,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Pompoenenjager 2023",
+        "brons": 10,
+        "zilver": 250,
+        "goud": 500,
+        "type": "Eenmalig"
+    }
 ]
