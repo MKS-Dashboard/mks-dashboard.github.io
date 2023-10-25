@@ -21,7 +21,9 @@ function Progressdata(props) {
         let totalOwn = 0
         let OwnUsed = 0
         for (var i = 0; i < ziekenhuizen.length; i++) {
-            totalOwn += 10 + ziekenhuizen[i].level
+            totalOwn += 10 +
+                (ziekenhuizen[i].level ?? 0) +
+                (ziekenhuizen[i].extensions.filter(ex => (ex.caption === "Groot ziekenhuis") && ex.available === true).length * 10)
             OwnUsed += ziekenhuizen[i].patient_count ?? 0
         }
         setTotalBedsUser(totalOwn)
@@ -31,7 +33,9 @@ function Progressdata(props) {
         let totalTeam = 0
         let TeamUsed = 0
         for (var j = 0; j < TeamZiekenhuizen.length; j++) {
-            totalTeam += 10 + TeamZiekenhuizen[j].level
+            totalTeam += 10 +
+                (TeamZiekenhuizen[j].level ?? 0) +
+                (TeamZiekenhuizen[j].extensions.filter(ex => (ex.caption === "Groot ziekenhuis") && ex.available === true).length * 10)
             TeamUsed += TeamZiekenhuizen[j].patient_count ?? 0
         }
         setTotalBedsTeam(totalTeam)
@@ -41,7 +45,8 @@ function Progressdata(props) {
         let totalCelOwn = 0
         let OwnCelUsed = 0
         for (var k = 0; k < politie.length; k++) {
-            totalCelOwn += politie[k].extensions.filter(ex => (ex.caption === "Gevangeniscel" || ex.caption === "Extra cel") && ex.available === true).length
+            totalCelOwn += politie[k].extensions.filter(ex => (ex.caption === "Gevangeniscel" || ex.caption === "Extra cel") && ex.available === true).length +
+                (politie[k].extensions.filter(ex => (ex.caption === "Grote gevangenis") && ex.available === true).length * 10)
             OwnCelUsed += politie[k].prisoner_count ?? 0
         }
         setTotalCellsUser(totalCelOwn)
@@ -51,7 +56,8 @@ function Progressdata(props) {
         let totalCellTeam = 0
         let TeamCellUsed = 0
         for (var l = 0; l < TeamCellen.length; l++) {
-            totalCellTeam += 10 + TeamCellen[l].extensions.filter(ex => (ex.caption === "Gevangeniscel" || ex.caption === "Extra cel") && ex.available === true).length
+            totalCellTeam += 10 + TeamCellen[l].extensions.filter(ex => (ex.caption === "Gevangeniscel" || ex.caption === "Extra cel") && ex.available === true).length +
+                (TeamCellen[l].extensions.filter(ex => (ex.caption === "Grote gevangenis") && ex.available === true).length * 10)
             TeamCellUsed += TeamCellen[l].prisoner_count ?? 0
         }
         setTotalCellsTeam(totalCellTeam)
