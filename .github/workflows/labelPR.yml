@@ -10,7 +10,7 @@ jobs:
     continue-on-error: true
     steps:
       - name: Assign labels based on target branch
-        uses: shiftEscape/auto-label-pulls
+        uses: shiftEscape/auto-label-pulls@main
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           config-path: ".github/config/branch-labels.json"
