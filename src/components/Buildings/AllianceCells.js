@@ -33,7 +33,8 @@ function AllianceCells(props) {
         function selectCells() {
             var CellList = props.allianceBuildingsData.filter(b => b.building_type === 12)
             for (let i = 0; i < CellList.length; i++) {
-                CellList[i].cells = CellList[i].extensions.filter(ex => (ex.caption === "Gevangeniscel" || ex.caption === "Extra cel") && ex.available === true).length
+                CellList[i].cells = CellList[i].extensions.filter(ex => (ex.caption === "Gevangeniscel" || ex.caption === "Extra cel") && ex.available === true).length +
+                    (CellList[i].extensions.filter(ex => (ex.caption === "Grote gevangenis") && ex.available === true).length * 10)
             }
             setCells(CellList)
             if (CellList.length > 0) {

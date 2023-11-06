@@ -12,7 +12,8 @@ export const lists_BuildingInformation = [
             "Signalisatie",
             "Natuurbrandbestrijding",
             "Urban Search and Rescue",
-            "Specialisme Technische Hulpverlening"
+            "Specialisme Technische Hulpverlening",
+            "Grote brandweerkazerne"
         ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
@@ -35,7 +36,8 @@ export const lists_BuildingInformation = [
             "Neurologie",
             "Neurochirurgie",
             "Cardiologie",
-            "Cardiochirurgie"
+            "Cardiochirurgie",
+            "Groot ziekenhuis"
         ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
@@ -44,6 +46,9 @@ export const lists_BuildingInformation = [
         "ID": 3,
         "name": "Ambulance, Standplaats",
         "smallBuildingId": 13,
+        "extentions": [
+            "Grote ambulancepost"
+        ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
     },
@@ -62,7 +67,9 @@ export const lists_BuildingInformation = [
         "smallBuildingId": 18,
         "extentions": [
             "Gevangeniscel",
-            "Extra cel"
+            "Extra cel",
+            "Groot politiebureau",
+            "Grote gevangenis"
         ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
@@ -125,7 +132,8 @@ export const lists_BuildingInformation = [
         "name": "Politie, Cellencomplex voor teams",
         "extentions": [
             "Gevangeniscel",
-            "Extra cel"
+            "Extra cel",
+            "Grote gevangenis"
         ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
@@ -321,6 +329,21 @@ export const lists_BuildingExtensionsOverview = [
     },
     {
         "name": "Specialisme Technische Hulpverlening"
+    },
+    {
+        "name": "Groot ziekenhuis"
+    },
+    {
+        "name": "Groot politiebureau"
+    },
+    {
+        "name": "Grote gevangenis"
+    },
+    {
+        "name": "Grote brandweerkazerne"
+    },
+    {
+        "name": "Grote ambulancepost"
     }
 ]
 

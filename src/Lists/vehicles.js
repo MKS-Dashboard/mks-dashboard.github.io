@@ -572,7 +572,7 @@ export const lists_Vehicles = [
     {
         "ID": 96,
         "name": "Quad-USAR",
-        "namelong": "Quat – Urban Search and Rescue",
+        "namelong": "Quad – Urban Search and Rescue",
         "categorie": ["Brandweer"]
     },
     {

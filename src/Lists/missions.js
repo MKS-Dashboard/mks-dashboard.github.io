@@ -324,7 +324,7 @@ export const lists_EventMissions = [
     },
     {
         "name": "Herfst",
-        "mission_ids": [856, 857, 858, 859, 860, 861, 862, 863, 864, 865],
+        "mission_ids": [856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 1058, 1059, 1060, 1061],
         "keys": ["all", "seasonal", "authum"]
     },
     {
