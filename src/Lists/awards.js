@@ -432,5 +432,19 @@ export const lists_awards = [
         "zilver": 250,
         "goud": 500,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Sinterklaas Award 2023",
+        "brons": 10,
+        "zilver": 50,
+        "goud": 100,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Snoep verzameld",
+        "brons": 10,
+        "zilver": 25,
+        "goud": 50,
+        "type": "Eenmalig"
     }
 ]
