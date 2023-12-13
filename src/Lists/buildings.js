@@ -69,7 +69,8 @@ export const lists_BuildingInformation = [
             "Gevangeniscel",
             "Extra cel",
             "Groot politiebureau",
-            "Grote gevangenis"
+            "Grote gevangenis",
+            "LE - Dienst Infrastructuur"
         ],
         "LevelCountAsBuilding": false,
         "BuildingCounter": true,
@@ -344,6 +345,9 @@ export const lists_BuildingExtensionsOverview = [
     },
     {
         "name": "Grote ambulancepost"
+    },
+    {
+        "name": "LE - Dienst Infrastructuur"
     }
 ]
 
@@ -371,7 +375,11 @@ export const lists_BuildingSpecialisations = [
     {
         "name": "STH Specialisatie",
         "type": "disaster_response"
-    }
+    },
+    {
+        "name": "LE - Dienst Infrastructuur Specialisatie",
+        "type": "traffic_police"
+    },
 ]
 
 export const lists_Schools = [

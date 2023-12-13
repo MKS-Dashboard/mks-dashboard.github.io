@@ -218,6 +218,18 @@ export const lists_Codetranslations = [
                 "one": "Tankautospuit USAR",
                 "more": "Tankautospuiten USAR"
             },
+            "police_motorcycle": {
+                "one": "Dienstmotor Politie",
+                "more": "Dienstmotoren Politie"
+            },
+            "traffic_patrol": {
+                "one": "Snelle Interventievoertuig Politie",
+                "more": "Snelle Interventievoertuigen Politie"
+            },
+            "traffic_inspector": {
+                "one": "Dienstbus - Verkeersongevallenanalyse",
+                "more": "Dienstbussen - Verkeersongevallenanalyse"
+            },
         },
         "additional": {
             "max_possible_prisoners": "Maximaal aantal gevangenen",
@@ -271,7 +283,8 @@ export const lists_Codetranslations = [
             "elw_airport": "Kans dat de AFO/OSC's benodigd zijn"
         },
         "personnel_educations": {
-            "wildfire": "Handcrew"
+            "wildfire": "Handcrew",
+            "police_motorcycle": "Motoragent"
         }
     }
 ]
