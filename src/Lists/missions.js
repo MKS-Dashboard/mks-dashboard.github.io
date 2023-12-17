@@ -257,6 +257,7 @@ export const lists_Codetranslations = [
             "handoff_possible_via_building_types": "Patiënt of gevangenen overdracht via gebouwtype",
             "subsequent_mission_only": "Alleen als vervolginzet",
             "allow_arff_instead_of_lf": "Crashtender i.p.v. Tankautospuit",
+            "allow_traffic_car_instead_of_fustw": "Signalisatievoertuig i.p.v. Noodhulp",
             "optional_event_mission": "Uitschakelbare event melding",
             "pump_water_amount": "Aantal liter water weg te pompen",
             "personnel_educations": "Benodigde opgeleide personeelsleden"
