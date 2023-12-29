@@ -460,5 +460,12 @@ export const lists_awards = [
         "zilver": 250,
         "goud": 500,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Nieuw Jaar 2023",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
     }
 ]
