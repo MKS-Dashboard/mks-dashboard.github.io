@@ -446,5 +446,26 @@ export const lists_awards = [
         "zilver": 25,
         "goud": 50,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Kerstmis 2023",
+        "brons": 15,
+        "zilver": 150,
+        "goud": 250,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Kerstverzamelaar 2023",
+        "brons": 10,
+        "zilver": 250,
+        "goud": 500,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Nieuw Jaar 2023",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
     }
 ]

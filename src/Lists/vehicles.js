@@ -271,8 +271,8 @@ export const lists_Vehicles = [
     },
     {
         "ID": 46,
-        "name": "DM Noodhulp",
-        "namelong": "Dienstmotor Noodhulp",
+        "name": "DM-P",
+        "namelong": "Dienstmotor Politie",
         "categorie": ["Politie"]
     },
     {
@@ -581,6 +581,18 @@ export const lists_Vehicles = [
         "namelong": "Dienstbus – Speurhonden",
         "categorie": ["Brandweer"]
     },
+    {
+        "ID": 98,
+        "name": "SIV-P",
+        "namelong": "Snelle Interventievoertuig Politie",
+        "categorie": ["Politie"]
+    },
+    {
+        "ID": 99,
+        "name": "DB-VOA",
+        "namelong": "Dienstbus - Verkeersongevalleanalyse",
+        "categorie": ["Politie"]
+    },
 
 ]
 
@@ -692,7 +704,7 @@ export const lists_vehicleGroups = [
     {
         "name": "Noodhulpeenheden",
         "texts": ["Noodhulpeenheden", "Noodhulpeenheid"],
-        "vehicles": [22, 25, 46, 47, 48, 59, 60, 75],
+        "vehicles": [22, 25, 46, 47, 48, 59, 60, 75, 98],
         "type": ["Politie"]
     },
     {
@@ -910,7 +922,25 @@ export const lists_vehicleGroups = [
         "texts": ["Dienstbus-Speurhonden", "Dienstbussen-Speurhonden"],
         "vehicles": [97],
         "type": ["Brandweer"]
-    }
+    },
+    {
+        "name": "Dienstmotoren Politie",
+        "texts": ["DM-P"],
+        "vehicles": [46],
+        "type": ["Politie"]
+    },
+    {
+        "name": "Snelle Interventievoertuigen Politie",
+        "texts": ["SIV-P"],
+        "vehicles": [46, 98],
+        "type": ["Politie"]
+    },
+    {
+        "name": "Dienstbussen - Verkeersongevalleanalyse",
+        "texts": ["DB-VOA"],
+        "vehicles": [99],
+        "type": ["Politie"]
+    },
 ]
 
 export const lists_additionalVehicleValues = [
