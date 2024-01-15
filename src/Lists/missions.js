@@ -358,7 +358,7 @@ export const lists_EventMissions = [
     },
     {
         "name": "Winter",
-        "mission_ids": [1003, 1004, 1005, 1006],
+        "mission_ids": [1003, 1004, 1005, 1006, 1074, 1075, 1076, 1077, 1078],
         "keys": ["all", "seasonal", "winter"]
     },
     {
