@@ -107,13 +107,16 @@ const Home = (props) => {
             Welkom in het mks-dashboard.<br />
             <br />
             Op deze pagina kun je verschillende gegevens over meldkamerspel vinden.<br />
-            <!-- Voor enkele functies dien je in te loggen om je eigen data te krijgen. Deze opties zijn verborgen zolang we de data niet hebben.<br />
+            <!-- 
+            Voor enkele functies dien je in te loggen om je eigen data te krijgen. Deze opties zijn verborgen zolang we de data niet hebben.<br />
             De gegevens waar we geen data voor nodig hebben zijn direct zichtbaar en te bekijken.<br />
-            In de suggestiebox kun je zien aan welke suggesties er zijn gegeven. Hier kun je ook je eigen suggesties achterlaten. Daarnaast hebben we een overzicht van welke suggesties live komen met de volgende update.<br /> -->
+            -->
+            In de suggestiebox kun je zien aan welke suggesties er zijn gegeven. Hier kun je ook je eigen suggesties achterlaten. Daarnaast hebben we een overzicht van welke suggesties live komen met de volgende update.<br /> 
             <br />
             <br />
 
-            <!-- <label>
+            <!-- 
+            <label>
                 <input type="checkbox"
                     defaultChecked={props.agree}
                     onChange={() => props.updateAgree()}
@@ -133,7 +136,8 @@ const Home = (props) => {
             <br /><br />
             Uw SessionID van <a href="https://meldkamerspel.com">Meldkamerspel.com</a>:<HiInformationCircle size={15} title={`Chrome/Edge: F12(element inspecteren) --> Application --> Cookies --> _session_id\nFirefox: F12(element inspecteren) --> Storage --> Cookies --> _session_id`} /><br />
             <input name='sessionId' type='password' value={props.template} onChange={e => props.setInputValue(e.target.value)} disabled={!props.agree} onKeyDown={handleKeyDown} />
-            <input name='submit' type='submit' value='Gegevens ophalen' onClick={() => props.GetData()} disabled={!props.agree} /> -->
+            <input name='submit' type='submit' value='Gegevens ophalen' onClick={() => props.GetData()} disabled={!props.agree} /> 
+            -->
 
             <br /> <br /> <br /> <br /> <br />
 
