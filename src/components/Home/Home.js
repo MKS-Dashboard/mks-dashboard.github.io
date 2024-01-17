@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { HiInformationCircle } from "react-icons/hi";
+// import { HiInformationCircle } from "react-icons/hi";
 
 const Home = (props) => {
 
@@ -96,11 +96,11 @@ const Home = (props) => {
         }
     }, []);
 
-    const handleKeyDown = event => {
-        if (event.key === 'Enter') {
-            props.GetData()
-        }
-    };
+    // const handleKeyDown = event => {
+    //     if (event.key === 'Enter') {
+    //         props.GetData()
+    //     }
+    // };
 
     return (
         <div id="Container">
