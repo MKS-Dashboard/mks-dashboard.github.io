@@ -474,5 +474,12 @@ export const lists_awards = [
         "zilver": 400,
         "goud": 1000,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Team Uitdaging Januari 2024",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
     }
 ]
