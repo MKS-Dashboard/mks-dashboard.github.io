@@ -495,5 +495,12 @@ export const lists_awards = [
         "zilver": 200,
         "goud": 400,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Carnaval 2024",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
     }
 ]
