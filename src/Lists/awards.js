@@ -502,5 +502,12 @@ export const lists_awards = [
         "zilver": 15,
         "goud": 50,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Europese 112-dag 2024",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
     }
 ]
