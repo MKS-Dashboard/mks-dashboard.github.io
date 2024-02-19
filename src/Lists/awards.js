@@ -516,5 +516,12 @@ export const lists_awards = [
         "zilver": 15,
         "goud": 50,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Politie Uitdaging Februari 2024",
+        "brons": 10,
+        "zilver": 50,
+        "goud": 200,
+        "type": "Eenmalig"
     }
 ]
