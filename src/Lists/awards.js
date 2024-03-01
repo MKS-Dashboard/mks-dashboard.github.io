@@ -481,5 +481,47 @@ export const lists_awards = [
         "zilver": 15,
         "goud": 50,
         "type": "Eenmalig"
+    },
+    {
+        "naam": "Valentijnsdag 2024",
+        "brons": 5,
+        "zilver": 30,
+        "goud": 100,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Romanticus 2024",
+        "brons": 10,
+        "zilver": 200,
+        "goud": 400,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Carnaval 2024",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Europese 112-dag 2024",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "8 Jarig Jubileum!",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
+    },
+    {
+        "naam": "Politie Uitdaging Februari 2024",
+        "brons": 10,
+        "zilver": 50,
+        "goud": 200,
+        "type": "Eenmalig"
     }
 ]

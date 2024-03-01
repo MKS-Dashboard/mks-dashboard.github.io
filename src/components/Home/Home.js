@@ -114,7 +114,7 @@ const Home = (props) => {
             In de suggestiebox kun je zien aan welke suggesties er zijn gegeven. Hier kun je ook je eigen suggesties achterlaten. Daarnaast hebben we een overzicht van welke suggesties live komen met de volgende update.<br /> 
             <br />
             <br />
-
+            Vanwege het wegvallen van de backend-hosting is het helaas niet meer mogelijk in te loggen om persoonlijke data op te halen. Indien er meer tijd is voor deverlopment zal worden gekeken naar een alternatieve hosting voor de backend. Tot die tijd zal deze site algemene informatie bevatten.
             {/*
             <label>
                 <input type="checkbox"
