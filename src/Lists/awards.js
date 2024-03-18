@@ -523,5 +523,12 @@ export const lists_awards = [
         "zilver": 50,
         "goud": 200,
         "type": "Eenmalig"
-    }
+    },
+    {
+        "naam": "Team Uitdaging Maart 2024",
+        "brons": 5,
+        "zilver": 15,
+        "goud": 50,
+        "type": "Eenmalig"
+    },
 ]
