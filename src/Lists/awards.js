@@ -531,4 +531,11 @@ export const lists_awards = [
         "goud": 50,
         "type": "Eenmalig"
     },
+    {
+        "naam": "Paasei-vinder 2024",
+        "brons": 10,
+        "zilver": 100,
+        "goud": 300,
+        "type": "Eenmalig"
+    },
 ]
