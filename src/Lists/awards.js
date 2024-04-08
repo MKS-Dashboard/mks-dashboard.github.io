@@ -545,4 +545,11 @@ export const lists_awards = [
         "goud": 75,
         "type": "Eenmalig"
     },
+    {
+        "naam": "Lente-evenement 2024",
+        "brons": 10,
+        "zilver": 100,
+        "goud": 500,
+        "type": "Eenmalig"
+    },
 ]
