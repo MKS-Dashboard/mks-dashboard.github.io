@@ -333,7 +333,7 @@ export const lists_EventMissions = [
     },
     {
         "name": "Voetbal",
-        "mission_ids": [820, 821, 822, 823, 824, 825, 826, 827, 828, 829],
+        "mission_ids": [820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 1083, 1084, 1085, 1086],
         "keys": ["all", "soccer"]
     },
     {
