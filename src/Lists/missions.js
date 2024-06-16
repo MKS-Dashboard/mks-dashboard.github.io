@@ -2,13 +2,15 @@ export const lists_ExcludedMissionKeysAllianceMissions = [
     "only_alliance_mission",
     "filter_id",
     "patient_specialization_ids",
-    "patient_specialization_captions"
+    "patient_specialization_captions",
+    "unavailable_in_normal_missions"
 ]
 
 export const lists_ExcludedMissionKeysAllianceEvents = [
     "filter_id",
     "patient_specialization_ids",
-    "patient_specialization_captions"
+    "patient_specialization_captions",
+    "unavailable_in_normal_missions"
 ]
 
 export const lists_ExcludedMissionKeysMissions = [
@@ -16,7 +18,8 @@ export const lists_ExcludedMissionKeysMissions = [
     "patient_specialization_captions",
     "patient_specialization_ids",
     "duration",
-    "patient_allow_first_responder_chance"
+    "patient_allow_first_responder_chance",
+    "unavailable_in_normal_missions"
 ]
 
 export const lists_Codetranslations = [
