@@ -181,11 +181,11 @@ const Home = (props) => {
                     })()}
                 </tbody>
             </table>
-
+            <a href="https://discord.gg/nzn8xGz" target="_blank" align="right"><img src="https://discord.com/api/guilds/502098937855868949/embed.png?style=banner3" alt="Meldkamerspel.com spelers discord"></a>
 
             <br />
 
-            <a href="https://discord.gg/nzn8xGz" target="_blank" align="right"><img src="https://discord.com/api/guilds/502098937855868949/embed.png?style=banner3" alt="Meldkamerspel.com spelers discord"></a>
+            
 
         </div >
     )
