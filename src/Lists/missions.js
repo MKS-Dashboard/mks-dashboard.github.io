@@ -233,6 +233,14 @@ export const lists_Codetranslations = [
                 "one": "Dienstbus - Verkeersongevallenanalyse",
                 "more": "Dienstbussen - Verkeersongevallenanalyse"
             },
+            "mass_casualty_advanced": {
+                "one": "Calamiteitenvoertuig GGB",
+                "more": "Calamiteitenvoertuigen GGB"
+            },
+            "mass_casualty": {
+                "one": "Noodhulpteam Rode Kruis",
+                "more": "Noodhulpteams Rode Kruis"
+            }
         },
         "additional": {
             "max_possible_prisoners": "Maximaal aantal gevangenen",
