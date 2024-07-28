@@ -334,7 +334,7 @@ export const lists_EventMissions = [
     },
     {
         "name": "Zomer",
-        "mission_ids": [617, 618, 619, 620, 621, 830, 831, 832],
+        "mission_ids": [617, 618, 619, 620, 621, 830, 831, 832,1098,1099,1100,1101,1102],
         "keys": ["all", "seasonal", "summer"]
     },
     {
@@ -386,6 +386,11 @@ export const lists_EventMissions = [
         "name": "Vaderdag",
         "mission_ids": [1037, 1038, 1039, 1040, 1041],
         "keys": ["all", "fathersday"]
+    },
+    {
+        "name": "Sport event",
+        "mission_ids": [1087,1088,1089,1090,1091,1092,1093,1094,1095,1096,1097],
+        "keys": ["all", "olympics"]
     }
 ]
 
@@ -465,5 +470,9 @@ export const lists_EventMissions_filterkeys = [
     {
         "name": "Vaderdag",
         "key": "fathersday"
+    },
+    {
+        "name": "Olymische spelen",
+        "key": "olympics"
     }
 ]
