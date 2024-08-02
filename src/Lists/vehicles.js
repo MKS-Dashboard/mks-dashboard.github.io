@@ -593,7 +593,24 @@ export const lists_Vehicles = [
         "namelong": "Dienstbus - Verkeersongevalleanalyse",
         "categorie": ["Politie"]
     },
-
+    {
+        "ID": 100,
+        "name": "GGB",
+        "namelong": "Calamiteitenvoertuig GGB",
+        "categorie": ["Ambulance"]
+    },
+    {
+        "ID": 101,
+        "name": "NHT",
+        "namelong": "Noodhulpteam Rode Kruis",
+        "categorie": ["Ambulance"]
+    },
+    {
+        "ID": 102,
+        "name": "MC-Ambulance",
+        "namelong": "Medium Care Ambulance",
+        "categorie": ["Ambulance"]
+    },
 ]
 
 export const lists_vehicleGroups = [
@@ -613,7 +630,7 @@ export const lists_vehicleGroups = [
     {
         "name": "Ambulances",
         "texts": ["Ambulance", "Ambulances"],
-        "vehicles": [16, 52, 57, 63],
+        "vehicles": [16, 52, 57, 63, 102],
         "type": ["Ambulance"]
     },
     {
@@ -941,6 +958,18 @@ export const lists_vehicleGroups = [
         "vehicles": [99],
         "type": ["Politie"]
     },
+    {
+        "name": "Calamiteitenvoertuigen GGB",
+        "texts": ["GGB"],
+        "vehicles": [100],
+        "type": ["Ambulance"]
+    },
+    {
+        "name": "Noodhulpteam Rode Kruis",
+        "texts": ["NHT"],
+        "vehicles": [101],
+        "type": ["Ambulance"]
+    },
 ]
 
 export const lists_additionalVehicleValues = [
@@ -1096,6 +1125,18 @@ export const lists_additionalVehicleValues = [
             },
             {
                 "id": 63,
+                "amount": 1
+            },
+            {
+                "id": 100,
+                "amount": 6
+            },
+            {
+                "id": 101,
+                "amount": 6
+            },
+            {
+                "id": 102,
                 "amount": 1
             }
         ]

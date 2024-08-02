@@ -2,13 +2,15 @@ export const lists_ExcludedMissionKeysAllianceMissions = [
     "only_alliance_mission",
     "filter_id",
     "patient_specialization_ids",
-    "patient_specialization_captions"
+    "patient_specialization_captions",
+    "unavailable_in_normal_missions"
 ]
 
 export const lists_ExcludedMissionKeysAllianceEvents = [
     "filter_id",
     "patient_specialization_ids",
-    "patient_specialization_captions"
+    "patient_specialization_captions",
+    "unavailable_in_normal_missions"
 ]
 
 export const lists_ExcludedMissionKeysMissions = [
@@ -16,7 +18,8 @@ export const lists_ExcludedMissionKeysMissions = [
     "patient_specialization_captions",
     "patient_specialization_ids",
     "duration",
-    "patient_allow_first_responder_chance"
+    "patient_allow_first_responder_chance",
+    "unavailable_in_normal_missions"
 ]
 
 export const lists_Codetranslations = [
@@ -230,6 +233,14 @@ export const lists_Codetranslations = [
                 "one": "Dienstbus - Verkeersongevallenanalyse",
                 "more": "Dienstbussen - Verkeersongevallenanalyse"
             },
+            "mass_casualty_advanced": {
+                "one": "Calamiteitenvoertuig GGB",
+                "more": "Calamiteitenvoertuigen GGB"
+            },
+            "mass_casualty": {
+                "one": "Noodhulpteam Rode Kruis",
+                "more": "Noodhulpteams Rode Kruis"
+            }
         },
         "additional": {
             "max_possible_prisoners": "Maximaal aantal gevangenen",
@@ -323,7 +334,7 @@ export const lists_EventMissions = [
     },
     {
         "name": "Zomer",
-        "mission_ids": [617, 618, 619, 620, 621, 830, 831, 832],
+        "mission_ids": [617, 618, 619, 620, 621, 830, 831, 832,1098,1099,1100,1101,1102],
         "keys": ["all", "seasonal", "summer"]
     },
     {
@@ -333,7 +344,7 @@ export const lists_EventMissions = [
     },
     {
         "name": "Voetbal",
-        "mission_ids": [820, 821, 822, 823, 824, 825, 826, 827, 828, 829],
+        "mission_ids": [820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 1083, 1084, 1085, 1086],
         "keys": ["all", "soccer"]
     },
     {
@@ -375,6 +386,11 @@ export const lists_EventMissions = [
         "name": "Vaderdag",
         "mission_ids": [1037, 1038, 1039, 1040, 1041],
         "keys": ["all", "fathersday"]
+    },
+    {
+        "name": "Sport event",
+        "mission_ids": [1087,1088,1089,1090,1091,1092,1093,1094,1095,1096,1097],
+        "keys": ["all", "olympics"]
     }
 ]
 
@@ -454,5 +470,9 @@ export const lists_EventMissions_filterkeys = [
     {
         "name": "Vaderdag",
         "key": "fathersday"
+    },
+    {
+        "name": "Olymische spelen",
+        "key": "olympics"
     }
 ]
