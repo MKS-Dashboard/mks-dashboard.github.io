@@ -304,7 +304,7 @@ export const lists_Codetranslations = [
 export const lists_EventMissions = [
     {
         "name": "Halloween",
-        "mission_ids": [146, 147, 148, 149, 150, 151, 152, 153, 154],
+        "mission_ids": [146, 147, 148, 149, 150, 151, 152, 153, 154, 1058, 1059, 1060, 1061],
         "keys": ["all", "halloween"]
     },
     {
