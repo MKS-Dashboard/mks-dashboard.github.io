@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { HiInformationCircle } from "react-icons/hi";
+import { HiInformationCircle } from "react-icons/hi";
 
 const Home = (props) => {
 
