@@ -44,10 +44,10 @@ function App() {
 
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
-    apiUrl = "https://mks-dashboard-test-piet2001.cloud.okteto.net"
+    apiUrl = "https://mks-dashboard-backend-dev-y1p5.onrender.com"
   }
   else {
-    apiUrl = "https://mks-dashboard-mks-dashboard-piet2001.cloud.okteto.net"
+    apiUrl = "https://mks-dashboard-backend-prd.onrender.com"
   }
 
   function LoadData() {
