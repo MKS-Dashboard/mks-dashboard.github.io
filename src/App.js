@@ -44,7 +44,7 @@ function App() {
 
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
-    apiUrl = "https://mks-dashboard-backend-dev-y1p5.onrender.com"
+    apiUrl = "https://mks-dashboard-backend-prd-production.up.railway.app"
   }
   else {
     apiUrl = "https://mks-dashboard-backend-prd.onrender.com"
