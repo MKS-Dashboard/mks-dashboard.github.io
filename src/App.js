@@ -47,7 +47,7 @@ function App() {
     apiUrl = "https://piet2001-mks.hf.space"
   }
   else {
-    apiUrl = "https://mks-dashboard-backend-prd.onrender.com"
+    apiUrl = "https://piet2001-mks.hf.space"
   }
 
   function LoadData() {
