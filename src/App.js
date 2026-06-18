@@ -44,7 +44,7 @@ function App() {
 
 
   if (window.location.href.includes("localhost") || window.location.href.includes("netlify")) {
-    apiUrl = "https://piet2001-mks.hf.space/docs"
+    apiUrl = "https://piet2001-mks.hf.space"
   }
   else {
     apiUrl = "https://mks-dashboard-backend-prd.onrender.com"
