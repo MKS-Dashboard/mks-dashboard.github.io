@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { HiInformationCircle } from "react-icons/hi";
+import { HiInformationCircle } from "react-icons/hi";
 
 const Home = (props) => {
 
@@ -96,26 +96,25 @@ const Home = (props) => {
         }
     }, []);
 
-    // const handleKeyDown = event => {
-    //     if (event.key === 'Enter') {
-    //         props.GetData()
-    //     }
-    // };
+    const handleKeyDown = event => {
+        if (event.key === 'Enter') {
+            props.GetData()
+        }
+    };
 
     return (
         <div id="Container">
             Welkom in het mks-dashboard.<br />
             <br />
             Op deze pagina kun je verschillende gegevens over meldkamerspel vinden.<br />
-            {/*
             Voor enkele functies dien je in te loggen om je eigen data te krijgen. Deze opties zijn verborgen zolang we de data niet hebben.<br />
             De gegevens waar we geen data voor nodig hebben zijn direct zichtbaar en te bekijken.<br />
-            */}
-            In de suggestiebox kun je zien aan welke suggesties er zijn gegeven. Hier kun je ook je eigen suggesties achterlaten. Daarnaast hebben we een overzicht van welke suggesties live komen met de volgende update.<br /> 
+
+            In de suggestiebox kun je zien aan welke suggesties er zijn gegeven. Hier kun je ook je eigen suggesties achterlaten. Daarnaast hebben we een overzicht van welke suggesties live komen met de volgende update.<br />
             <br />
             <br />
             Vanwege het wegvallen van de backend-hosting is het helaas niet meer mogelijk in te loggen om persoonlijke data op te halen. Indien er meer tijd is voor deverlopment zal worden gekeken naar een alternatieve hosting voor de backend. Tot die tijd zal deze site algemene informatie bevatten.
-            {/*
+
             <label>
                 <input type="checkbox"
                     defaultChecked={props.agree}
@@ -136,8 +135,8 @@ const Home = (props) => {
             <br /><br />
             Uw SessionID van <a href="https://meldkamerspel.com">Meldkamerspel.com</a>:<HiInformationCircle size={15} title={`Chrome/Edge: F12(element inspecteren) --> Application --> Cookies --> _session_id\nFirefox: F12(element inspecteren) --> Storage --> Cookies --> _session_id`} /><br />
             <input name='sessionId' type='password' value={props.template} onChange={e => props.setInputValue(e.target.value)} disabled={!props.agree} onKeyDown={handleKeyDown} />
-            <input name='submit' type='submit' value='Gegevens ophalen' onClick={() => props.GetData()} disabled={!props.agree} /> 
-            */}
+            <input name='submit' type='submit' value='Gegevens ophalen' onClick={() => props.GetData()} disabled={!props.agree} />
+
 
             <br /> <br /> <br /> <br /> <br />
 
@@ -184,7 +183,7 @@ const Home = (props) => {
 
             <br />
 
-            
+
 
         </div >
     )
